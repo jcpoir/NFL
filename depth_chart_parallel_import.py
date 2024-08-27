@@ -7,6 +7,7 @@
 from helper import *
 
 BASE_DIR, TARGET_DIR = "temp/", "pipeline/"
+N_CORES = 6
 
 def import_data(season, verbose = True, delay = 10):
     ''' Executes a parallel import of depth chart data, then aggregates. '''
