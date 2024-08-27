@@ -1,0 +1,154 @@
+## get_depth_charts.py
+# @author jcpoir
+# Stores depth chart information in a tabular format, then outputs to the "temp" directory
+# results are aggregated by another script
+
+from helper import *
+
+def get_depth_charts(start_idx, end_idx, verbose = False):
+
+    ref = "$ref"
+    out = pd.DataFrame()
+
+    # Query the list of team ids from ESPN
+    depth_charts = {}
+    teams = get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams")
+    nfl = teams["sports"][0]["leagues"][0]["teams"]
+
+    # For paralellization
+    idx = 0
+
+    for team in nfl:
+        
+        is_job = (idx >= start_idx) and (idx < end_idx)
+        if not is_job: 
+            idx += 1
+            continue
+        idx += 1
+            
+        # Unpack team metadata
+        team_info = team["team"]
+        team_id, team_name = team_info["id"], team_info["abbreviation"]
+
+        # Query the team's depth chart
+        URL = f"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/{team_id}/depthcharts"
+        depth_charts = get(URL)["items"]
+
+        # Iterate through the depth charts (defense (0), offense (1), special teams (2))
+        for depth_chart in depth_charts:
+            
+            # Iterate through position groups (WR, RB, DT, etc.)
+            positions = depth_chart["positions"]
+
+            for position_idx in positions:
+                
+                position = positions[position_idx]
+                athletes = position["athletes"]
+
+                if verbose:
+                    pbar = tqdm(athletes)
+                    pbar.set_description(f"Team: {team_name} Position: {position_idx}")
+                else:
+                    pbar = athletes
+
+                # Iterate through athletes on a given team at a given position
+                n_injuries = 0
+                for athlete in pbar:
+
+                    rank = athlete["rank"] - n_injuries # IMPORTANT: depth chart position
+                    athlete_info = get(athlete["athlete"][ref])
+
+                    # Gather athlete metadata
+                    player_name, player_id = athlete_info["shortName"], athlete_info["id"] # Also include
+                    jersey = 0
+                    if "jersey" in athlete_info: jersey = athlete_info["jersey"]
+                    
+                    formatted_name = remove_whitespace(f"{jersey}-{player_name}")
+                    injuries = athlete_info["injuries"]
+
+                    injury_status, return_date  = "H", "N/A"
+                    if len(injuries) > 0: 
+                        injury_status = injuries[0]["type"]["abbreviation"]
+                        return_date = injuries[0]["details"]["returnDate"]
+
+                    if injury_status not in ["H", "Q"]:
+                        rank = -1
+                        n_injuries += 1
+
+                    # Save data for this player
+                    df = pd.DataFrame()
+                    df["Team"], df["Team_id"], df["Position"], df["Rank"] = [team_name], [team_id], [position_idx], [rank]
+                    df["Player"], df["Player_id"], df["Injury_Status"], df["Return_Date"] = [formatted_name], [player_id], [injury_status], [return_date]
+
+                    out = pd.concat((out,df))
+
+    out.to_csv(f"temp/depth_charts{start_idx}-{end_idx}.csv", index = False)
+
+def load_depth_charts():
+    ''' Reads in depth charts to a pandas dataframe, then deposits the data into a nested dictionary 
+    for which dict[team][name] returns a dictionary of {rank:1, pos:"wr" . . . }. Also will return
+     a player-centric reference dict. '''
+
+    df = pd.read_csv("pipeline/depth_charts.csv")
+
+    key_positions = set(["qb", "rb", "wr", "te"])
+
+    # Initialize the output dictionary
+    dc_ref, player_ref = {}, {}
+    for team in df.Team.unique():
+        dc_ref[team] = {}
+        df1 = df[df.Team == team]
+
+        for i in range(len(df1)):
+
+            row = df1.iloc[i]
+
+            player_id = row.Player_id
+            ref = {}
+
+            ## Ensure that key positions aren't overwritten. RB > KR
+            plays_multiple_positions = player_id in player_ref
+            if plays_multiple_positions:
+
+                is_key_position = player_ref[player_id]["Position"] in key_positions
+                rank = row["Rank"]
+                is_top_option = rank == 1
+                
+                if is_key_position and not is_top_option:
+                    continue
+
+            for col in ["Position", "Rank", "Injury_Status", "Return_Date"]:
+                ref[col] = row[col]
+
+            dc_ref[team][player_id] = ref
+            ref["Team"] = row["Team"]
+            ref["Name"] = row["Player"]
+
+            player_ref[player_id] = ref
+
+    return dc_ref, player_ref
+
+def load_depth_charts_2():
+    ''' Loads depth charts in the format dc_ref[team][pos][rank]. This is used in enforce_min_usage() in smoothing
+    tools. '''
+
+    df = pd.read_csv("pipeline/depth_charts.csv")
+    dc_ref = {}
+
+    for team in sorted(df.Team.unique()):
+        dc_ref[team] = {}
+        df1 = df[df.Team == team]
+
+        for pos in sorted(df1.Position.unique()):
+            dc_ref[team][pos] = {}
+            df2 = df1[df1.Position == pos]
+
+            for rank in sorted(df2.Rank.unique()):
+                df3 = df2[df2.Rank == rank]
+                entry = df3.iloc[0]
+                id, name = entry.Player_id, entry.Player
+
+                rank = int(rank)
+                dc_ref[team][pos][rank] = {"id": id, "name": name}
+
+    return dc_ref

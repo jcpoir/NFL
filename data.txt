@@ -1,0 +1,110 @@
+
+KC (52.0%) vs (43.7%) BAL
+
+KC:
+PA: 20.92
+D: 43.0
+DIFF: 1.19
+PF: 22.11
+W: 520.0
+L: 437.0
+
+BAL:
+PA: 22.11
+D: 43.0
+DIFF: -1.19
+PF: 20.92
+W: 437.0
+L: 520.0
+
+== PASS ==
+
+PASSER                        CMP           YD            TD            INT           FUM           RTG           
+[KC]  15-P.Mahomes            23.06/36.39   238.19        1.57          0.93          0.23          85.89         
+[BAL] 8-L.Jackson             17.75/28.3    194.59        1.24          0.46          0.21          90.79         
+
+== RUSH ==
+
+RUSHER                        ATT           YD            LNG           TD            FUM           AVG           
+[BAL] 22-D.Henry              18.75         88.13         85.00         0.51          0.09          4.70          
+[KC]  10-I.Pacheco            15.61         67.13         77.00         0.41          0.09          4.30          
+[BAL] 43-J.Hill               9.80          45.10         84.00         0.26          0.06          4.60          
+[BAL] 8-L.Jackson             7.12          42.62         83.00         0.27          0.05          5.99          
+[KC]  25-C.Edwards-Helaire    5.39          23.30         59.00         0.15          0.02          4.32          
+[KC]  15-P.Mahomes            2.99          23.24         29.00         0.14          0.01          7.77          
+[KC]  30-K.Ingram             0.34          1.65          69.00         0.01          0.00          4.92          
+[BAL] 4-Z.Flowers             0.19          1.00          22.00         0.00          0.00          5.19          
+[KC]  19-K.Toney              0.10          0.45          11.00         0.00          0.00          4.56          
+[BAL] 89-M.Andrews            0.07          0.27          5.00          0.00          0.00          3.97          
+[BAL] 3-D.Harty               0.05          0.23          13.00         0.00          0.00          4.67          
+[KC]  24-S.Moore              0.03          0.13          13.00         0.00          0.00          4.85          
+[KC]  4-R.Rice                0.01          0.01          4.00          0.00          0.00          2.00          
+[KC]  83-N.Gray               0.00          0.00          3.00          0.00          0.00          0.75          
+
+== REC ==
+
+RECEIVER                      CMP           YD            TD            LNG           FUM           
+[BAL] 4-Z.Flowers             6.55/10.52    71.74         0.46          46.00         0.08          
+[KC]  4-R.Rice                6.78/10.73    70.85         0.43          63.00         0.07          
+[KC]  5-M.Brown               4.04/6.42     41.94         0.28          54.00         0.04          
+[BAL] 7-R.Bateman             3.74/5.99     40.65         0.29          59.00         0.04          
+[KC]  87-T.Kelce              3.27/5.1      33.57         0.21          52.00         0.04          
+[BAL] 15-N.Agholor            2.47/4.04     27.37         0.18          44.00         0.03          
+[BAL] 89-M.Andrews            1.61/2.48     17.62         0.11          44.00         0.02          
+[KC]  10-I.Pacheco            1.47/2.24     14.78         0.10          41.00         0.02          
+[KC]  84-J.Watson             1.23/2.0      13.24         0.09          48.00         0.01          
+[KC]  1-X.Worthy              1.31/2.1      13.23         0.08          38.00         0.02          
+[BAL] 80-I.Likely             1.16/1.86     12.77         0.08          44.00         0.02          
+[KC]  83-N.Gray               1.23/1.92     12.24         0.10          41.00         0.01          
+[KC]  19-K.Toney              1.1/1.77      11.54         0.08          40.00         0.01          
+[BAL] 43-J.Hill               1.06/1.58     11.49         0.06          40.00         0.01          
+[KC]  24-S.Moore              1.0/1.57      10.12         0.08          40.00         0.01          
+[KC]  25-C.Edwards-Helaire    0.61/0.95     6.18          0.03          42.00         0.01          
+[KC]  0-J.Smith-Schuster      0.53/0.86     5.44          0.05          41.00         0.00          
+[BAL] 22-D.Henry              0.41/0.62     4.60          0.02          36.00         0.00          
+[KC]  8-J.Ross                0.28/0.4      2.74          0.02          29.00         0.00          
+[BAL] 8-L.Jackson             0.22/0.36     2.42          0.02          39.00         0.00          
+[BAL] 3-D.Harty               0.2/0.32      2.25          0.01          34.00         0.00          
+[BAL] 42-P.Ricard             0.18/0.28     2.02          0.01          34.00         0.00          
+[KC]  15-P.Mahomes            0.18/0.28     1.93          0.02          31.00         0.00          
+[BAL] 87-K.Kirkwood           0.09/0.13     0.94          0.00          30.00         0.00          
+[BAL] 16-T.Wallace            0.04/0.06     0.43          0.00          29.00         0.00          
+[KC]  30-K.Ingram             0.04/0.07     0.41          0.01          21.00         0.00          
+[BAL] 85-C.Okonkwo            0.01/0.02     0.11          0.00          22.00         0.00          
+[BAL] 10-D.Hopkins            0.01/0.01     0.09          0.00          13.00         0.00          
+[BAL] 9-J.Tucker              0.01/0.02     0.05          0.00          14.00         0.00          
+[BAL] 81-J.Whyle              0.0/0.0       0.02          0.00          10.00         0.00          
+
+
+== FANTASY POINTS ==
+
+[BAL] 8-L.Jackson             17.77         
+[KC]  15-P.Mahomes            17.09         
+[BAL] 4-Z.Flowers             16.45         
+[KC]  4-R.Rice                16.33         
+[BAL] 22-D.Henry              12.66         
+[KC]  10-I.Pacheco            12.48         
+[KC]  5-M.Brown               9.85          
+[BAL] 7-R.Bateman             9.48          
+[BAL] 43-J.Hill               8.46          
+[KC]  87-T.Kelce              7.83          
+[BAL] 15-N.Agholor            6.24          
+[KC]  25-C.Edwards-Helaire    4.62          
+[BAL] 89-M.Andrews            4.01          
+[KC]  1-X.Worthy              3.11          
+[KC]  84-J.Watson             3.05          
+[KC]  83-N.Gray               3.03          
+[BAL] 80-I.Likely             2.86          
+[KC]  19-K.Toney              2.77          
+[KC]  24-S.Moore              2.45          
+[KC]  0-J.Smith-Schuster      1.36          
+[KC]  8-J.Ross                0.66          
+[BAL] 3-D.Harty               0.51          
+[BAL] 42-P.Ricard             0.46          
+[KC]  30-K.Ingram             0.33          
+[BAL] 87-K.Kirkwood           0.18          
+[BAL] 16-T.Wallace            0.10          
+[BAL] 10-D.Hopkins            0.03          
+[BAL] 85-C.Okonkwo            0.02          
+[BAL] 9-J.Tucker              0.01          
+[BAL] 81-J.Whyle              0.00          
