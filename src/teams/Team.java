@@ -25,7 +25,7 @@ public class Team {
 	
 	public Map<String,double[]> ranges;
 	
-	static double TACKLE_rate = 0.86; static double TWO_TACKLE_rate = 0.14; static double DEF_ratio = 0.5; // this is the percentage of prediction that is alotted to defense
+	static double TACKLE_rate = 0.86; static double TWO_TACKLE_rate = 0.14; static double DEF_ratio = 0.25; // this is the percentage of prediction that is alotted to defense
 	
 	public String getName() {return team_name;}
 	

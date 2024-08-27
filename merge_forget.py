@@ -3,8 +3,7 @@
 # Links this week's play-by-play data with that of the previous year. 
 # Drops the earliest data from the dataset
 
-import pandas as pd
-from datetime import datetime
+from helper import *
 
 DATE_FORMAT = "%Y-%m-%d"
 
@@ -59,8 +58,9 @@ def merge_forget(season, week, new_data = None, source_directory = "pipeline/", 
     def calc_timeDelta(date):
         ''' calculates the difference in time (number of days) between the date of the most recent game
         and the date of every game in the dataset '''
-        td = curr_date - datetime.strptime(date, "%Y-%m-%d")
+        td = curr_date - datetime.strptime(date, DATE_FORMAT)
         return td.days
+    
     data["TimeDelta"] = data.Date.apply(calc_timeDelta)
     data = data[data["TimeDelta"] <= retain_days]
 
@@ -68,8 +68,9 @@ def merge_forget(season, week, new_data = None, source_directory = "pipeline/", 
     def calc_relevancy(n_days):
         relevancy = max(decay_coeff ** (n_days / 365), min_relevancy)
         return relevancy
+    
     data["Relevancy"] = data.TimeDelta.apply(calc_relevancy)
-    data.drop("TimeDelta", axis = 1, inplace = True)
+    # data.drop("TimeDelta", axis = 1, inplace = True)
 
     data.sort_values("Date", ascending = False, inplace = True)
 

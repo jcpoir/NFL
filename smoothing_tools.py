@@ -81,23 +81,23 @@ def get_conditions(playType, player, is_OFF = True):
   if is_OFF:
 
     if playType == "PASS":
-      if player == 1: return {"qb-1" : 1.0} # Here we're enforcing that the starting qb will take 95% of snaps at MINIMUM
+      if player == 1: return {"qb-1" : 0.95} # Here we're enforcing that the starting qb will take 95% of snaps at MINIMUM
 
       if player == 2:
         return {
-          "wr-1" : 0.25,
-          "wr-2" : 0.15,
+          "wr-1" : 0.2,
+          "wr-2" : 0.125,
           "wr-3" : 0.05
         }
       
     if playType == "RUSH":
       return {
-        "rb-1" : 0.3,
+        "rb-1" : 0.25,
         "rb-2" : 0.1
       }
     
     if playType == "SCRAMBLE":
-      return {"qb-1" : 1.0}
+      return {"qb-1" : 0.95}
     
     if playType in ("KICKOFF", "FIELD GOAL"):
       return {"pk-1" : 1.0}

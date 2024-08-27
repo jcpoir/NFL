@@ -45,6 +45,7 @@ def filter():
     # Handle issue where interceptions, fumbles have flipped offense, defense teams
     INTs = df.IsInterception == True
     df["OffenseTeam"][INTs], df["DefenseTeam"][INTs] = df["DefenseTeam"][INTs], df["OffenseTeam"][INTs]
+    df["Player2"][INTs] = ""
 
     def resolve_fumbles(df):
         cond1 = df.IsFumble == True
@@ -107,7 +108,7 @@ def reassign_plays():
     dc_ref , player_ref = load_depth_charts()
     
     # Assign relevancy coefficients. Other will handle special players like kicker/punter
-    R_PASS, R_RUSH, R_REC, R_SCRAMBLE, R_OTHER = 0.4, 0.5, 0.4, 0.75, 0.9
+    R_PASS, R_RUSH, R_REC, R_SCRAMBLE, R_OTHER = 0.7, 0.7, 0.25, 0.75, 0.9
     
     # Assigns the importance of player1, player2, to the outcome of a given offensive play type.
     rel_ref = {"PASS" : [R_PASS, R_REC], "RUSH" : [R_RUSH, 0], "SCRAMBLE" : [R_SCRAMBLE, 0],
@@ -173,7 +174,7 @@ def reassign_plays():
 
                     new_row = copy.deepcopy(row)
                     new_row["Relevancy"] = new_row.Relevancy * relevancy[0] # Relevancy of the new row = just relevancy from the trader/released player
-                    new_row[f"Player{alt_str_idx}"], new_row[f"Player{alt_str_idx}_id"] = "", ""
+                    new_row[f"Player{alt_str_idx}"], new_row[f"Player{alt_str_idx}_ID"] = "", ""
                     new_row["OffenseTeam"] = curr_teams[i]
 
                     new_row = pd.DataFrame([new_row])

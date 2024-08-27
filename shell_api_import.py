@@ -1,4 +1,4 @@
-## shell_api_import
+## shell_api_import.py
 
 import sys
 import os

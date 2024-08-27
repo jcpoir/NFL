@@ -101,7 +101,7 @@ class SkewedVoigtModel(SkewedVoigt):
         self.optimizer = optim.Adam(self.parameters(), lr = 0.1)
         self.loss = torch.tensor(0)
 
-    def fit_transform(self, x, y, loss_fn, n_epochs=1000, conv_thresh=1e-8, verbose=True, mean_conv=None, isKickoff=False, isSack=False):
+    def fit_transform(self, x, y, loss_fn, n_epochs=1000, conv_thresh=1e-8, mean_conv=None, isKickoff=False, isSack=False, show_plots=False, verbose=False):
 
         # Hopefully fix the new tensor bug . . .
         x, y = torch.tensor(x[:]), torch.tensor(y[:])
@@ -123,9 +123,10 @@ class SkewedVoigtModel(SkewedVoigt):
                 weights[par] = []
             X = []
 
-        pbar = tqdm(range(n_epochs))
+        pbar = range(n_epochs)
+        if verbose: pbar = tqdm(range(n_epochs))
         for epoch in pbar:
-            pbar.set_description(f"epoch = {epoch}, loss = {loss}")
+            if verbose: pbar.set_description(f"epoch = {epoch}, loss = {loss}")
 
             optimizer.zero_grad()
 
@@ -169,7 +170,7 @@ class SkewedVoigtModel(SkewedVoigt):
 
                 weights = update_weights(weights, model)
 
-        if verbose:
+        if show_plots:
 
             ## (1) Parameter Graph
 
@@ -195,7 +196,7 @@ class SkewedVoigtModel(SkewedVoigt):
 
         return y_p_graph.numpy()
 
-    def smooth_normalize(self, x, y, verbose = False, isKickoff = False, isSack = False):
+    def smooth_normalize(self, x, y, verbose = True, show_plots = False, isKickoff = False, isSack = False):
         ''' Perform a two-phase contrained optimization. In the first phase, use MSE to optimize for shape.
         Then, freeze the skew and optimize on MSE and difference of means using sigma and center '''
 
@@ -207,15 +208,15 @@ class SkewedVoigtModel(SkewedVoigt):
         if not isSack and not isKickoff: loss_fns.append(MSE_Mean_Loss) # For most, however, we NEED the means to be as close as possible for simulations to be accurate!
 
         for loss_fn in loss_fns:
-            out = self.fit_transform(x, y, loss_fn, conv_thresh=conv_thresh, mean_conv=mean_conv, verbose=verbose, isKickoff=isKickoff, isSack=isSack)
+            out = self.fit_transform(x, y, loss_fn, conv_thresh=conv_thresh, mean_conv=mean_conv, verbose=verbose, show_plots = show_plots, isKickoff=isKickoff, isSack=isSack)
             if isKickoff or isSack: self.skew.requires_grad = False
             conv_thresh, mean_conv = 1e-6, 0.01  # Stage two: mean fit
-            self.optimizer.lr = 0.01 ## TODO: revert to 0.01
+            self.optimizer.lr = 0.01
         self.optimizer.lr, self.skew.requires_grad = 0.1, True
 
         return out
     
-def smooth_normalize(x, y, isKickoff = False, isSack = False, show_plots = False, n_retries = 10):
+def smooth_normalize(x, y, isKickoff = False, isSack = False, show_plots = False, verbose = True, n_retries = 10):
     ''' We're getting some messy fits with smooth normalize (seeing divergence at points, especially in special
     teams dists). Working on that, but in the meantime this function will serve as a buffer by abstracting the
     instantiation and retrying the fit a predefined number of times '''
@@ -224,14 +225,16 @@ def smooth_normalize(x, y, isKickoff = False, isSack = False, show_plots = False
     lr = 0.1
 
     for i in range(n_retries):
-        
+              
         model = SkewedVoigtModel()
         model.optimizer.lr = lr
 
+        if i == n_retries - 1: model.optimizer.lr = 0
+
         x_t,y_t = get_tensors(x, y)
-        out = model.smooth_normalize(x_t,y_t, isKickoff=isKickoff, isSack=isSack, verbose = show_plots)
+        out = model.smooth_normalize(x_t,y_t, isKickoff=isKickoff, isSack=isSack, verbose=verbose, show_plots=show_plots)
         
-        is_divergent = torch.isnan(model.loss)
+        is_divergent = torch.isnan(model.loss) or np.isnan(y[0])
         if not is_divergent: break
 
         lr = lr / 2

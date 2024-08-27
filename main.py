@@ -34,7 +34,7 @@ def run_pipeline(season, week):
     # (3) Filter data to account for injuries, roster changes
     if True:
 
-        if True:
+        if False:
             from depth_chart_parallel_import import import_data
             import_data(season)
 
@@ -51,13 +51,13 @@ def run_pipeline(season, week):
 
     # (4) Aggregate data into team distributions
     from smoothing_tools import agg_distributions
-    from defense_offense import gen_distributions
+    from defense_offense_parallel import gen_distributions
     if True:
-        gen_distributions(side = "OFF", show_plots = False)
+        gen_distributions(side = "OFF")
         agg_distributions("OFF")
     
     if True:
-        gen_distributions(side = "DEF", show_plots = False)
+        gen_distributions(side = "DEF")
         agg_distributions("DEF")
 
     if True:

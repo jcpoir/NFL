@@ -727,6 +727,6 @@ public class GameSimulator {
 		GameSimulator sim = new GameSimulator(dists);
 		
 		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true;
-		sim.simulateMatchup("BAL", "KC", n_trials, avg_stats, OT, verbose, show_result);
+		sim.simulateMatchup("NE", "LAC", n_trials, avg_stats, OT, verbose, show_result);
 	}
 }

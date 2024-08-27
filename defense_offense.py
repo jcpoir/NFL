@@ -9,19 +9,24 @@ from skewed_voigt import *
 
 x = np.linspace(-20,100,121)
 
-def gen_distributions(n_target = 20, show_plots = False, side = "OFF"):
-  ''' for each play type/team/year/player/yardage/down etc., get a distribution and save '''
+def gen_distributions(n_target = 20, show_plots = False, side = "OFF", idx_low = None, idx_high = None, verbose = True):
+  ''' for each play type/team/year/player/yardage/down etc., get a distribution and save 
+  idx_low and idx_high were added to enable parallel compute, along with the verbose option'''
 
   global x
   
-  side_str = "Offense"
-  if side == "DEF": side_str = "Defense"
+  data_file, side_str = "pipeline/data3.1.csv", "Offense"
+  if side == "DEF": data_file, side_str = "pipeline/data3.csv", "Defense"
 
-  print(f"\n== Generating {side_str[:-1]}ive Distributions ==\n")
+  if verbose: print(f"\n== Generating {side_str[:-1]}ive Distributions ==\n")
 
-  pbp_df = pd.read_csv("pipeline/data3.1.csv", low_memory = False)
+  pbp_df = pd.read_csv(data_file, low_memory = False)
 
-  playTypes = ["SCRAMBLE", "RUSH", "PASS", -1] # -1 will mean "don't apply a filter here" in all cases
+  playTypes = ["PASS", "SCRAMBLE", "RUSH", -1] # -1 will mean "don't apply a filter here" in all cases
+
+  # Set up for parallel computation
+  is_parallel = (idx_low != None) and (idx_high != None)
+  idx = 0
 
   # Apply a cascading filter across the fields
   for playType in playTypes:
@@ -32,16 +37,21 @@ def gen_distributions(n_target = 20, show_plots = False, side = "OFF"):
     else: df1 = pbp_df[(pbp_df["PlayType"] == "RUSH") | (pbp_df["PlayType"] == "PASS") | (pbp_df["PlayType"] == "SCRAMBLE") | (pbp_df["PlayType"] == "SACK")]
 
     y = get_yds_dist(df1, x)
-    gen_reference_dist = smooth_normalize(x,y)
+    gen_reference_dist = smooth_normalize(x,y, show_plots=show_plots, verbose=verbose)
     
     team_col = f"{side_str}Team"
     for team in [team for team in df1[team_col].unique()]:
+        
+        # Allow for distribution of jobs across nodes in parallel compute
+        if is_parallel:
+          idx += 1
+          if idx <= idx_low or idx > idx_high: continue
 
         if team != -1: df3 = df1[df1[team_col] == team]
         else: df3 = df1.copy()
 
         y = get_yds_dist(df3, x)
-        team_reference_dist = smooth_normalize(x,y)
+        team_reference_dist = smooth_normalize(x,y, show_plots=show_plots, verbose=verbose)
 
         out_df = pd.DataFrame()
         for yardRange in [-1, (0,2), (3,7), (8,13), (14,100)]:
@@ -58,7 +68,7 @@ def gen_distributions(n_target = 20, show_plots = False, side = "OFF"):
 
                 # combine analytics, allowing for compensation with another dist
                 metadata = {"PlayType" : playType, f"{side_str}Team" : team, "Yard Range" : yardRange, "Down" : down}
-                print(metadata)
+                if verbose: print(metadata)
 
                 if len(df5) == 0: df5 = df4.copy()
                 if len(df5) == 0: df5 = df3.copy()
@@ -74,12 +84,12 @@ def gen_distributions(n_target = 20, show_plots = False, side = "OFF"):
                 if _sum != 0: y = y / _sum # constrain to probability mass == 1
 
                 # for small datasets, compensates by adding in less relevant examples (at a discount)
-                n_examples = len(df5)
+                n_examples = df5.Relevancy.sum()
                 y = supplement(y, team_reference_dist, n_examples, n_target = n_target)
-                n_examples = len(df3)
+                n_examples = df3.Relevancy.sum()
                 y = supplement(y, gen_reference_dist, n_examples, n_target = n_target)
 
-                y1 = smooth_normalize(x, y, show_plots = show_plots)
+                y1 = smooth_normalize(x, y, show_plots=show_plots, verbose=verbose)
 
                 # calculate FUM%, TD% etc. for the down&distance and overall dataframes
                 ref1 = calc_analytics(df5, y1, x, metadata = metadata)

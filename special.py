@@ -108,6 +108,7 @@ def get_fum_dists(pbp_df, show_plots = False):
   x = get_x(120)
 
   df = pbp_df[pbp_df.IsFumble == True]
+  df["PassType"] = df.PassType.fillna("")
   out = pd.DataFrame()
 
   isType = lambda x : passType in x.PassType.lower()
