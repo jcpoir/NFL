@@ -1,0 +1,111 @@
+
+NE (45.3%) vs (51.5%) LAC
+
+NE:
+PA: 21.22
+D: 32.0
+DIFF: -1.35
+PF: 19.86
+W: 453.0
+L: 515.0
+
+LAC:
+PA: 19.86
+D: 32.0
+DIFF: 1.35
+PF: 21.22
+W: 515.0
+L: 453.0
+
+== PASS ==
+
+PASSER                        CMP           YD            TD            INT           FUM           RTG           
+[LAC] 10-J.Herbert            23.92/37.2    254.30        1.41          0.60          0.24          90.12         
+[NE]  14-J.Brissett           20.45/31.41   210.97        1.33          0.63          0.16          90.02         
+
+== RUSH ==
+
+RUSHER                        ATT           YD            LNG           TD            FUM           AVG           
+[NE]  38-R.Stevenson          21.59         91.89         72.00         0.54          0.14          4.26          
+[LAC] 4-G.Edwards             16.33         80.90         98.00         0.66          0.20          4.95          
+[NE]  21-A.Gibson             10.79         45.98         59.00         0.25          0.06          4.26          
+[LAC] 27-J.K.Dobbins          3.56          17.51         87.00         0.13          0.06          4.92          
+[LAC] 10-J.Herbert            2.35          14.63         37.00         0.06          0.01          6.23          
+[NE]  14-J.Brissett           1.26          8.20          34.00         0.04          0.01          6.53          
+[NE]  36-K.Harris             0.35          1.56          54.00         0.02          0.00          4.39          
+[NE]  39-J.Hasty              0.27          1.21          53.00         0.01          0.00          4.44          
+[LAC] 34-J.Patterson          0.19          1.17          76.00         0.01          0.00          6.31          
+[LAC] 12-D.Davis              0.19          0.85          84.00         0.01          0.00          4.51          
+[NE]  3-D.Douglas             0.12          0.53          21.00         0.00          0.00          4.31          
+[NE]  84-K.Bourne             0.10          0.38          15.00         0.00          0.00          4.00          
+[NE]  11-T.Thornton           0.09          0.34          9.00          0.00          0.00          4.02          
+[LAC] 5-J.Palmer              0.04          0.21          59.00         0.00          0.00          5.68          
+[LAC] 1-Q.Johnston            0.04          0.18          13.00         0.00          0.00          4.38          
+[NE]  83-J.Reagor             0.04          0.16          18.00         0.00          0.00          4.32          
+[NE]  2-K.J.Osborn            0.03          0.11          8.00          0.00          0.00          3.58          
+[NE]  17-B.Baringer           0.02          0.10          12.00         0.00          0.00          6.00          
+
+== REC ==
+
+RECEIVER                      CMP           YD            TD            LNG           FUM           
+[LAC] 5-J.Palmer              7.89/12.37    83.79         0.48          49.00         0.08          
+[LAC] 9-D.Chark Jr.           5.9/9.34      63.58         0.37          54.00         0.06          
+[NE]  84-K.Bourne             4.54/6.98     46.75         0.31          57.00         0.03          
+[LAC] 15-L.McConkey           3.7/5.71      39.20         0.22          44.00         0.04          
+[NE]  2-K.J.Osborn            3.27/5.0      34.24         0.21          49.00         0.03          
+[NE]  3-D.Douglas             2.82/4.33     28.75         0.19          43.00         0.03          
+[NE]  21-A.Gibson             2.5/3.81      25.24         0.15          40.00         0.02          
+[NE]  81-A.Hooper             1.97/3.09     20.56         0.14          52.00         0.01          
+[LAC] 1-Q.Johnston            1.78/2.8      19.40         0.12          46.00         0.01          
+[LAC] 88-H.Hurst              1.82/2.68     19.11         0.10          41.00         0.01          
+[NE]  85-H.Henry              1.34/2.11     13.77         0.09          43.00         0.01          
+[LAC] 81-W.Dissly             1.35/2.04     13.54         0.06          41.00         0.02          
+[NE]  1-J.Polk                1.12/1.68     11.75         0.07          43.00         0.01          
+[NE]  38-R.Stevenson          1.05/1.6      10.52         0.07          51.00         0.01          
+[NE]  83-J.Reagor             0.68/1.03     7.05          0.04          35.00         0.00          
+[LAC] 12-D.Davis              0.54/0.8      5.66          0.02          33.00         0.01          
+[NE]  11-T.Thornton           0.51/0.75     5.35          0.04          36.00         0.00          
+[NE]  39-J.Hasty              0.48/0.75     5.01          0.03          43.00         0.01          
+[LAC] 4-G.Edwards             0.43/0.64     4.23          0.02          31.00         0.00          
+[LAC] 27-J.K.Dobbins          0.2/0.3       2.11          0.01          30.00         0.00          
+[LAC] 10-J.Herbert            0.16/0.26     1.93          0.01          34.00         0.00          
+[LAC] 87-S.Fehoko             0.09/0.13     0.96          0.01          30.00         0.00          
+[LAC] 34-J.Patterson          0.07/0.12     0.76          0.00          23.00         0.00          
+[NE]  14-J.Brissett           0.06/0.11     0.73          0.01          23.00         0.00          
+[NE]  80-K.Boutte             0.05/0.09     0.62          0.00          31.00         0.00          
+[NE]  13-J.Slye               0.03/0.05     0.39          0.00          38.00         0.00          
+[NE]  36-K.Harris             0.03/0.04     0.26          0.00          29.00         0.00          
+[LAC] 11-C.Dicker             0.0/0.01      0.03          0.00          16.00         0.00          
+
+
+== FANTASY POINTS ==
+
+[LAC] 5-J.Palmer              19.02         
+[LAC] 10-J.Herbert            16.37         
+[NE]  38-R.Stevenson          14.61         
+[LAC] 9-D.Chark Jr.           14.34         
+[NE]  14-J.Brissett           13.38         
+[LAC] 4-G.Edwards             12.58         
+[NE]  21-A.Gibson             11.85         
+[NE]  84-K.Bourne             11.05         
+[LAC] 15-L.McConkey           8.83          
+[NE]  2-K.J.Osborn            7.87          
+[NE]  3-D.Douglas             6.84          
+[NE]  81-A.Hooper             4.82          
+[LAC] 1-Q.Johnston            4.42          
+[LAC] 88-H.Hurst              4.32          
+[NE]  85-H.Henry              3.26          
+[LAC] 81-W.Dissly             3.01          
+[LAC] 27-J.K.Dobbins          2.85          
+[NE]  1-J.Polk                2.68          
+[NE]  83-J.Reagor             1.63          
+[LAC] 12-D.Davis              1.35          
+[NE]  39-J.Hasty              1.32          
+[NE]  11-T.Thornton           1.29          
+[LAC] 34-J.Patterson          0.35          
+[NE]  36-K.Harris             0.31          
+[LAC] 87-S.Fehoko             0.24          
+[NE]  80-K.Boutte             0.13          
+[NE]  13-J.Slye               0.09          
+[LAC] 11-C.Dicker             0.01          
+[NE]  17-B.Baringer           0.01          

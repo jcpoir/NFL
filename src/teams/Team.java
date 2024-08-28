@@ -628,16 +628,23 @@ public class Team {
 			// Use a randomized pass play to get player1, formation
 			String pass_idx = Team.formPlayIndex("PASS", distance_rng, down_rng);
 			Map<String,String> play_selection = Team.randomSelectAll(team_dists.get(pass_idx));
-			
-			// Look up sack distribution by formation (only variable considered at this time)
 			String formation = play_selection.get("Formation"); String p1 = play_selection.get("Player1");
 			String outcome = play_selection.get("outcome");
 			
+			// Look up sack distribution by formation (only variable considered at this time)
 			String sack_idx = Team.formSackIndex(formation);
-			
 			Map<String,Map<Double,String>> sack_dist = team_dists.get(sack_idx);
-			
 			String n_yds = capYards(Team.randomSelect(sack_dist.get("dist"))); String yds = Team.addYards(n_yds);
+			
+			// For defensive players, look up the rush distribution
+			String rush_idx = Team.formPlayIndex("RUSH", distance_rng, down_rng);
+			Map<String,Map<Double,String>> rush_dist = team_dists.get(rush_idx);
+			String def_player = Team.randomSelect(rush_dist.get("DefPlayer")); String def_player_2 = Team.randomSelect(rush_dist.get("DefPlayer"));
+			
+			double x = r.nextDouble();
+			boolean is_tackle = x <= TACKLE_rate; boolean is_two_tackle = (x <= TWO_TACKLE_rate) & (!def_player.equals(def_player_2)); String tackle_str = "";
+			if (is_two_tackle) tackle_str = " (" + def_player + ", " + def_player_2 + ")";
+			else if (is_tackle) tackle_str = " (" + def_player + ")";
 			
 			// Generate a random yardage
 
@@ -645,11 +652,11 @@ public class Team {
 			out.put("player2", null); out.put("isTurnover", "0");
 			
 			// Formulate output message
-			summary = "(" + formation + ") "  + p1 + " SACKED for " + yds + ".";
+			summary = "(" + formation + ") "  + p1 + " SACKED for " + yds + tackle_str + ".";
 			
 			// Strip sack (special case)
 			if (outcome.equals("FUM")) {
-				String fum_message = " FUMBLES, recovered by " + opp_name + ".";
+				String fum_message = " FUMBLES, recovered by " + def_player + ".";
 				summary += fum_message; out.put("isTurnover", "1");
 			}
 			
@@ -657,7 +664,7 @@ public class Team {
 		
 		// If the play is not a sack . . .
 		else {
-
+			
 			// Get the ingredients of the play
 			Map<String,String> results = Team.randomSelectAll(team_dist);
 			
@@ -700,7 +707,7 @@ public class Team {
 				}
 				
 				else if (outcome.equals("INT") ) {
-					summary += p1 + " pass " + passtype + " intended for " + p2 + " INTERCEPTED by " + opp_name + " and returned for " + yds + tackle_str + ".";
+					summary += p1 + " pass " + passtype + " intended for " + p2 + " INTERCEPTED by " + def_player + " and returned for " + yds + ".";
 					out.put("isTurnover", "1"); out.put("interception", "1");
 				}
 				
