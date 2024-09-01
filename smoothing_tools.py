@@ -5,6 +5,7 @@
 # distributions for associated events (i.e. fumbles, interceptions).
 
 from get_depth_charts import *
+from helper import *
 
 # (1) Support functions
 
@@ -43,16 +44,6 @@ def get_yds_dist(pbp_df, x, scoring = False, yard_col = "Yards", allow_events = 
 
   return y
 
-def standardize(ref):
-  ''' Standardizes a dictionary so that the sum of all values == 1.0 '''
-
-  total = 0
-  for k in ref: total += ref[k]
-  out = {}
-  for k in ref: out[k] = ref[k] / total
-
-  return out
-
 def relevancy_calc_rate(df, condition, rel_column = "Relevancy"):
   ''' Given a dataframe and a subset-defining condition, compute and the relevancy-weighted average
    value. Used in calc_analytics to find stats like incompletion percentage (INC%) and touchdown
@@ -62,15 +53,22 @@ def relevancy_calc_rate(df, condition, rel_column = "Relevancy"):
   ans = np.sum(df[condition][rel_column]) / np.sum(df[rel_column])
   return ans
 
-def relevancy_get_value_counts(df, agg_col, rel_column = "Relevancy", str_convert = True):
+def relevancy_get_value_counts(df, agg_col, rel_column = "Relevancy", decay_exp = 1, str_convert = True, is_standardize = True):
   ''' Given a dataframe or dataframe subset df, returns a string-converted dictionary of relevancy-
   weighted term frequencies. Essentially, instead of doing a value count, this function groups by value
-  and sums across the relevancy column. '''
+  and sums across the relevancy column. rel_column is set to "Rel_Time", or time-only relevancy scores,
+   when we're looking to calculate target share. '''
+
+  ## Extra decay applied for player dists
+  apply_exponent = lambda x : x ** decay_exp
+  df["Rel_Calc"] = df[rel_column].apply(apply_exponent)
+  rel_column = "Rel_Calc"
 
   ref = df.groupby(agg_col).sum()[rel_column].to_dict()
   gb = df.groupby(agg_col).sum()[rel_column]
   ref = gb[gb != 0].to_dict() ## bugfix: solved issue of 0 P mass players getting minimum threshold usage in java simulations
 
+  if is_standardize: ref = standardize(ref)
   if str_convert: ref = str(ref)
   return ref
 
@@ -85,15 +83,23 @@ def get_conditions(playType, player, is_OFF = True):
 
       if player == 2:
         return {
-          "wr-1" : 0.2,
-          "wr-2" : 0.125,
-          "wr-3" : 0.05
+          "wr-1" : 0.3,
+          "wr-2" : 0.2,
+          "wr-3" : 0.1,
+          "wr-4" : 0.025,
+          "wr-5" : 0.0125,
+          "te-1" : 0.03, # Low TE values are here in part just to ensure that their target share is preserved where it exists
+          "te-2" : 0.01,
+          "max" : 0.5
         }
       
     if playType == "RUSH":
       return {
-        "rb-1" : 0.25,
-        "rb-2" : 0.1
+        "rb-1" : 0.35,
+        "rb-2" : 0.25,
+        "rb-3" : 0.025,
+        "wr-1" : 0.01, # Same logic here as for TEs
+        "max" : 0.7
       }
     
     if playType == "SCRAMBLE":
@@ -122,11 +128,11 @@ def get_conditions(playType, player, is_OFF = True):
 
         for pos in primary:
           idx = f"{pos}-{rank}"
-          out[idx] = 4 * mult
+          out[idx] = mult
 
         for pos in secondary:
           idx = f"{pos}-{rank}"
-          out[idx] = mult
+          out[idx] = 4 * mult
 
       return out
     
@@ -136,11 +142,11 @@ def get_conditions(playType, player, is_OFF = True):
 
         for pos in primary:
           idx = f"{pos}-{rank}"
-          out[idx] = mult
+          out[idx] = 4 * mult
 
         for pos in secondary:
           idx = f"{pos}-{rank}"
-          out[idx] = 4 * mult
+          out[idx] = mult
 
       return out
       
@@ -158,6 +164,14 @@ def player_id_to_player(player_id_ref):
     out[name] = player_id_ref[id]
 
   return out
+
+def standardize(ref):
+
+  total = 0
+  for col in ref: total += ref[col]
+  for col in ref: ref[col] = ref[col] / total
+
+  return ref
   
 def enforce_min_usage(player_id_ref, team, conditions):
   ''' Looks at a reference dictionary of player usage, looks up players in depth_charts.csv, then
@@ -167,11 +181,16 @@ def enforce_min_usage(player_id_ref, team, conditions):
   dc_ref = dc3
 
   player_id_ref = standardize(player_id_ref)
-  
   usage_ref = {}
+
+  # Enforce maximum target shares
+  max_rate = 1.0
+  if "max" in conditions: max_rate = conditions["max"]
 
   # Condition syntax: "wr-1"
   for dc_pos in conditions:
+
+    if dc_pos == "max": continue
 
     # Look up player id for the given depth chart position
     c = dc_pos.split("-")
@@ -194,10 +213,15 @@ def enforce_min_usage(player_id_ref, team, conditions):
     else:
       empirical_rate = player_id_ref[player_id]
       rate_too_low = empirical_rate < required_min_rate
+      rate_too_high = empirical_rate > max_rate
 
       # Case where player has recorded usage, but not enough to satisfy their depth chart condition
       if rate_too_low:
         usage_ref[player_id] = required_min_rate
+        player_id_ref.pop(player_id)
+
+      elif rate_too_high:
+        usage_ref[player_id] = max_rate
         player_id_ref.pop(player_id)
 
       # Case where player has enough usage. Still hold them out, but keep current usage level (higher than minimum)
@@ -211,6 +235,7 @@ def enforce_min_usage(player_id_ref, team, conditions):
     usage_total += usage_ref[k]
 
   # Scale non-condition values and deposit them
+  player_id_ref = standardize(player_id_ref)
   remainder = 1 - usage_total
   if remainder > 0:
     for k in player_id_ref:
@@ -230,19 +255,21 @@ def get_player_usage(df, metadata, player_idx):
   ''' player_idx = 1 or 2 i.e. column "Player1" '''
 
   is_OFF = "OffenseTeam" in metadata
+  rel_column = "Relevancy"
+  if is_OFF: rel_column = "Rel_Time"
 
   playType = metadata["PlayType"]
   if is_OFF: team = metadata["OffenseTeam"]
   else: team = metadata["DefenseTeam"]
 
-  player_id_ref = relevancy_get_value_counts(df, f"Player{player_idx}_ID", str_convert = False)
+  player_id_ref = relevancy_get_value_counts(df[df.SeasonYear >= SEASON_YEAR], f"Player{player_idx}_ID", decay_exp = 4, rel_column=rel_column, str_convert = False)
   conditions = get_conditions(playType, player_idx, is_OFF = is_OFF)
   
   if conditions != None:
     player_ref = enforce_min_usage(player_id_ref, team, conditions)
 
   else:
-    player_ref = player_id_to_player(player_id_ref)
+    player_ref = standardize(player_id_to_player(player_id_ref))
 
   return str(player_ref)
 
@@ -291,7 +318,8 @@ def calc_analytics(df, y1, x, metadata):
 
   # Find rates of occurance for different play types. Simplifying assumption here is that sacks and scrambles
   # happen only on pass plays
-  passes, rushes, scrambles, sacks = r(df, df.PlayType == "PASS"), r(df, df.PlayType == "RUSH"), r(df, df.PlayType == "SCRAMBLE"), r(df, df.PlayType == "SACK")
+  alt = "Rel_Time"
+  passes, rushes, scrambles, sacks = r(df, df.PlayType == "PASS", rel_column=alt), r(df, df.PlayType == "RUSH", rel_column=alt), r(df, df.PlayType == "SCRAMBLE", rel_column=alt), r(df, df.PlayType == "SACK", rel_column=alt)
   total = passes + rushes + scrambles + sacks
 
   ref["PASS%"] = (passes + scrambles + sacks) / total
@@ -301,7 +329,7 @@ def calc_analytics(df, y1, x, metadata):
 
   # Get player, pass/run type value counts
   rvc = relevancy_get_value_counts
-  for col in ("Formation", "PassType", "RushDirection"): ref[col] = rvc(df, col)
+  for col in ("Formation", "PassType", "RushDirection"): ref[col] = rvc(df, col, rel_column=alt)
 
   if metadata["PlayType"] != -1: ref["Player1"] = get_player_usage(df, metadata, 1)
   if metadata["PlayType"] == "PASS": ref["Player2"] = get_player_usage(df, metadata, 2)

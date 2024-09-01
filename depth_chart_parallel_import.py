@@ -17,7 +17,7 @@ def import_data(season, verbose = True, delay = 10):
     print("Waiting . . .\n")
     time.sleep(delay)
     print("Consolidating . . .\n")
-    out = consolidate()
+    consolidate()
 
 def consolidate():
     ''' Concatenates parallel compute results into one file. Then removes the intermediate files. '''

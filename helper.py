@@ -20,7 +20,8 @@ import copy
 import torch
 from datetime import datetime
 
-N_CORES = 8
+N_CORES, SEASON_YEAR = 8, 2023
+ref = "$ref"
 
 # Helper functions
 def get(URL):

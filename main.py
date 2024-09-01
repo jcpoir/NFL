@@ -23,7 +23,7 @@ def run_pipeline(season, week):
         bypass("before", "data1")
 
     # (2) Merge new data into the dataset, abandon old data
-    if True:
+    if False:
         from merge_forget import merge_forget
         data = merge_forget(season, week, merge = False)
         data.to_csv(p("data2"), index = False)
@@ -32,17 +32,16 @@ def run_pipeline(season, week):
         bypass("data1", "data2")
 
     # (3) Filter data to account for injuries, roster changes
-    if True:
+    if False:
 
         if False:
             from depth_chart_parallel_import import import_data
             import_data(season)
-
         from filter import filter, reassign_plays
         if True:
             data = filter()
             data.to_csv("pipeline/data3.csv", index = False)
-        if True:
+        if False:
             data = reassign_plays()
             data.to_csv("pipeline/data3.1.csv", index = False)
     else:
@@ -56,8 +55,8 @@ def run_pipeline(season, week):
         gen_distributions(side = "OFF")
         agg_distributions("OFF")
     
-    if True:
-        gen_distributions(side = "DEF")
+    if False:
+        gen_distributions(side = "DEF", n_target = 30)
         agg_distributions("DEF")
 
     if True:

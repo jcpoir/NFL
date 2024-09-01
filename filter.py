@@ -89,6 +89,9 @@ def filter():
     
     df = resolve_KO_punt(df)
 
+    ## Add a second relevancy column
+    df["Rel_Time"] = df["Relevancy"]
+
     print("Filtering complete [✓]")
 
     return df
@@ -202,6 +205,7 @@ def reassign_plays():
         return row
     
     tqdm.pandas()
+    df["Rel_Time"] = df["Relevancy"] ## Save time-only relevnacy before player injuries/trades are accounted for. "Rel_Time" is used to determine target share later
     df = df.progress_apply(reassign, axis = 1)
     
     # Aggregate extra rows

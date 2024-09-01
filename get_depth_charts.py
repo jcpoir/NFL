@@ -5,6 +5,28 @@
 
 from helper import *
 
+def get_injuries(team_id):
+
+    out = {}
+
+    injury_data = get(f"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/{team_id}/injuries")["items"]
+    for item in injury_data:
+
+        ref_url = item[ref]
+        player_id = ref_url.split("/")[-3]
+        injury = get(ref_url)
+
+        status = injury["type"]["abbreviation"]
+        if status == "A": status = "H"
+
+        returnDate = "N/A"
+        if status != "H":
+            returnDate = injury["details"]["returnDate"]
+
+        out[player_id] = (status, returnDate)
+
+    return out
+
 def get_depth_charts(start_idx, end_idx, verbose = False):
 
     ref = "$ref"
@@ -29,6 +51,9 @@ def get_depth_charts(start_idx, end_idx, verbose = False):
         # Unpack team metadata
         team_info = team["team"]
         team_id, team_name = team_info["id"], team_info["abbreviation"]
+
+        # Load in data from the ESPN API
+        injury_ref = get_injuries(team_id)
 
         # Query the team's depth chart
         URL = f"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/{team_id}/depthcharts"
@@ -64,21 +89,29 @@ def get_depth_charts(start_idx, end_idx, verbose = False):
                     if "jersey" in athlete_info: jersey = athlete_info["jersey"]
                     
                     formatted_name = remove_whitespace(f"{jersey}-{player_name}")
-                    injuries = athlete_info["injuries"]
 
+                    # Save health data
                     injury_status, return_date  = "H", "N/A"
-                    if len(injuries) > 0: 
-                        injury_status = injuries[0]["type"]["abbreviation"]
-                        return_date = injuries[0]["details"]["returnDate"]
+                    if player_id in injury_ref: 
+                        player_data = injury_ref[player_id]
+                        injury_status, return_date = player_data[0], player_data[1]
 
                     if injury_status not in ["H", "Q"]:
                         rank = -1
                         n_injuries += 1
 
+                    # Save draft stats
+                    experience, round, pick = athlete_info["experience"]["years"], -1, -1
+                    if "draft" in athlete_info:
+                        draft_info = athlete_info["draft"]
+                        round, pick = draft_info["round"], draft_info["selection"]
+
                     # Save data for this player
                     df = pd.DataFrame()
-                    df["Team"], df["Team_id"], df["Position"], df["Rank"] = [team_name], [team_id], [position_idx], [rank]
-                    df["Player"], df["Player_id"], df["Injury_Status"], df["Return_Date"] = [formatted_name], [player_id], [injury_status], [return_date]
+                    df["Team"], df["Position"], df["Rank"] = [team_name], [position_idx], [rank]
+                    df["Player"], df["Injury_Status"], df["Return_Date"] = [formatted_name], [injury_status], [return_date]
+                    df["YOE"], df["Round"], df["Pick"] = [experience], [round], [pick]
+                    df["Team_id"], df["Player_id"] = [team_id], [player_id]
 
                     out = pd.concat((out,df))
 

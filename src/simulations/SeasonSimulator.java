@@ -354,7 +354,7 @@ public class SeasonSimulator extends GameSimulator {
 			GameResult result;
 			
 			while (i < j) {
-				result = simulateMatchup(conf_seeds.get(i), conf_seeds.get(j), 1, false, OT, false, false);
+				result = simulateMatchup(conf_seeds.get(i), conf_seeds.get(j), 1, false, OT, false, false, false);
 				conf_out.put(seed_ref.get(result.winner), result.winner);
 				i++; j--;
 			}
@@ -374,7 +374,7 @@ public class SeasonSimulator extends GameSimulator {
 		String nfc_team = seeds.get("NFC").get(1);
 		
 		boolean OT = true;
-		GameResult result = simulateMatchup(afc_team, nfc_team, 1, false, OT, false, false);
+		GameResult result = simulateMatchup(afc_team, nfc_team, 1, false, OT, false, false, false);
 		
 		return result.winner;
 	}

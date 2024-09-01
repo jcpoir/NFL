@@ -6,12 +6,12 @@ from helper import *
 
 N_CORES = 6
 
-def gen_distributions(side = "OFF", show_plots = False, verbose = True):
+def gen_distributions(side = "OFF", n_target = 20, show_plots = False, verbose = True):
     ''' Excecutes a parallel calculation of play distributions '''
 
     side_str = "Offense"
     if side == "DEF": side_str = "Defense"
 
     if verbose: print(f"\n== Parallelized Generation of {side_str[:-1]}ive Distributions ==\n")
-    run(f"bash defense_offense.sh {N_CORES} {side}")
+    run(f"bash defense_offense.sh {N_CORES} {side} {n_target}")
     if verbose: print(f"Generation complete [✓]")

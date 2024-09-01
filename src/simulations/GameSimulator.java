@@ -30,7 +30,8 @@ public class GameSimulator {
 	Map<String,Integer> playInfo; Map<String,Integer> scores; Team[] teams;
 	Map<String, Map<String, Map<String, Double>>> dists; String leader;
 	
-	static int AVG_PLAYS = 150; static int N_SECONDS = 3600; // average number of plays in an NFL game, per research, and length of a game.
+	// NOTE: AVG_PLAYS adjusted down to deal w/ timeouts
+	static int AVG_PLAYS = 145; static int N_SECONDS = 3600; // average number of plays in an NFL game, per research, and length of a game.
 	static int XP_LINE = 15; static int TOUCHBACK_LINE = 25; static int KICKOFF_LINE = 35; static int SAFETY_PUNT_LINE = 20;
 	String LOG_FILE = "data.txt";
 	
@@ -468,7 +469,7 @@ public class GameSimulator {
 	}
 	
 	// (4) Simulation
-	Map<String,Integer> runGame(Team team1, Team team2, boolean OT, boolean verbose) {
+	Map<String,Integer> runGame(Team team1, Team team2, boolean OT, boolean verbose, boolean add_to_box) {
 		
 		resetPlayInfo();
 		
@@ -567,7 +568,7 @@ public class GameSimulator {
 				boolean isPunt = (result.keySet().contains("punt")); boolean isSafety = yardline < 0;
 				
 				// Aggregate box scores
-				addToBox(result, team.team_name);
+				if(add_to_box) addToBox(result, team.team_name);
 				
 				if (isPunt) {
 					String isTouchback = result.get("isTouchback");
@@ -673,7 +674,8 @@ public class GameSimulator {
 		}
 	}
 	
-	GameResult simulateMatchup(String teamName1, String teamName2, int n_trials, boolean avg_stats, boolean OT, boolean verbose, boolean show_result) throws IOException {
+	GameResult simulateMatchup(String teamName1, String teamName2, int n_trials, boolean avg_stats, boolean OT, boolean verbose, boolean show_result, boolean add_to_box) throws IOException {
+		// NOTE: added add_to_box paramaeter so that in the playoffs we don't aggregate fantasy stats anymore (causes bias)
 		
 		// (0) Get execution time
 		Instant start = Instant.now();
@@ -695,7 +697,7 @@ public class GameSimulator {
 		// track the game results in an arraylist
 		List<Map<String,Integer>> scores_list = new ArrayList<Map<String,Integer>>();
 		for (int i = 0; i < n_trials; i++) {
-			Map<String,Integer> score = runGame(team1, team2, OT, verbose);
+			Map<String,Integer> score = runGame(team1, team2, OT, verbose, add_to_box);
 			scores_list.add(score);
 		}
 		
@@ -718,7 +720,7 @@ public class GameSimulator {
 	
 	GameResult simulateMatchup(String teamName1, String teamName2, int n_trials) throws IOException {
 		
-		return simulateMatchup(teamName1, teamName2, n_trials, false, false, false, false);
+		return simulateMatchup(teamName1, teamName2, n_trials, false, false, false, false, true);
 	}
 	
 	public static void main(String[] args) throws IOException {
@@ -726,7 +728,7 @@ public class GameSimulator {
 		Map<String, Map<String, Map<String, Double>>> dists = GameSimulator.loadData();
 		GameSimulator sim = new GameSimulator(dists);
 		
-		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true;
-		sim.simulateMatchup("NE", "LAC", n_trials, avg_stats, OT, verbose, show_result);
+		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true;
+		sim.simulateMatchup("NYJ", "IND", n_trials, avg_stats, OT, verbose, show_result, add_to_box);
 	}
 }
