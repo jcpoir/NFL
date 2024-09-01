@@ -1,98 +1,96 @@
 
-IND (35.4%) vs (60.4%) NYJ
+NE (45.4%) vs (51.1%) CIN
 
-IND:
-PA: 20.02
-D: 42.0
-DIFF: -4.05
-PF: 15.97
-W: 354.0
-L: 604.0
+NE:
+PA: 19.14
+D: 35.0
+DIFF: -0.79
+PF: 18.35
+W: 454.0
+L: 511.0
 
-NYJ:
-PA: 15.97
-D: 42.0
-DIFF: 4.05
-PF: 20.02
-W: 604.0
-L: 354.0
+CIN:
+PA: 18.35
+D: 35.0
+DIFF: 0.79
+PF: 19.14
+W: 511.0
+L: 454.0
 
 == PASS ==
 
 PASSER                        CMP           YD            TD            INT           FUM           RTG           
-[NYJ] 8-A.Rodgers             26.52/41.03   309.83        2.13          0.72          0.23          97.45         
-[IND] 5-A.Richardson          11.06/18.51   122.98        0.68          0.59          0.10          78.43         
-[NYJ] 5-G.Wilson              0.9/1.3       10.07         0.06          0.02          0.00          102.89        
+[CIN] 9-J.Burrow              22.16/34.01   253.79        1.59          0.70          0.18          94.43         
+[NE]  14-J.Brissett           22.74/35.09   235.53        1.44          0.70          0.19          89.49         
+[CIN] 1-J.Chase               0.17/0.25     1.99          0.01          0.01          0.00          93.47         
 
 == RUSH ==
 
 RUSHER                        ATT           YD            LNG           TD            FUM           AVG           
-[IND] 28-J.Taylor             30.59         143.57        89.00         0.74          0.21          4.69          
-[IND] 27-T.Sermon             11.97         55.41         79.00         0.29          0.08          4.63          
-[NYJ] 20-B.Hall               11.77         48.44         99.00         0.33          0.11          4.12          
-[NYJ] 0-B.Allen               4.22          17.26         79.00         0.11          0.04          4.09          
-[IND] 31-T.Goodson            3.68          17.02         33.00         0.08          0.03          4.62          
-[NYJ] 8-A.Rodgers             1.35          9.53          33.00         0.06          0.01          7.06          
-[IND] 5-A.Richardson          1.33          8.80          27.00         0.04          0.00          6.61          
-[NYJ] 32-I.Davis              0.47          2.01          24.00         0.01          0.00          4.29          
-[IND] 11-M.Pittman Jr.        0.44          1.95          24.00         0.01          0.01          4.38          
-[NYJ] 5-G.Wilson              0.37          1.40          15.00         0.01          0.00          3.77          
-[NYJ] 25-I.Abanikanda         0.13          0.54          22.00         0.00          0.00          4.02          
-[IND] 83-K.Granson            0.03          0.12          6.00          0.00          0.00          3.81          
-[NYJ] 82-X.Gipson             0.00          0.01          4.00          0.00          0.00          3.67          
-[NYJ] 18-M.Williams           0.00          0.01          5.00          0.00          0.00          5.00          
+[NE]  38-R.Stevenson          15.79         70.08         54.00         0.42          0.10          4.44          
+[CIN] 31-Z.Moss               14.10         65.12         83.00         0.46          0.08          4.62          
+[NE]  21-A.Gibson             11.24         50.79         78.00         0.29          0.07          4.52          
+[CIN] 30-C.Brown              7.93          36.29         83.00         0.24          0.04          4.57          
+[NE]  14-J.Brissett           1.43          9.59          58.00         0.08          0.01          6.70          
+[CIN] 9-J.Burrow              1.43          8.53          63.00         0.05          0.00          5.97          
+[NE]  3-D.Douglas             1.82          7.68          21.00         0.04          0.01          4.23          
+[CIN] 32-T.Williams           1.16          5.15          81.00         0.02          0.01          4.44          
+[NE]  39-J.Hasty              0.74          3.36          21.00         0.02          0.01          4.54          
+[CIN] 1-J.Chase               0.25          1.14          57.00         0.01          0.00          4.51          
+[CIN] 15-C.Jones              0.22          1.06          74.00         0.01          0.00          4.85          
+[NE]  17-B.Baringer           0.10          0.56          28.00         0.00          0.00          5.64          
+[NE]  11-T.Thornton           0.09          0.40          13.00         0.00          0.00          4.47          
 
 == REC ==
 
 RECEIVER                      CMP           YD            TD            LNG           FUM           
-[NYJ] 5-G.Wilson              9.03/13.94    105.78        0.74          50.00         0.09          
-[NYJ] 82-X.Gipson             5.55/8.56     64.50         0.43          52.00         0.05          
-[NYJ] 83-T.Conklin            4.81/7.46     56.63         0.38          57.00         0.05          
-[IND] 11-M.Pittman Jr.        3.77/6.31     41.49         0.24          44.00         0.03          
-[NYJ] 20-B.Hall               3.37/5.2      39.46         0.26          42.00         0.02          
-[IND] 10-A.Mitchell           2.18/3.71     23.84         0.15          41.00         0.03          
-[NYJ] 10-A.Lazard             1.93/2.98     22.19         0.14          41.00         0.01          
-[IND] 14-A.Pierce             1.75/2.94     19.66         0.10          42.00         0.01          
-[IND] 83-K.Granson            1.24/2.06     13.85         0.07          41.00         0.01          
-[NYJ] 89-J.Ruckert            1.16/1.8      13.36         0.11          43.00         0.01          
-[IND] 1-J.Downs               0.92/1.51     10.75         0.05          40.00         0.01          
-[NYJ] 25-I.Abanikanda         0.74/1.13     8.50          0.06          38.00         0.00          
-[IND] 81-M.Alie-Cox           0.68/1.13     7.60          0.04          42.00         0.01          
-[NYJ] 19-I.Charles            0.44/0.67     5.14          0.03          34.00         0.00          
-[NYJ] 18-M.Williams           0.27/0.43     3.12          0.03          39.00         0.01          
-[IND] 28-J.Taylor             0.17/0.29     2.07          0.01          41.00         0.00          
-[IND] 6-A.Gould               0.16/0.25     1.75          0.01          36.00         0.00          
-[NYJ] 9-G.Zuerlein            0.12/0.17     1.22          0.01          26.00         0.00          
-[IND] 31-T.Goodson            0.1/0.18      0.97          0.00          31.00         0.00          
-[IND] 27-T.Sermon             0.06/0.1      0.72          0.01          26.00         0.00          
-[IND] 5-A.Richardson          0.02/0.03     0.19          0.00          20.00         0.00          
-[IND] 7-M.Gay                 0.01/0.02     0.10          0.00          25.00         0.00          
+[CIN] 1-J.Chase               6.99/10.7     80.50         0.50          42.00         0.05          
+[NE]  3-D.Douglas             6.85/10.57    71.21         0.46          51.00         0.05          
+[CIN] 5-T.Higgins             4.45/6.91     51.51         0.34          49.00         0.05          
+[NE]  2-K.J.Osborn            4.3/6.65      44.04         0.26          43.00         0.05          
+[NE]  85-H.Henry              2.77/4.23     29.79         0.18          51.00         0.02          
+[CIN] 80-A.Iosivas            2.57/3.9      29.15         0.18          47.00         0.02          
+[NE]  21-A.Gibson             2.84/4.34     28.23         0.17          43.00         0.03          
+[NE]  81-A.Hooper             2.59/3.99     26.50         0.17          49.00         0.01          
+[CIN] 88-M.Gesicki            2.1/3.37      24.87         0.15          41.00         0.02          
+[CIN] 16-T.Irwin              1.9/2.89      21.75         0.15          40.00         0.01          
+[CIN] 89-D.Sample             1.84/2.82     20.86         0.12          40.00         0.02          
+[NE]  11-T.Thornton           1.74/2.78     18.79         0.11          44.00         0.02          
+[NE]  38-R.Stevenson          1.47/2.29     15.23         0.09          49.00         0.02          
+[CIN] 30-C.Brown              0.71/1.0      7.85          0.05          40.00         0.01          
+[CIN] 31-Z.Moss               0.67/1.02     7.23          0.04          40.00         0.00          
+[CIN] 81-J.Burton             0.55/0.86     6.22          0.04          37.00         0.01          
+[CIN] 15-C.Jones              0.33/0.48     3.31          0.03          40.00         0.00          
+[CIN] 32-T.Williams           0.18/0.24     1.98          0.01          27.00         0.00          
+[NE]  80-K.Boutte             0.15/0.2      1.32          0.01          27.00         0.00          
+[NE]  39-J.Hasty              0.04/0.06     0.43          0.00          22.00         0.00          
+[CIN] 9-J.Burrow              0.03/0.05     0.28          0.00          29.00         0.00          
+[CIN] 2-E.McPherson           0.02/0.03     0.26          0.00          25.00         0.00          
 
 
 == FANTASY POINTS ==
 
-[NYJ] 5-G.Wilson              24.70         
-[NYJ] 8-A.Rodgers             20.34         
-[IND] 28-J.Taylor             18.80         
-[NYJ] 20-B.Hall               15.43         
-[NYJ] 82-X.Gipson             14.46         
-[NYJ] 83-T.Conklin            12.64         
-[IND] 11-M.Pittman Jr.        9.50          
-[IND] 5-A.Richardson          7.37          
-[IND] 27-T.Sermon             7.27          
-[IND] 10-A.Mitchell           5.38          
-[NYJ] 10-A.Lazard             4.99          
-[IND] 14-A.Pierce             4.32          
-[NYJ] 89-J.Ruckert            3.14          
-[IND] 83-K.Granson            3.03          
-[IND] 31-T.Goodson            2.35          
-[NYJ] 0-B.Allen               2.30          
-[IND] 1-J.Downs               2.28          
-[NYJ] 25-I.Abanikanda         2.01          
-[IND] 81-M.Alie-Cox           1.67          
-[NYJ] 19-I.Charles            1.15          
-[NYJ] 18-M.Williams           0.75          
-[IND] 6-A.Gould               0.41          
-[NYJ] 9-G.Zuerlein            0.30          
-[NYJ] 32-I.Davis              0.27          
-[IND] 7-M.Gay                 0.02          
+[CIN] 1-J.Chase               18.22         
+[NE]  3-D.Douglas             17.60         
+[CIN] 9-J.Burrow              15.97         
+[NE]  14-J.Brissett           14.86         
+[NE]  21-A.Gibson             13.31         
+[NE]  38-R.Stevenson          12.88         
+[CIN] 5-T.Higgins             11.53         
+[CIN] 31-Z.Moss               10.74         
+[NE]  2-K.J.Osborn            10.18         
+[CIN] 30-C.Brown              6.77          
+[NE]  85-H.Henry              6.76          
+[CIN] 80-A.Iosivas            6.52          
+[NE]  81-A.Hooper             6.21          
+[CIN] 88-M.Gesicki            5.46          
+[CIN] 16-T.Irwin              4.96          
+[CIN] 89-D.Sample             4.59          
+[NE]  11-T.Thornton           4.31          
+[CIN] 81-J.Burton             1.38          
+[CIN] 32-T.Williams           1.08          
+[CIN] 15-C.Jones              0.96          
+[NE]  39-J.Hasty              0.52          
+[NE]  80-K.Boutte             0.31          
+[CIN] 2-E.McPherson           0.06          
+[NE]  17-B.Baringer           0.06          

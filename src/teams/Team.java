@@ -255,6 +255,7 @@ public class Team {
 						double v = td2.get(key); ev += v * Double.parseDouble(key);
 						disp.put(Integer.parseInt(key), v);
 					}
+					// System.out.println("k: " + k + " ev: " + ev + "\ndist: " + disp); // another useful bugfixing line
 				}
 				
 			}
@@ -550,6 +551,7 @@ public class Team {
 			if (x <= k) {return dist.get(k);}
 			k_ = k;
 		}
+		
 		return dist.get(k_);
 	}
 	

@@ -53,7 +53,7 @@ def relevancy_calc_rate(df, condition, rel_column = "Relevancy"):
   ans = np.sum(df[condition][rel_column]) / np.sum(df[rel_column])
   return ans
 
-def relevancy_get_value_counts(df, agg_col, rel_column = "Relevancy", decay_exp = 1, str_convert = True, is_standardize = True):
+def relevancy_get_value_counts(df, agg_col, rel_column = "Relevancy", decay_exp = 1, str_convert = True, is_standardize = False):
   ''' Given a dataframe or dataframe subset df, returns a string-converted dictionary of relevancy-
   weighted term frequencies. Essentially, instead of doing a value count, this function groups by value
   and sums across the relevancy column. rel_column is set to "Rel_Time", or time-only relevancy scores,
@@ -319,7 +319,7 @@ def calc_analytics(df, y1, x, metadata):
   # Find rates of occurance for different play types. Simplifying assumption here is that sacks and scrambles
   # happen only on pass plays
   alt = "Rel_Time"
-  passes, rushes, scrambles, sacks = r(df, df.PlayType == "PASS", rel_column=alt), r(df, df.PlayType == "RUSH", rel_column=alt), r(df, df.PlayType == "SCRAMBLE", rel_column=alt), r(df, df.PlayType == "SACK", rel_column=alt)
+  passes, rushes, scrambles, sacks = r(df, df.PlayType == "PASS"), r(df, df.PlayType == "RUSH"), r(df, df.PlayType == "SCRAMBLE"), r(df, df.PlayType == "SACK")
   total = passes + rushes + scrambles + sacks
 
   ref["PASS%"] = (passes + scrambles + sacks) / total
@@ -329,12 +329,12 @@ def calc_analytics(df, y1, x, metadata):
 
   # Get player, pass/run type value counts
   rvc = relevancy_get_value_counts
-  for col in ("Formation", "PassType", "RushDirection"): ref[col] = rvc(df, col, rel_column=alt)
+  for col in ("Formation", "PassType", "RushDirection"): ref[col] = rvc(df, col, rel_column=alt, is_standardize=True)
 
   if metadata["PlayType"] != -1: ref["Player1"] = get_player_usage(df, metadata, 1)
   if metadata["PlayType"] == "PASS": ref["Player2"] = get_player_usage(df, metadata, 2)
 
-  ref["PlayDist"] = rvc(df, "PlayType")
+  ref["PlayDist"] = rvc(df, "PlayType", decay_exp = 0.5)
 
   # save dist
   ref["Dist"] = str(y1)

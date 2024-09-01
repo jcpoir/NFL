@@ -728,7 +728,7 @@ public class GameSimulator {
 		Map<String, Map<String, Map<String, Double>>> dists = GameSimulator.loadData();
 		GameSimulator sim = new GameSimulator(dists);
 		
-		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true;
-		sim.simulateMatchup("NYJ", "IND", n_trials, avg_stats, OT, verbose, show_result, add_to_box);
+		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = false; boolean show_result = true; boolean add_to_box = true;
+		sim.simulateMatchup("NE", "CIN", n_trials, avg_stats, OT, verbose, show_result, add_to_box);
 	}
 }

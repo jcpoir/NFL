@@ -51,6 +51,7 @@ def run_pipeline(season, week):
     # (4) Aggregate data into team distributions
     from smoothing_tools import agg_distributions
     from defense_offense_parallel import gen_distributions
+    
     if True:
         gen_distributions(side = "OFF")
         agg_distributions("OFF")
@@ -59,7 +60,7 @@ def run_pipeline(season, week):
         gen_distributions(side = "DEF", n_target = 30)
         agg_distributions("DEF")
 
-    if True:
+    if False:
         from special import gen_spec_distributions
         gen_spec_distributions()
 
