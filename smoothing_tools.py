@@ -200,34 +200,38 @@ def enforce_min_usage(player_id_ref, team, conditions):
 
     pos_group = dc_ref[team][pos]
     
-    if rank in pos_group: player_id = dc_ref[team][pos][rank]["id"]
+    if rank in pos_group: 
+      players = dc_ref[team][pos][rank]
+      player_ids = [player["id"] for player in players]
     else: continue
 
     # Find the minimum rate of usage for the given player, as stipulated by conditions
     required_min_rate = conditions[dc_pos]
 
-    # Case where the player has no recorded usage. Set usage = minimum and continue
-    not_in_ref = player_id not in player_id_ref
-    if not_in_ref: usage_ref[player_id] = required_min_rate
+    for player_id in player_ids: # To address the (rare) case where multiple players are assigned the same depth chart rank
 
-    else:
-      empirical_rate = player_id_ref[player_id]
-      rate_too_low = empirical_rate < required_min_rate
-      rate_too_high = empirical_rate > max_rate
+      # Case where the player has no recorded usage. Set usage = minimum and continue
+      not_in_ref = player_id not in player_id_ref
+      if not_in_ref: usage_ref[player_id] = required_min_rate
 
-      # Case where player has recorded usage, but not enough to satisfy their depth chart condition
-      if rate_too_low:
-        usage_ref[player_id] = required_min_rate
-        player_id_ref.pop(player_id)
-
-      elif rate_too_high:
-        usage_ref[player_id] = max_rate
-        player_id_ref.pop(player_id)
-
-      # Case where player has enough usage. Still hold them out, but keep current usage level (higher than minimum)
       else:
-        usage_ref[player_id] = empirical_rate
-        player_id_ref.pop(player_id)
+        empirical_rate = player_id_ref[player_id]
+        rate_too_low = empirical_rate < required_min_rate
+        rate_too_high = empirical_rate > max_rate
+
+        # Case where player has recorded usage, but not enough to satisfy their depth chart condition
+        if rate_too_low:
+          usage_ref[player_id] = required_min_rate
+          player_id_ref.pop(player_id)
+
+        elif rate_too_high:
+          usage_ref[player_id] = max_rate
+          player_id_ref.pop(player_id)
+
+        # Case where player has enough usage. Still hold them out, but keep current usage level (higher than minimum)
+        else:
+          usage_ref[player_id] = empirical_rate
+          player_id_ref.pop(player_id)
 
   # Reconcile holdouts (usage_ref) with empirical dict (player_id_ref)
   usage_total = 0
@@ -245,10 +249,9 @@ def enforce_min_usage(player_id_ref, team, conditions):
   total = 0
   for k in usage_ref: total += usage_ref[k]
   for k in usage_ref: usage_ref[k] = usage_ref[k] / total
-  
-  # Replace player ids with names
-  out = player_id_to_player(usage_ref)
 
+  out = standardize(usage_ref)
+  
   return out
 
 def get_player_usage(df, metadata, player_idx):
@@ -266,12 +269,11 @@ def get_player_usage(df, metadata, player_idx):
   conditions = get_conditions(playType, player_idx, is_OFF = is_OFF)
   
   if conditions != None:
-    player_ref = enforce_min_usage(player_id_ref, team, conditions)
+    player_id_ref = enforce_min_usage(player_id_ref, team, conditions)
 
-  else:
-    player_ref = standardize(player_id_to_player(player_id_ref))
+  player_ref = player_id_to_player(player_id_ref)
 
-  return str(player_ref)
+  return str(player_ref), str(player_id_ref)
 
 def score_adjust(dist, score_dict, reference_dist, verbose = False):
   ''' takes a yardage distribution without scoring (TD, 2pt) and adds in scoring
@@ -331,8 +333,8 @@ def calc_analytics(df, y1, x, metadata):
   rvc = relevancy_get_value_counts
   for col in ("Formation", "PassType", "RushDirection"): ref[col] = rvc(df, col, rel_column=alt, is_standardize=True)
 
-  if metadata["PlayType"] != -1: ref["Player1"] = get_player_usage(df, metadata, 1)
-  if metadata["PlayType"] == "PASS": ref["Player2"] = get_player_usage(df, metadata, 2)
+  if metadata["PlayType"] != -1: ref["Player1"], ref["Player1_ID"] = get_player_usage(df, metadata, 1)
+  if metadata["PlayType"] == "PASS": ref["Player2"], ref["Player2_ID"] = get_player_usage(df, metadata, 2)
 
   ref["PlayDist"] = rvc(df, "PlayType", decay_exp = 0.5)
 

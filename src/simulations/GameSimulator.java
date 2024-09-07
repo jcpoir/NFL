@@ -21,6 +21,7 @@ import java.time.Instant;
 
 import teams.Team;
 import tools.DataTable;
+import tools.Tools;
 
 public class GameSimulator {
 	
@@ -28,26 +29,29 @@ public class GameSimulator {
 	static Random r = new Random();
 	int yds; int distance; int yardline; int down; int pos; int kickoff; int time; int quarter; int n_trials;
 	Map<String,Integer> playInfo; Map<String,Integer> scores; Team[] teams;
-	Map<String, Map<String, Map<String, Double>>> dists; String leader;
+	public Map<String, Map<String, Map<String, Double>>> dists; String leader;
 	
 	// NOTE: AVG_PLAYS adjusted down to deal w/ timeouts
 	static int AVG_PLAYS = 145; static int N_SECONDS = 3600; // average number of plays in an NFL game, per research, and length of a game.
 	static int XP_LINE = 15; static int TOUCHBACK_LINE = 25; static int KICKOFF_LINE = 35; static int SAFETY_PUNT_LINE = 20;
 	String LOG_FILE = "data.txt";
+
+	static String LF = "\n";
 	
 	DataTable pass_df; DataTable rush_df; DataTable rec_df; DataTable fantasy_df;
+	DataTable pass_df2; DataTable rush_df2; DataTable rec_df2; DataTable fantasy_df2;
 	
 	// (0) Initialization
 	public GameSimulator() throws IOException {
 		
-		dists = GameSimulator.loadData();
-		initBoxScores(); initTextFile();
+		this.dists = GameSimulator.loadData();
+		initBoxScores(true); initTextFile();
 	}
 	
 	public GameSimulator(Map<String, Map<String, Map<String, Double>>> dists) throws IOException {
 		
 		this.dists = dists;
-		initBoxScores(); initTextFile();
+		initBoxScores(true); initTextFile();
 	}
 	
 	// (1) Helper functions
@@ -69,7 +73,7 @@ public class GameSimulator {
 		Instant end = Instant.now();
 		Duration timeElapsed = Duration.between(start, end);
 		
-		System.out.println("\nTime elapsed: " + timeElapsed.toMillis() + " ms");
+		System.out.println("Time elapsed: " + timeElapsed.toMillis() + " ms" + LF);
 	}
 
 	static double calcPasserRTG(double cmp, double att, double yds, double td, double intr) {
@@ -212,6 +216,26 @@ public class GameSimulator {
 		BufferedWriter w = new BufferedWriter(new FileWriter(LOG_FILE, true));
 		w.write(content); w.close();
 	}
+
+	void writeToFile(String content, String filepath, String filename) throws IOException {
+		/*
+		 * Writes a string to a selected file
+		 */
+
+		new File(filepath).mkdirs();
+		BufferedWriter w = new BufferedWriter(new FileWriter(filepath + "/" + filename, false));
+		w.write(content); w.close();
+	}
+
+	void appendToFile(String content, String filepath, String filename) throws IOException {
+		/*
+		 * Appends a string to a selected file
+		 */
+
+		 new File(filepath).mkdirs();
+		 BufferedWriter w = new BufferedWriter(new FileWriter(filepath + "/" + filename, true));
+		 w.write(content); w.close();
+	}
 	
 	String formatStats(Map<String,Map<String,Double>> summary_stats) {
 		/*
@@ -224,7 +248,6 @@ public class GameSimulator {
 		String team1 = teams.get(0); String team2 = teams.get(1); 
 				
 		double w1 = summary_stats.get(team1).get("W") / n_trials * 100.0; double w2 = summary_stats.get(team2).get("W") / n_trials * 100.0; 
-		
 		out += "\n" + team1 + " (" + round(w1,2) + "%) vs (" + round(w2,2) + "%) " + team2 + "\n\n";
 		
 		for (String team: summary_stats.keySet()) {
@@ -237,11 +260,26 @@ public class GameSimulator {
 		
 		return out;
 	}
+
+	String formatStatLine(Map<String,Map<String,Double>> summary_stats) {
+
+		String out = "";
+
+		List<String> teams = new ArrayList<String>(summary_stats.keySet());
+		String team1 = teams.get(0); String team2 = teams.get(1); 
+
+		double w1 = summary_stats.get(team1).get("W") / n_trials * 100.0; double w2 = summary_stats.get(team2).get("W") / n_trials * 100.0; 
+		out += team1 + " (" + round(w1,2) + "%) vs (" + round(w2,2) + "%) " + team2;
+
+		return out + LF;
+	}
 	
 	String formatBoxScores() {
 		/*
 		 * Generates formatted pass/rush/rec stat tables via string manipulation.
 		 */
+
+		pass_df = pass_df2.copy(); rush_df = rush_df2.copy(); rec_df = rec_df2.copy();
 		
 		String out = "";
 		
@@ -316,7 +354,7 @@ public class GameSimulator {
 		
 		String out = "";
 		
-		out += "\n== FANTASY POINTS ==\n\n";
+		out += "== FANTASY POINTS ==\n\n";
 		int n = 14; int m = 30; String s = "%-"+n+"s"; String f = "%-"+n+".2f";
 		
 		List<Entry<String, Map<String, Double>>> entries = fantasy_df.sortByField("PTS");
@@ -380,12 +418,18 @@ public class GameSimulator {
 		return out;
 	}
 	
-	void initBoxScores() {
+	void initBoxScores(boolean reset_agg) {
 		pass_df = new DataTable(); rush_df = new DataTable(); rec_df = new DataTable();
 		
 		pass_df.col("CMP"); pass_df.col("ATT"); pass_df.col("YD"); pass_df.col("TD"); pass_df.col("INT"); pass_df.col("SACK"); pass_df.col("FUM");
 		rec_df.col("REC", "CMP"); rec_df.col("TGT", "ATT"); rec_df.col("YD"); rec_df.col("LNG", "YD", "max"); rec_df.col("TD"); rec_df.col("FUM");
 		rush_df.col("ATT");  rush_df.col("YD"); rush_df.col("LNG", "YD", "max"); rush_df.col("TD"); rush_df.col("FUM");
+
+		if (reset_agg) {pass_df2 = pass_df.copy(); rec_df2 = rec_df.copy(); rush_df2 = rush_df.copy();}
+	}
+
+	void initBoxScores() {
+		initBoxScores(false);
 	}
 	
 	void addToBox(Map<String,String> result, String team) {
@@ -393,16 +437,17 @@ public class GameSimulator {
 		Map<String,Double> stats = resultToBSInput(result);
 		
 		String playType = result.get("playType"); if (playType == null) return;
-		String teamString = String.format("%-5s ", "[" + team + "]");
+		// String teamString = String.format("%-5s ", "[" + team + "]");
+		String teamString = "[" + team + "]";
 				
 		if ("RUSH".equals(playType) | "SCRAMBLE".equals(playType)) {
 			String ID = teamString + result.get("player1");
-			rush_df.put(ID, stats);
+			rush_df.put(ID, stats); rush_df2.put(ID, stats);
 		}
 		
 		else if ("PASS".equals(playType)) {
 			String ID1 = teamString + result.get("player1"); String ID2 = teamString + result.get("player2");
-			pass_df.put(ID1, stats); rec_df.put(ID2, stats);
+			pass_df.put(ID1, stats); rec_df.put(ID2, stats); pass_df2.put(ID1, stats); rec_df2.put(ID2, stats);
 		}
 		
 		// no longer counting sacks, as they lead to misleading QB rushing stats
@@ -415,7 +460,7 @@ public class GameSimulator {
 	}
 	
 	void divBoxByN(double n, String[] exclude_cols) {
-		pass_df.divBy(n, exclude_cols); rush_df.divBy(n, exclude_cols); rec_df.divBy(n, exclude_cols);
+		pass_df2.divBy(n, exclude_cols); rush_df2.divBy(n, exclude_cols); rec_df2.divBy(n, exclude_cols);
 	}
 	
 	void calcFantasyPoints() {
@@ -467,9 +512,19 @@ public class GameSimulator {
 			fantasy_df.put(player, out);
 		}
 	}
+
+	class GameResult {
+		Map<String,Integer> scores; String pbp;
+		public GameResult(Map<String,Integer> scores, String pbp) {
+			this.scores = scores; this.pbp = pbp;
+		}
+	}
 	
 	// (4) Simulation
-	Map<String,Integer> runGame(Team team1, Team team2, boolean OT, boolean verbose, boolean add_to_box) {
+	GameResult runGame(Team team1, Team team2, boolean OT, boolean verbose, boolean add_to_box, boolean to_txt) {
+
+		// Aggregate play-by-play as a string
+		String pbp = "START OF GAME";
 		
 		resetPlayInfo();
 		
@@ -489,7 +544,8 @@ public class GameSimulator {
 			pos = playInfo.get("pos");
 			Team team = teams[pos]; Team opp_team = teams[flip(pos)]; // opp_team is used exclusively for kickoffs
 			
-			if (verbose) System.out.println("\n\n" + getScoreLine() + "\n");
+			String scoreline_txt = "\n\n" + getScoreLine() + "\n";
+			if (to_txt) pbp = pbp + scoreline_txt + "\n";
 			
 			// Simulate one drive!
 			while (true) {
@@ -514,13 +570,22 @@ public class GameSimulator {
 				if (is_overtime == true) time += time_delta;
 				
 				kickoff = playInfo.get("kickoff");
+
+				// Update game scripts with down & distance
+				String dnd = getDownDist();
+				if (verbose) System.out.println(dnd); // HERE
+				if (to_txt) pbp += dnd + "\n";
 				
 				// special case where a kickoff is required
 				boolean isKickOff = (kickoff == 1);
 				if (isKickOff) {
 					
 					Map<String,String> result = opp_team.kickOff();
-					if (verbose) System.out.println(quarterTime + " " + result.get("summary"));
+
+					String kickoff_str = quarterTime + " " + result.get("summary");
+					if (verbose) System.out.println(kickoff_str);
+					if (to_txt) pbp += kickoff_str + "\n";
+				
 					yds = Integer.parseInt(result.get("yards")); down = 1; distance = 10;
 					yardline = playInfo.get("yardline") - yds; kickoff = 0;
 					
@@ -530,11 +595,14 @@ public class GameSimulator {
 					updatePlayInfo();
 					continue;
 				}
-				
+
 				// (!!) call on the team object to run a play given the game state
-				if (verbose) System.out.println(getDownDist());
 				Map<String,String> result = team.runPlay(playInfo);
-				if (verbose) System.out.println(quarterTime + " " + result.get("summary"));
+
+				// update game scripts with play description
+				String play_txt = quarterTime + " " + result.get("summary");
+				if (verbose) System.out.println(play_txt); // HERE
+				if (to_txt) pbp += play_txt + "\n";
 								
 				boolean isFG = (result.keySet().contains("FG")); 
 				
@@ -544,13 +612,20 @@ public class GameSimulator {
 					boolean isFG_good = (result.get("FG").equals("1"));
 					
 					if (isFG_good) {
-						if (verbose) System.out.print("FIELD GOAL: GOOD");
+						
+						String drive_result = "FIELD GOAL: GOOD";
+						if (verbose) System.out.print(drive_result); // HERE
+						if (to_txt) pbp += drive_result;
+
 						pos = flip(pos); down = 1; distance = 10; yardline = 100 - KICKOFF_LINE; kickoff = 1;
 						updatePlayInfo(); addScore(team.getName(), 3); break;
 					}
 					
 					else {
-						if (verbose) System.out.print("FIELD GOAL: NO GOOD");
+						String drive_result = "FIELD GOAL: NO GOOD";
+						if (verbose) System.out.print(drive_result); // HERE
+						if (to_txt) pbp += drive_result;
+
 						pos = flip(pos); down = 1; distance = 10; yardline = 25;
 						updatePlayInfo(); break;
 					}
@@ -575,28 +650,65 @@ public class GameSimulator {
 					pos = flip(pos); down = 1; distance = 10; yardline = 100 - yardline;
 					
 					if (isTouchback.equals("1")) yardline = TOUCHBACK_LINE;
-					updatePlayInfo(); if (verbose) System.out.print("PUNT");
+					updatePlayInfo(); 
+					
+					String drive_result = "PUNT";
+					if (verbose) System.out.print(drive_result); // HERE
+					if (to_txt) pbp += drive_result;
+
 					break;
 				}
+
+				// case of turnover
+				if (isTurnover) {
+
+					pos = flip(pos); down = 1; distance = 10; yardline = 100 - yardline;
+					updatePlayInfo();
+
+					// case of touchback
+					boolean isTouchback = yardline <= 0; boolean isDefTouchdown = yardline >= 100;
+
+					String drive_result = "TURNOVER";
+					if (isTouchback) {yardline = TOUCHBACK_LINE;}
+					else if (isDefTouchdown) {
+						
+						pos = flip(pos); updatePlayInfo();
+						Map<String,String> XP_result = team.kickXP();
+						String XP_str = XP_result.get("summary");
+						if (verbose) System.out.println(XP_str);
+						if (to_txt) pbp += XP_str + "\n";
+
+						String isXP_good = XP_result.get("XP");
+						if (isXP_good.equals("1")) addScore(team.getName(), 1);
+
+						drive_result = "DEFENSIVE TOUCHDOWN";
+						
+					}
+					
+					if (verbose) System.out.print(drive_result); // HERE
+					if (to_txt) pbp += drive_result;
+
+					updatePlayInfo(); break;
+				}
 				
-				if (isTD) {
+				else if (isTD) {
 					pos = flip(pos); down = 1; distance = 10; yardline = 100 - KICKOFF_LINE; kickoff = 1;
 					updatePlayInfo(); addScore(team.getName(), 6); 
 					
 					// Attempt and extra point (XP)
 					Map<String,String> XP_result = team.kickXP();
-					if (verbose) System.out.println(XP_result.get("summary"));
+					String XP_str = XP_result.get("summary");
+					if (verbose) System.out.println(XP_str);
+					if (to_txt) pbp += XP_str + "\n";
+
 					String isXP_good = XP_result.get("XP");
 					if (isXP_good.equals("1")) addScore(team.getName(), 1);
 					
-					if (verbose) System.out.print("TOUCHDOWN"); break;
-				}
-				
-				// case of turnover
-				else if (isTurnover) {
-					if (verbose) System.out.print("TURNOVER");
-					pos = flip(pos); down = 1; distance = 10; yardline = 100 - yardline;
-					updatePlayInfo(); break;
+					String drive_result = "TOUCHDOWN";
+					if (verbose) System.out.print(drive_result); // HERE
+					if (to_txt) pbp += drive_result;
+
+					break;
 				}
 				
 				// case of first down
@@ -605,13 +717,19 @@ public class GameSimulator {
 				}
 				
 				else if (isTOD) {
-					if (verbose) System.out.print("TURNOVER ON DOWNS"); 
+					String drive_result = "TURNOVER ON DOWNS";
+					if (verbose) System.out.print(drive_result); // HERE
+					if (to_txt) pbp += drive_result;
+
 					pos = flip(pos); down = 1; distance = 10; yardline = 100 - yardline;
 					updatePlayInfo(); break;
 				}	
 				
 				else if (isSafety) {
-					if (verbose) System.out.print("SAFETY");
+					String drive_result = "SAFETY";
+					if (verbose) System.out.print(drive_result); // HERE
+					if (to_txt) pbp += drive_result;
+
 					pos = flip(pos); down = 1; distance = 10; yardline = 100 - SAFETY_PUNT_LINE;
 					kickoff = 1; updatePlayInfo();
 					addScore(teams[pos].getName(), 2); break;
@@ -634,7 +752,10 @@ public class GameSimulator {
 			
 			if ((time <= N_SECONDS / 2) & quarter < 3) { // HALFTIME
 				
-				if (verbose) System.out.print("\nHALFTIME");  // stop play at halftime and give possession to the other team to start 2H
+				String halftime_str = "\nHALFTIME";
+				if (verbose) System.out.print(halftime_str);  // stop play at halftime and give possession to the other team to start 2H (HERE)
+				if (to_txt) pbp += halftime_str;
+
 				pos = 1; down = 1; distance = 10; yardline = 100 - KICKOFF_LINE; kickoff = 1; updatePlayInfo();
 				time = N_SECONDS / 2;
 				quarter = 3;
@@ -645,13 +766,21 @@ public class GameSimulator {
 			if (is_OT_over) break; // GAME END (OT)
 		}
 		
-		if (verbose) System.out.println("\n\nFINAL SCORE: " + getScoreLine());
+		// Standardize output spacing and add end of game tag
+		pbp = pbp.strip() + LF + LF;
+		pbp += "END OF GAME";
+
+		// Finish with final score, returning the result to simulateMatchup()
+		String fin_score_string = "\n\nFINAL SCORE: " + getScoreLine();
+		if (verbose) System.out.println(fin_score_string); // HERE
+		if (to_txt) pbp += fin_score_string;
 		
-		return scores;
+		GameResult out = new GameResult(scores, pbp);
+		return out;
 	}
 	
 	static Map<String, Map<String, Map<String, Double>>> loadData() throws IOException {
-		
+
 		// (1) Data Load
 		String path = "data/";  // NOTE: change the source directory here!!
 		
@@ -664,18 +793,20 @@ public class GameSimulator {
 	}
 	
 	// putting it all together; simulating a game!
-	class GameResult {
+	class MatchupResult {
 		
 		String boxScore = null; String summary = null; 
 		Map<String,Map<String,Double>> matchup_stats; String winner;
 		
-		GameResult(Map<String,Map<String,Double>> matchup_stats, String winner) {
+		MatchupResult(Map<String,Map<String,Double>> matchup_stats, String winner) {
 			this.matchup_stats = matchup_stats; this.winner = winner;
 		}
 	}
 	
-	GameResult simulateMatchup(String teamName1, String teamName2, int n_trials, boolean avg_stats, boolean OT, boolean verbose, boolean show_result, boolean add_to_box) throws IOException {
+	MatchupResult simulateMatchup(String teamName1, String teamName2, int n_trials, boolean avg_stats, boolean OT, boolean verbose, boolean show_result, boolean add_to_box, boolean to_txt) throws IOException {
 		// NOTE: added add_to_box paramaeter so that in the playoffs we don't aggregate fantasy stats anymore (causes bias)
+
+		initBoxScores(true);
 		
 		// (0) Get execution time
 		Instant start = Instant.now();
@@ -693,42 +824,73 @@ public class GameSimulator {
 
 		// (4) Playing a Drive
 		playInfo = PlayInfo;
-				
+
+		String base_filepath = "java_outputs/matchups/" + teamName1 + "vs" + teamName2 + "/";
 		// track the game results in an arraylist
 		List<Map<String,Integer>> scores_list = new ArrayList<Map<String,Integer>>();
 		for (int i = 0; i < n_trials; i++) {
-			Map<String,Integer> score = runGame(team1, team2, OT, verbose, add_to_box);
+			GameResult game_result = runGame(team1, team2, OT, verbose, add_to_box, to_txt);
+			Map<String,Integer> score = game_result.scores; String pbp = game_result.pbp;
 			scores_list.add(score);
+			
+			// Record all game results
+			if (to_txt) {
+				String filepath = base_filepath + "/simulations/" + (i+1);
+
+				calcFantasyPoints(); 
+
+				// Record game data in the {matchup}/{game_ID} folder.
+				writeToFile(pbp, filepath, "pbp.txt");
+				pass_df.to_csv(filepath + "/pass.csv"); rush_df.to_csv(filepath + "/rush.csv");
+				rec_df.to_csv(filepath + "/rec.csv"); fantasy_df.to_csv(filepath + "/fantasy.csv");
+
+				// Record fantasy data in fantasy/{player_id}.csv
+				Tools.record_fantasy(fantasy_df, i, score);
+
+				initBoxScores();
+			}
 		}
+
+		Tools.to_csv(scores_list, base_filepath, "scores", true);
 		
 		// (5) Finalize tabular data, report results
 		Map<String,Map<String,Double>> matchup_stats = toSummaryStats(scores_list);
 		if (avg_stats) divBoxByN((double) n_trials, new String[] {"LNG"});
-		calcFantasyPoints(); 
+		
+		// Get final fantasy totals (for the summary)
+		pass_df = pass_df2; rush_df = rush_df2; rec_df = rec_df2; calcFantasyPoints(); 
 		
 		// Here is where logging, console printing of aggregated tabular data happens!
-		String text = formatStats(matchup_stats) + formatBoxScores() + formatFantasyPoints(); 
+		String text = formatStats(matchup_stats); String statline = formatStatLine(matchup_stats);
+		appendToFile(statline, "java_outputs/", "summary.txt");
+
+		text += formatBoxScores() + formatFantasyPoints(); 
 		
 		if (show_result) {
-			
 			writeToFile(text); System.out.println(text);
 			displayTimeElapsed(start);
 		}	
 
-		return new GameResult(matchup_stats, leader); // stats are sent to SeasonSimulator (if applicable)
+		if (to_txt) {
+			writeToFile(text, base_filepath, "summary.txt");
+		}
+
+		return new MatchupResult(matchup_stats, leader); // stats are sent to SeasonSimulator (if applicable)
 	}
 	
-	GameResult simulateMatchup(String teamName1, String teamName2, int n_trials) throws IOException {
+	MatchupResult simulateMatchup(String teamName1, String teamName2, int n_trials) throws IOException {
 		
-		return simulateMatchup(teamName1, teamName2, n_trials, false, false, false, false, true);
+		return simulateMatchup(teamName1, teamName2, n_trials, true, false, false, false, false, true);
 	}
 	
 	public static void main(String[] args) throws IOException {
 		
 		Map<String, Map<String, Map<String, Double>>> dists = GameSimulator.loadData();
 		GameSimulator sim = new GameSimulator(dists);
+
+		Tools.clear_dir("java_outputs/fantasy");
 		
-		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = false; boolean show_result = true; boolean add_to_box = true;
-		sim.simulateMatchup("NE", "CIN", n_trials, avg_stats, OT, verbose, show_result, add_to_box);
+		int n_trials = 100; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
+		sim.simulateMatchup("ATL", "PIT", n_trials, avg_stats, OT, verbose, show_result, add_to_box, to_txt);
 	}
 }

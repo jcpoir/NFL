@@ -190,7 +190,7 @@ def get_kickoff_dists(pbp_df, show_plots = False):
     # (4) Record the results
     row = pd.DataFrame()
     row["PlayType"], row["OffenseTeam"], row["Distribution"], row["Touchback%"], row["TD%"], row["ypa^"] = ["KICKOFF"], [team], [str(y1)], [touchback_rate], [TD_rate], [get_dist_mean(x,y)]
-    row["Player1"] = [get_player_usage(df1, {"PlayType": "KICKOFF", "OffenseTeam": team}, 1)]
+    row["Player1"], row["Player1_ID"] = get_player_usage(df1, {"PlayType": "KICKOFF", "OffenseTeam": team}, 1)
 
     if len(out) == 0: out = row.copy()
     else: out = pd.concat((out, row))
@@ -240,7 +240,7 @@ def get_punt_dists(pbp_df, show_plots = False):
     # (4) Record the results
     row = pd.DataFrame()
     row["PlayType"], row["OffenseTeam"], row["Distribution"], row["Touchback%"], row["TD%"], row["ypa^"] = ["PUNT"], [team], [str(y1)], [touchback_rate], [TD_rate], [get_dist_mean(x,y)]
-    row["Player1"] = [get_player_usage(df1, {"PlayType": "PUNT", "OffenseTeam": team}, 1)]
+    row["Player1"], row["Player1_ID"] = get_player_usage(df1, {"PlayType": "PUNT", "OffenseTeam": team}, 1)
 
     if len(out) == 0: out = row.copy()
     else: out = pd.concat((out, row))
@@ -278,7 +278,7 @@ def get_fg_percentages(pbp_df, min_val = 0.02, max_val = 0.98):
 
       row = pd.DataFrame()
       row["OffenseTeam"], row["YardRange"], row["FG%"], row["n"] = [team], [str(yardRange)], [FG_rate], [len(FGs)]
-      row["Player1"] = [get_player_usage(df1, {"PlayType": "FIELD GOAL", "OffenseTeam": team}, 1)]
+      row["Player1"], row["Player1_ID"] = get_player_usage(df1, {"PlayType": "FIELD GOAL", "OffenseTeam": team}, 1)
 
       if len(out) == 0: out = row
       else: out = pd.concat((out, row))

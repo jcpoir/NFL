@@ -150,9 +150,7 @@ public class Team {
 			}
 			new_idx = new_idx.substring(0, new_idx.length() - 1);
 			out.put(new_idx, temp_dists.get(k));
-
-		}
-		
+		}	
 		return out;
 	}
 

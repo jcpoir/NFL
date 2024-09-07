@@ -18,18 +18,12 @@ def run_pipeline(season, week):
         from api_parallel_import import import_data
         data = import_data(season, week, verbose = True)
         data.to_csv(p("data1"), index = False)
-    else:
-        pass
-        bypass("before", "data1")
 
     # (2) Merge new data into the dataset, abandon old data
     if False:
         from merge_forget import merge_forget
         data = merge_forget(season, week, merge = False)
         data.to_csv(p("data2"), index = False)
-    else:
-        pass
-        bypass("data1", "data2")
 
     # (3) Filter data to account for injuries, roster changes
     if False:
@@ -37,6 +31,9 @@ def run_pipeline(season, week):
         if False:
             from depth_chart_parallel_import import import_data
             import_data(season)
+        if False:
+            from get_depth_charts import add_java_formats
+            add_java_formats("pipeline/depth_charts.csv")
         from filter import filter, reassign_plays
         if True:
             data = filter()
@@ -44,29 +41,28 @@ def run_pipeline(season, week):
         if False:
             data = reassign_plays()
             data.to_csv("pipeline/data3.1.csv", index = False)
-    else:
-        pass
-        bypass("data2", "data3")
 
-    # (4) Aggregate data into team distributions
-    from smoothing_tools import agg_distributions
-    from defense_offense_parallel import gen_distributions
-    
     if True:
-        gen_distributions(side = "OFF")
-        agg_distributions("OFF")
-    
-    if False:
-        gen_distributions(side = "DEF", n_target = 30)
-        agg_distributions("DEF")
 
-    if False:
-        from special import gen_spec_distributions
-        gen_spec_distributions()
+        # (4) Aggregate data into team distributions
+        from smoothing_tools import agg_distributions
+        from defense_offense_parallel import gen_distributions
+        
+        if False:
+            gen_distributions(side = "OFF")
+            agg_distributions("OFF")
+        
+        if False:
+            gen_distributions(side = "DEF", n_target = 30)
+            agg_distributions("DEF")
 
-    # (5) Converting data into a java-readable format (END)
-    if True:
-        from to_java_df import to_java_dfs
-        to_java_dfs()
+        if False:
+            from special import gen_spec_distributions
+            gen_spec_distributions()
+
+        # (5) Converting data into a java-readable format (END)
+        if True:
+            from to_java_df import to_java_dfs
+            to_java_dfs()
 
 run_pipeline(season = 2023, week = 1)

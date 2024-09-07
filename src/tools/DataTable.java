@@ -1,5 +1,8 @@
 package tools;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,6 +17,7 @@ public class DataTable {
 	
 	Map<String,String[]> cols = new HashMap<String,String[]>();
 	public Map<String,Map<String,Double>> table = new HashMap<String,Map<String,Double>>();
+	String LF = "\n";
 	
 	public DataTable () {}
 	
@@ -39,6 +43,15 @@ public class DataTable {
             left++;
             right--;
         }
+	}
+
+	public DataTable copy() {
+
+		DataTable out = new DataTable();
+		out.cols = new HashMap<>(cols);
+		out.table = new HashMap<>(table);
+
+		return out;
 	}
 	
 	public List<Entry<String, Map<String, Double>>> sortByField(String field) {
@@ -166,6 +179,37 @@ public class DataTable {
 			System.out.print(ID + ": ");
 			System.out.println(this.table.get(ID));
 		}
+	}
+
+	public void to_csv(String filepath) throws IOException {
+
+		BufferedWriter w = new BufferedWriter(new FileWriter(filepath, false));
+		
+		int i = 0;
+		for (Entry<String, Map<String, Double>> r : table.entrySet()) {
+
+			Map<String,Double> data = r.getValue();
+
+			boolean is_first = i == 0;
+			if (is_first) {
+
+				String line = "ID";
+
+				for (String k : data.keySet()) {
+					line += "," + k;
+				}
+				w.write(line + LF);
+			}
+
+			String line = r.getKey();
+
+			for (double v : data.values()) {
+				line += "," + v;
+			}
+
+			w.write(line + LF); i++;
+		}
+		w.close();
 	}
 	
 	public static void main(String args[]) {

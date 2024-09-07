@@ -27,6 +27,7 @@ def filter():
     print("\n== Filtering Dataset ==\n")
 
     df = pd.read_csv("pipeline/data2.csv")
+    df.fillna("", inplace = True)
 
     ## (1) Fill Specified NaN values
     for col in ["PassType", "Formation", "PlayType", "RushDirection"]:
@@ -205,7 +206,6 @@ def reassign_plays():
         return row
     
     tqdm.pandas()
-    df["Rel_Time"] = df["Relevancy"] ## Save time-only relevnacy before player injuries/trades are accounted for. "Rel_Time" is used to determine target share later
     df = df.progress_apply(reassign, axis = 1)
     
     # Aggregate extra rows

@@ -22,12 +22,29 @@ from datetime import datetime
 
 N_CORES, SEASON_YEAR = 8, 2023
 ref = "$ref"
+LF = "\n";
+
+DOMAIN = "localhost:8000"
 
 # Helper functions
 def get(URL):
   response = requests.get(URL)
   response = json.loads(response.text)
   return response
+
+def to_player_link(row):
+    # Used in add_java_formats() in get_depth_charts
+    team, player, id = row.Team, row.Player, row.Player_id
+    return f'<a href= "{DOMAIN}/{id}">[{team}]{player}</a>'
+
+def to_java_format(row):
+    # Same as above
+    team, player = row.Team, row.Player
+    if team == "" or player == "":
+       return ""
+    if team == None or player == None:
+       return ""
+    return f"[{team}]{player}"
 
 def remove_whitespace(input):
     return re.sub("\.\s+", ".", input)

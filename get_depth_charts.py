@@ -4,6 +4,7 @@
 # results are aggregated by another script
 
 from helper import *
+import csv
 
 def get_injuries(team_id):
 
@@ -178,10 +179,33 @@ def load_depth_charts_2():
 
             for rank in sorted(df2.Rank.unique()):
                 df3 = df2[df2.Rank == rank]
-                entry = df3.iloc[0]
-                id, name = entry.Player_id, entry.Player
-
                 rank = int(rank)
-                dc_ref[team][pos][rank] = {"id": id, "name": name}
+
+                ## Changing to account for multiple players at the same depth chart rank
+                players = []
+                for i in range(len(df3)):
+
+                    entry = df3.iloc[i]
+
+                    id, name = entry.Player_id, entry.Player
+                    players.append({"id": id, "name": name})
+
+                dc_ref[team][pos][rank] = players
 
     return dc_ref
+
+def add_java_formats(depth_chart_filepath, verbose = True):
+    ''' Uses transformations to get a team + player format i.e. [NE]12-T.Brady, which can act as an index for
+    players, and a URL format <a href = localhost:/ . . . '''
+
+    print(LF + f"== Adding Java Formats to {depth_chart_filepath} ==" + LF)
+
+    df = pd.read_csv(depth_chart_filepath)
+    
+    df["Player_java"] = df.apply(to_java_format, axis = 1)
+    df["Player_link"] = df.apply(to_player_link, axis = 1)
+    print(df["Player_link"])
+
+    df.to_csv(depth_chart_filepath, index = False, quoting=csv.QUOTE_NONE)
+
+    print("Formats added. [✓]" + LF)

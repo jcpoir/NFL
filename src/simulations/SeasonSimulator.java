@@ -148,7 +148,7 @@ public class SeasonSimulator extends GameSimulator {
 		return out;
 	}
 	
-	public void addToSeasonStats(GameResult result, boolean[] is_div) {
+	public void addToSeasonStats(MatchupResult result, boolean[] is_div) {
 		
 		Map<String,Map<String,Double>> matchup_stats = result.matchup_stats;
 		
@@ -351,10 +351,10 @@ public class SeasonSimulator extends GameSimulator {
 				conf_out.put(i, conf_seeds.get(i));
 			}
 			
-			GameResult result;
+			MatchupResult result;
 			
 			while (i < j) {
-				result = simulateMatchup(conf_seeds.get(i), conf_seeds.get(j), 1, false, OT, false, false, false);
+				result = simulateMatchup(conf_seeds.get(i), conf_seeds.get(j), 1, false, OT, false, false, false, false);
 				conf_out.put(seed_ref.get(result.winner), result.winner);
 				i++; j--;
 			}
@@ -374,7 +374,7 @@ public class SeasonSimulator extends GameSimulator {
 		String nfc_team = seeds.get("NFC").get(1);
 		
 		boolean OT = true;
-		GameResult result = simulateMatchup(afc_team, nfc_team, 1, false, OT, false, false, false);
+		MatchupResult result = simulateMatchup(afc_team, nfc_team, 1, false, OT, false, false, false, false);
 		
 		return result.winner;
 	}
@@ -396,7 +396,7 @@ public class SeasonSimulator extends GameSimulator {
 			for (String[] matchup : matchups) {
 	
 				if (verbose) System.out.println("(" + i + "/" + j + ") " + matchup[0] + " vs " + matchup[1]);
-				GameResult result = simulateMatchup(matchup[0], matchup[1], 1);
+				MatchupResult result = simulateMatchup(matchup[0], matchup[1], 1);
 				
 				// calculate additional stats
 				boolean[] is_div = determineRelation(matchup);

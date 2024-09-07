@@ -9,6 +9,8 @@ import re
 # (0) Defining term seperators
 SEP1, SEP2 = "$", "&"
 
+_, player_ref = load_depth_charts()
+
 # (1) Support functions
 
 def convert_dict(ref):
@@ -52,6 +54,29 @@ def form_dist(row):
 
   return convert_dict(ref)
 
+def form_player_dist(row):
+  ''' like form_dist, but incorporates player id via lookup to player columns. 
+  This is so that we can view player names in java but also have a value that may
+  be used as an index '''
+
+  global col, plyaer_ref
+
+  # Case where no players detected
+  if row[col] == "-1": return convert_dict({"NULL":1})
+
+  # Convert string to dictionary
+  ref = ast.literal_eval(row[col])
+
+  out = {}
+  for id in ref:
+    id = int(id)
+    # Player id is the input col value, get player name from the depth chart reference map
+    name = player_ref[id]["Name"]
+    player_tag = name + "+" + str(id)
+    out[player_tag] = ref[id]
+
+  return convert_dict(out)
+
 # (2) Primary Conversion Functions
 
 def to_java_df(df, team_col = "OffenseTeam"):
@@ -70,7 +95,10 @@ def to_java_df(df, team_col = "OffenseTeam"):
   out["idx"] = df.apply(form_index, axis = 1)
 
   ## (2) Define a player, play selection distributions
-  for col in ("Player1", "Player2", "Formation", "RushDirection", "PassType", "PlayDist"):
+  for i in [1, 2]:
+    col = f"Player{i}_ID"
+    out[f"Player{i}"] = df.apply(form_player_dist, axis = 1)
+  for col in ("Formation", "RushDirection", "PassType", "PlayDist"):
     out[col] = df.apply(form_dist, axis = 1)
 
   ## (2a) Collect PlayType column as well, with PASS/RUSH breakdown
@@ -125,8 +153,8 @@ def spec_to_java_df(SPEC1_df, SPEC2_df, SPEC3_df):
   SPEC2_df.rename({"Distribution": "Dist"}, axis = 1, inplace = True)
   SPEC2["dist"] = SPEC2_df.apply(form_yardage_dist, axis = 1)
 
-  col = "Player1"
-  SPEC2["player"] = SPEC2_df.apply(form_dist, axis = 1)
+  col = "Player1_ID"
+  SPEC2["player"] = SPEC2_df.apply(form_player_dist, axis = 1)
 
   ## (3) FGs
 
@@ -139,8 +167,9 @@ def spec_to_java_df(SPEC1_df, SPEC2_df, SPEC3_df):
 
   SPEC3["idx"] = SPEC3_df.apply(form_index, axis = 1)
   SPEC3["FG%"] = SPEC3_df["FG%"]
-  col = "Player1"
-  SPEC3["player"] = SPEC3_df.apply(form_dist, axis = 1)
+
+  col = "Player1_ID"
+  SPEC3["player"] = SPEC3_df.apply(form_player_dist, axis = 1)
 
   return SPEC1, SPEC2, SPEC3
 

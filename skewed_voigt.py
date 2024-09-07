@@ -101,7 +101,7 @@ class SkewedVoigtModel(SkewedVoigt):
         self.optimizer = optim.Adam(self.parameters(), lr = 0.1)
         self.loss = torch.tensor(0)
 
-    def fit_transform(self, x, y, loss_fn, n_epochs=1000, conv_thresh=1e-8, mean_conv=None, isKickoff=False, isSack=False, show_plots=False, verbose=False):
+    def fit_transform(self, x, y, loss_fn, n_epochs=3000, conv_thresh=1e-8, mean_conv=None, isKickoff=False, isSack=False, show_plots=False, verbose=False):
 
         # Hopefully fix the new tensor bug . . .
         x, y = torch.tensor(x[:]), torch.tensor(y[:])
