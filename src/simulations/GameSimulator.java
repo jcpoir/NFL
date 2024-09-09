@@ -248,14 +248,14 @@ public class GameSimulator {
 		String team1 = teams.get(0); String team2 = teams.get(1); 
 				
 		double w1 = summary_stats.get(team1).get("W") / n_trials * 100.0; double w2 = summary_stats.get(team2).get("W") / n_trials * 100.0; 
-		out += "\n" + team1 + " (" + round(w1,2) + "%) vs (" + round(w2,2) + "%) " + team2 + "\n\n";
+		out += LF + team1 + " (" + round(w1,2) + "%) vs (" + round(w2,2) + "%) " + team2 + LF + LF;
 		
 		for (String team: summary_stats.keySet()) {
-			out += team + ":\n";
+			out += team + ":" + LF;
 			for (String stat: summary_stats.get(team).keySet()) {
-				out += stat + ": " + round(summary_stats.get(team).get(stat),2) + "\n";
+				out += stat + ": " + round(summary_stats.get(team).get(stat),2) + LF;
 			}
-			out += "\n";
+			out += LF;
 		}
 		
 		return out;
@@ -287,9 +287,9 @@ public class GameSimulator {
 		int n = 14; int m = 30; String s = "%-"+n+"s"; Map<String,Map<String,Double>> map; Map<String,Double> row;
 		
 		// Passer data
-		out += "== PASS ==\n\n"; 
+		out += "== PASS ==" + LF + LF; 
 		String headerFormat = "%-"+m+"s"+s+s+s+s+s+s; String header = String.format(headerFormat, "PASSER", "CMP", "YD", "TD", "INT", "FUM", "RTG"); 
-		out += header + "\n";
+		out += header + LF;
 		
 		List<Entry<String, Map<String, Double>>> entries = pass_df.sortByField("YD");
 		
@@ -305,15 +305,15 @@ public class GameSimulator {
 			double cmp = Math.round(row.get("CMP") * mult) / mult; double att = Math.round(row.get("ATT") * mult) / mult;
 			String entry_str = String.format(rowFormat, player, cmp+"/"+att, row.get("YD"), row.get("TD"), row.get("INT"), row.get("FUM"), rtg); 
 			
-			out += entry_str + "\n";
+			out += entry_str + LF;
 		}
 		
 		// Rusher data
-		out += "\n== RUSH ==\n\n";
+		out += LF + "== RUSH ==" + LF + LF;
 		
 		headerFormat = "%-"+m+"s"+s+s+s+s+s+s;
 		header = String.format(headerFormat, "RUSHER", "ATT", "YD", "LNG", "TD", "FUM", "AVG"); rowFormat = "%-"+m+"s"+f+f+f+f+f+"%-"+n+".2f";
-		out += header + "\n";
+		out += header + LF;
 		
 		entries = rush_df.sortByField("YD");
 		for (Entry<String, Map<String, Double>> entry : entries) {
@@ -323,14 +323,14 @@ public class GameSimulator {
 			double yd = row.get("YD"); double att = row.get("ATT"); double avg = yd/att;
 			String entry_str = String.format(rowFormat, player, att, yd, row.get("LNG"), row.get("TD"), row.get("FUM"), avg); 
 			
-			out += entry_str + "\n";
+			out += entry_str + LF;
 		}
 		
-		out += "\n== REC ==\n\n";
+		out += LF + "== REC ==" + LF;
 		
 		headerFormat = "%-"+m+"s"+s+s+s+s+s;
 		header = String.format(headerFormat, "RECEIVER", "CMP", "YD", "TD", "LNG", "FUM"); rowFormat = "%-"+m+"s"+s+f+f+f+f;
-		out += header + "\n";
+		out += header + LF;
 		
 		entries = rec_df.sortByField("YD");
 		for (Entry<String, Map<String, Double>> entry : entries) {
@@ -340,10 +340,10 @@ public class GameSimulator {
 			double cmp = Math.round(row.get("REC") * mult) / mult; double att = Math.round(row.get("TGT") * mult) / mult;
 			String entry_str = String.format(rowFormat, player, cmp+"/"+att, row.get("YD"), row.get("TD"), row.get("LNG"), row.get("FUM")); 
 			
-			out += entry_str + "\n";
+			out += entry_str + LF;
 		}
 		
-		out += "\n";
+		out += LF;
 		return out;
 	}
 	
@@ -354,7 +354,7 @@ public class GameSimulator {
 		
 		String out = "";
 		
-		out += "== FANTASY POINTS ==\n\n";
+		out += "== FANTASY POINTS ==" + LF + LF;
 		int n = 14; int m = 30; String s = "%-"+n+"s"; String f = "%-"+n+".2f";
 		
 		List<Entry<String, Map<String, Double>>> entries = fantasy_df.sortByField("PTS");
@@ -363,7 +363,7 @@ public class GameSimulator {
 		for (Entry<String, Map<String, Double>> entry : entries) {
 			String ID = entry.getKey(); double fpoints = entry.getValue().get("PTS");
 			
-			out += String.format(rowFormat, ID, fpoints) + "\n";
+			out += String.format(rowFormat, ID, fpoints) + LF;
 		}
 		
 		return out;
@@ -544,8 +544,8 @@ public class GameSimulator {
 			pos = playInfo.get("pos");
 			Team team = teams[pos]; Team opp_team = teams[flip(pos)]; // opp_team is used exclusively for kickoffs
 			
-			String scoreline_txt = "\n\n" + getScoreLine() + "\n";
-			if (to_txt) pbp = pbp + scoreline_txt + "\n";
+			String scoreline_txt = LF + LF + getScoreLine() + LF;
+			if (to_txt) pbp = pbp + scoreline_txt + LF;
 			
 			// Simulate one drive!
 			while (true) {
@@ -574,7 +574,7 @@ public class GameSimulator {
 				// Update game scripts with down & distance
 				String dnd = getDownDist();
 				if (verbose) System.out.println(dnd); // HERE
-				if (to_txt) pbp += dnd + "\n";
+				if (to_txt) pbp += dnd + LF;
 				
 				// special case where a kickoff is required
 				boolean isKickOff = (kickoff == 1);
@@ -584,7 +584,7 @@ public class GameSimulator {
 
 					String kickoff_str = quarterTime + " " + result.get("summary");
 					if (verbose) System.out.println(kickoff_str);
-					if (to_txt) pbp += kickoff_str + "\n";
+					if (to_txt) pbp += kickoff_str + LF;
 				
 					yds = Integer.parseInt(result.get("yards")); down = 1; distance = 10;
 					yardline = playInfo.get("yardline") - yds; kickoff = 0;
@@ -602,7 +602,7 @@ public class GameSimulator {
 				// update game scripts with play description
 				String play_txt = quarterTime + " " + result.get("summary");
 				if (verbose) System.out.println(play_txt); // HERE
-				if (to_txt) pbp += play_txt + "\n";
+				if (to_txt) pbp += play_txt + LF;
 								
 				boolean isFG = (result.keySet().contains("FG")); 
 				
@@ -676,7 +676,7 @@ public class GameSimulator {
 						Map<String,String> XP_result = team.kickXP();
 						String XP_str = XP_result.get("summary");
 						if (verbose) System.out.println(XP_str);
-						if (to_txt) pbp += XP_str + "\n";
+						if (to_txt) pbp += XP_str + LF;
 
 						String isXP_good = XP_result.get("XP");
 						if (isXP_good.equals("1")) addScore(team.getName(), 1);
@@ -699,7 +699,7 @@ public class GameSimulator {
 					Map<String,String> XP_result = team.kickXP();
 					String XP_str = XP_result.get("summary");
 					if (verbose) System.out.println(XP_str);
-					if (to_txt) pbp += XP_str + "\n";
+					if (to_txt) pbp += XP_str + LF;
 
 					String isXP_good = XP_result.get("XP");
 					if (isXP_good.equals("1")) addScore(team.getName(), 1);
@@ -752,7 +752,7 @@ public class GameSimulator {
 			
 			if ((time <= N_SECONDS / 2) & quarter < 3) { // HALFTIME
 				
-				String halftime_str = "\nHALFTIME";
+				String halftime_str = LF + "HALFTIME";
 				if (verbose) System.out.print(halftime_str);  // stop play at halftime and give possession to the other team to start 2H (HERE)
 				if (to_txt) pbp += halftime_str;
 
@@ -771,7 +771,7 @@ public class GameSimulator {
 		pbp += "END OF GAME";
 
 		// Finish with final score, returning the result to simulateMatchup()
-		String fin_score_string = "\n\nFINAL SCORE: " + getScoreLine();
+		String fin_score_string = LF + LF + "FINAL SCORE: " + getScoreLine();
 		if (verbose) System.out.println(fin_score_string); // HERE
 		if (to_txt) pbp += fin_score_string;
 		
@@ -824,8 +824,9 @@ public class GameSimulator {
 
 		// (4) Playing a Drive
 		playInfo = PlayInfo;
-
-		String base_filepath = "java_outputs/matchups/" + teamName1 + "vs" + teamName2 + "/";
+		
+		String matchup = teamName1 + "vs" + teamName2;
+		String base_filepath = "java_outputs/matchups/" + matchup + "/";
 		// track the game results in an arraylist
 		List<Map<String,Integer>> scores_list = new ArrayList<Map<String,Integer>>();
 		for (int i = 0; i < n_trials; i++) {
@@ -840,12 +841,12 @@ public class GameSimulator {
 				calcFantasyPoints(); 
 
 				// Record game data in the {matchup}/{game_ID} folder.
-				writeToFile(pbp, filepath, "pbp.txt");
-				pass_df.to_csv(filepath + "/pass.csv"); rush_df.to_csv(filepath + "/rush.csv");
-				rec_df.to_csv(filepath + "/rec.csv"); fantasy_df.to_csv(filepath + "/fantasy.csv");
+				writeToFile(pbp, filepath, "pbp.html");
+				pass_df.to_csv(filepath + "/pass.html"); rush_df.to_csv(filepath + "/rush.html");
+				rec_df.to_csv(filepath + "/rec.html"); fantasy_df.to_csv(filepath + "/fantasy.html");
 
 				// Record fantasy data in fantasy/{player_id}.csv
-				Tools.record_fantasy(fantasy_df, i, score);
+				Tools.record_fantasy(fantasy_df, i, matchup, score);
 
 				initBoxScores();
 			}
@@ -883,14 +884,14 @@ public class GameSimulator {
 		return simulateMatchup(teamName1, teamName2, n_trials, true, false, false, false, false, true);
 	}
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		Map<String, Map<String, Map<String, Double>>> dists = GameSimulator.loadData();
 		GameSimulator sim = new GameSimulator(dists);
 
 		Tools.clear_dir("java_outputs/fantasy");
 		
-		int n_trials = 100; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
+		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
 		sim.simulateMatchup("ATL", "PIT", n_trials, avg_stats, OT, verbose, show_result, add_to_box, to_txt);
 	}
 }

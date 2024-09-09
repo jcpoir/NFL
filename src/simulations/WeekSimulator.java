@@ -50,10 +50,9 @@ public class WeekSimulator extends GameSimulator{
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Tools.clear_dir("java_outputs");
-
         WeekSimulator s = new WeekSimulator();
         s.simWeek(1);
     }

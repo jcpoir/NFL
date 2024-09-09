@@ -22,9 +22,9 @@ from datetime import datetime
 
 N_CORES, SEASON_YEAR = 8, 2023
 ref = "$ref"
-LF = "\n";
+LF = "\n"
 
-DOMAIN = "localhost:8000"
+DOMAIN = "http://127.0.0.1:8000"
 
 # Helper functions
 def get(URL):

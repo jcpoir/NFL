@@ -3,6 +3,7 @@
 # This script is responsible for convering distribution data, in csv format,
 # into a more java-interpretable format that uses custom seperators and spacing
 
+from helper import *
 from smoothing_tools import *
 import re
 
@@ -59,7 +60,7 @@ def form_player_dist(row):
   This is so that we can view player names in java but also have a value that may
   be used as an index '''
 
-  global col, plyaer_ref
+  global col, player_ref
 
   # Case where no players detected
   if row[col] == "-1": return convert_dict({"NULL":1})
@@ -72,7 +73,9 @@ def form_player_dist(row):
     id = int(id)
     # Player id is the input col value, get player name from the depth chart reference map
     name = player_ref[id]["Name"]
-    player_tag = name + "+" + str(id)
+    # player_tag = name + "+" + str(id) HERE: swithcing to hyperlinks
+    player_tag = f'<a href="{DOMAIN}/player?id={id}">{name}</a>'
+
     out[player_tag] = ref[id]
 
   return convert_dict(out)
@@ -188,8 +191,8 @@ def to_java_dfs():
 
   ## Write files to pipeline and java startpoint (data folder)
   def w(df, file):
-    df.to_csv(f"pipeline/{file}.csv", index = False)
-    df.to_csv(f"data/{file}.csv", index = False)
+    df.to_csv(f"pipeline/{file}.csv", index = False, quoting=csv.QUOTE_NONE)
+    df.to_csv(f"data/{file}.csv", index = False, quoting=csv.QUOTE_NONE)
 
   w(OFF, "OFF")
   w(DEF, "DEF")
