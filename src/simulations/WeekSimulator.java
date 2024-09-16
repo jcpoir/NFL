@@ -42,7 +42,7 @@ public class WeekSimulator extends GameSimulator{
 
         matchups = loadMatchups(week, "data/NFL_2024_Matchups.csv");
 
-        int n_trials = 10000; boolean avg_stats = true; boolean OT = false; boolean verbose = false; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
+        int n_trials = 10; boolean avg_stats = true; boolean OT = false; boolean verbose = false; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
 
         for (String[] matchup : matchups) {
             System.out.println(matchup[0] + " vs " + matchup[1]);

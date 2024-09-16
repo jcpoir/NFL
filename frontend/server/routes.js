@@ -1,9 +1,45 @@
 const path = require('path');
 const fs = require('fs');
 
+p = "<p>"; p_ = "</p>";
+
+const html_filepath = "../client/html/components/"
+const content_filepath = "../client/html/pages/"
+
+async function serve(req, res) {
+
+    const page = req.params.page
+    const content = content_filepath + page + ".html"
+
+    filepaths = [
+        html_filepath + "main_header.html",
+        content
+    ]
+
+    console.log(page)
+
+    fileContent = "";
+    for (fp of filepaths) {
+
+        fp = path.join(__dirname, fp);
+        fileContent += fs.readFileSync(fp, "utf-8")
+    }
+
+    // Add additional files for specified filepaths
+    if (page == "weekly_predictions") {
+
+        fp = path.join(__dirname, "../../java_outputs/summary.html");
+        fileContent += p + fs.readFileSync(fp, "utf-8") + p_;
+    }
+
+    // Send file with error handling
+    res.send(fileContent);
+    console.log(fileContent);
+}
+
 async function gamescript(req, res) {
 
-    const matchup = req.query.matchup ? req.query.matchup : "NEvsSEA";
+    const matchup = req.query.matchup ? req.query.matchup : "NEvsATL";
     const sim_idx = req.query.sim_idx ? req.query.sim_idx : "1";
     const data_type = req.query.data_type ? req.query.data_type : "pbp"
 
@@ -21,9 +57,9 @@ async function gamescript(req, res) {
     
     // Use path.join for cross-platform compatibility
     const filepaths = [
-        "../client/html/narrative_header.html",
+        html_filepath + "narrative_header.html",
         `../../java_outputs/matchups/${matchup}/simulations/${sim_idx}/${filename}`,
-        "../client/html/narrative_footer.html"
+        html_filepath + "narrative_footer.html"
     ];
 
     fileContent = "";
@@ -42,9 +78,9 @@ async function player(req, res) {
     const player_id = req.query.id ? req.query.id : "-1";
 
     const filepaths = [
-        "../client/html/narrative_header.html",
+        html_filepath + "narrative_header.html",
         `../../java_outputs/fantasy/${player_id}.html`,
-        "../client/html/narrative_footer.html"
+        html_filepath + "narrative_footer.html"
     ];
 
     fileContent = "";
@@ -58,4 +94,4 @@ async function player(req, res) {
     res.send(fileContent);
 }
 
-module.exports = { gamescript, player };
+module.exports = { serve, gamescript, player };

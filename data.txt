@@ -1,103 +1,1604 @@
 
-NE (64.5%) vs (32.6%) ATL
+ARI (30.0%) vs (60.0%) LAR
 
-NE:
-PA: 18.11
-D: 29.0
-DIFF: 5.88
-PF: 23.99
-W: 645.0
-L: 326.0
+ARI:
+PA: 23.8
+D: 1.0
+DIFF: -2.2
+PF: 21.6
+W: 3.0
+L: 6.0
 
-ATL:
-PA: 23.99
-D: 29.0
-DIFF: -5.88
-PF: 18.11
-W: 326.0
-L: 645.0
+LAR:
+PA: 21.6
+D: 1.0
+DIFF: 2.2
+PF: 23.8
+W: 6.0
+L: 3.0
 
 == PASS ==
 
-PASSER                                                                          CMP           YD            TD            INT           FUM           RTG           
-[ATL]<a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>           23.85/37.36   263.70        1.43          0.84          0.21          88.11         
-[NE]<a href="http://127.0.0.1:8000/player?id=2578570">14-J.Brissett</a>         21.63/33.26   225.98        1.36          0.71          0.19          89.39         
-[ATL]<a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>           0.18/0.27     1.77          0.01          0.01          0.00          86.49         
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[LAR] <a href="http://127.0.0.1:8000/player?id=12483">9-M.Stafford</a>        26.9/39.9     317.80        2.00          1.10          0.40          96.67         
+[ARI] <a href="http://127.0.0.1:8000/player?id=3917315">1-K.Murray</a>          23.7/35.7     240.80        1.70          0.80          0.10          92.05         
+[ARI] <a href="http://127.0.0.1:8000/player?id=4240631">20-D.Dallas</a>         0.4/0.7       5.10          0.10          0.00          0.00          119.64        
 
 == RUSH ==
 
-RUSHER                                                                          ATT           YD            LNG           TD            FUM           AVG           
-[NE]<a href="http://127.0.0.1:8000/player?id=4569173">38-R.Stevenson</a>        10.33         54.45         98.00         0.50          0.07          5.27          
-[NE]<a href="http://127.0.0.1:8000/player?id=4362921">11-T.Thornton</a>         8.65          48.53         98.00         0.49          0.06          5.61          
-[NE]<a href="http://127.0.0.1:8000/player?id=4360294">4-A.Gibson</a>            7.39          37.96         96.00         0.32          0.05          5.13          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4430807">7-B.Robinson</a>         8.35          36.41         83.00         0.21          0.08          4.36          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4372485">14-R.Moore</a>           5.86          25.74         78.00         0.12          0.03          4.40          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4373626">25-T.Allgeier</a>        5.82          25.29         65.00         0.13          0.05          4.34          
-[NE]<a href="http://127.0.0.1:8000/player?id=2578570">14-J.Brissett</a>         1.91          11.72         85.00         0.07          0.01          6.14          
-[ATL]<a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>           1.97          11.64         40.00         0.06          0.02          5.89          
-[NE]<a href="http://127.0.0.1:8000/player?id=3928925">39-J.Hasty</a>            0.73          3.88          89.00         0.04          0.00          5.32          
-[NE]<a href="http://127.0.0.1:8000/player?id=3045523">84-K.Bourne</a>           0.83          3.19          81.00         0.03          0.01          3.85          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3047876">12-K.Hodge</a>           0.63          2.88          92.00         0.01          0.00          4.58          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3728262">34-R.McCloud III</a>     0.62          2.78          22.00         0.01          0.01          4.49          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4048259">26-A.Williams</a>        0.63          2.72          25.00         0.02          0.01          4.33          
-[NE]<a href="http://127.0.0.1:8000/player?id=4427095">3-D.Douglas</a>           0.26          1.42          76.00         0.01          0.00          5.49          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>           0.23          1.06          16.00         0.01          0.00          4.59          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4040655">1-D.Mooney</a>           0.21          1.04          23.00         0.00          0.00          4.84          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4360248">8-K.Pitts</a>            0.13          0.62          17.00         0.00          0.00          4.80          
-[NE]<a href="http://127.0.0.1:8000/player?id=4240545">17-B.Baringer</a>         0.08          0.42          15.00         0.00          0.00          5.00          
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[ARI] <a href="http://127.0.0.1:8000/player?id=3917315">1-K.Murray</a>          8.5           51.30         16.00         0.10          0.00          6.04          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4430737">23-K.Williams</a>       9.1           38.70         12.00         0.40          0.00          4.25          
+[ARI] <a href="http://127.0.0.1:8000/player?id=3045147">6-J.Conner</a>          8.0           35.80         15.00         0.10          0.00          4.48          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4429275">33-T.Benson</a>         7.2           33.50         16.00         0.30          0.10          4.65          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4360797">5-T.Atwell</a>          3.6           25.20         78.00         0.20          0.00          7.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4429096">22-B.Corum</a>          4.9           24.10         33.00         0.20          0.00          4.92          
+[LAR] <a href="http://127.0.0.1:8000/player?id=3043116">15-D.Robinson</a>       2.1           15.80         70.00         0.10          0.00          7.52          
+[LAR] <a href="http://127.0.0.1:8000/player?id=12483">9-M.Stafford</a>        2.0           15.40         20.00         0.00          0.00          7.70          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4240631">20-D.Dallas</a>         3.1           11.30         10.00         0.10          0.10          3.65          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4362478">31-E.Demercado</a>      1.2           5.60          10.00         0.00          0.00          4.67          
+[ARI] <a href="http://127.0.0.1:8000/player?id=2576581">10-C.Moore</a>          0.4           1.80          7.00          0.00          0.00          4.50          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4243003">20-R.Rivers</a>         0.4           1.70          7.00          0.00          0.00          4.25          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4432708">18-M.Harrison Jr.</a>   0.2           1.10          7.00          0.00          0.00          5.50          
+[LAR] <a href="http://127.0.0.1:8000/player?id=2977187">10-C.Kupp</a>           0.2           1.10          7.00          0.00          0.00          5.50          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4037235">4-G.Dortch</a>          0.5           0.70          4.00          0.00          0.00          1.40          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4045180">12-B.Gillikin</a>       0.1           0.40          4.00          0.00          0.00          4.00          
 
 == REC ==
 
-RECEIVER                                                                        CMP           YD            TD            LNG           FUM           
-[ATL]<a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>           7.17/11.22    79.03         0.42          46.00         0.08          
-[NE]<a href="http://127.0.0.1:8000/player?id=4427095">3-D.Douglas</a>           6.49/10.01    68.38         0.40          45.00         0.06          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4040655">1-D.Mooney</a>           4.93/7.64     54.68         0.30          46.00         0.03          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4430807">7-B.Robinson</a>         4.05/6.32     45.04         0.25          46.00         0.03          
-[NE]<a href="http://127.0.0.1:8000/player?id=3916566">2-K.J.Osborn</a>          4.26/6.56     43.65         0.28          45.00         0.03          
-[NE]<a href="http://127.0.0.1:8000/player?id=4360294">4-A.Gibson</a>            3.22/4.93     33.57         0.20          45.00         0.03          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4372485">14-R.Moore</a>           2.53/4.05     27.57         0.15          41.00         0.03          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3728262">34-R.McCloud III</a>     2.43/3.82     26.89         0.14          46.00         0.02          
-[NE]<a href="http://127.0.0.1:8000/player?id=4362921">11-T.Thornton</a>         2.24/3.38     23.56         0.15          45.00         0.03          
-[NE]<a href="http://127.0.0.1:8000/player?id=4569173">38-R.Stevenson</a>        1.94/3.01     20.26         0.11          41.00         0.01          
-[NE]<a href="http://127.0.0.1:8000/player?id=3045523">84-K.Bourne</a>           1.73/2.66     18.05         0.12          45.00         0.02          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4373626">25-T.Allgeier</a>        0.98/1.47     10.65         0.07          42.00         0.01          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4360248">8-K.Pitts</a>            0.72/1.15     8.07          0.04          41.00         0.01          
-[NE]<a href="http://127.0.0.1:8000/player?id=3046439">85-H.Henry</a>            0.64/0.96     6.95          0.04          43.00         0.00          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3047876">12-K.Hodge</a>           0.57/0.92     6.27          0.03          38.00         0.01          
-[NE]<a href="http://127.0.0.1:8000/player?id=4430637">1-J.Polk</a>              0.53/0.81     5.42          0.03          34.00         0.00          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4428796">82-C.Washington</a>      0.29/0.47     3.21          0.02          41.00         0.00          
-[NE]<a href="http://127.0.0.1:8000/player?id=4692022">6-J.Baker</a>             0.29/0.45     3.06          0.01          32.00         0.00          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4035020">89-C.Woerner</a>         0.22/0.34     2.46          0.01          42.00         0.00          
-[NE]<a href="http://127.0.0.1:8000/player?id=3043275">81-A.Hooper</a>           0.22/0.35     2.28          0.02          28.00         0.00          
-[ATL]<a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>           0.1/0.16      1.16          0.01          39.00         0.00          
-[NE]<a href="http://127.0.0.1:8000/player?id=3928925">39-J.Hasty</a>            0.08/0.14     0.82          0.00          25.00         0.00          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3049899">6-Y.Koo</a>              0.03/0.06     0.43          0.00          27.00         0.00          
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[LAR] <a href="http://127.0.0.1:8000/player?id=2977187">10-C.Kupp</a>           8.4/12.3      97.50         0.90          29.00         0.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4430737">23-K.Williams</a>       8.0/12.0      94.20         0.60          39.00         0.10          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4432708">18-M.Harrison Jr.</a>   7.9/11.6      78.70         0.70          37.00         0.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=3043116">15-D.Robinson</a>       5.6/8.0       64.70         0.50          24.00         0.20          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4360761">14-M.Wilson</a>         4.2/6.6       43.60         0.30          32.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=3059722">12-Z.Jones</a>          4.1/5.9       41.70         0.30          27.00         0.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=2310331">18-T.Johnson</a>        2.4/3.7       28.60         0.00          21.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4037235">4-G.Dortch</a>          2.2/3.5       19.60         0.20          15.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4362478">31-E.Demercado</a>      1.5/2.3       17.60         0.10          16.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=3045147">6-J.Conner</a>          1.5/2.6       13.30         0.20          12.00         0.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4242557">86-C.Parkinson</a>      0.7/0.9       12.00         0.00          31.00         0.10          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4360797">5-T.Atwell</a>          1.0/1.4       11.40         0.00          17.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4361307">85-T.McBride</a>        0.7/1.4       10.50         0.00          20.00         0.10          
+[ARI] <a href="http://127.0.0.1:8000/player?id=2978109">0-Z.Pascal</a>          0.7/0.8       7.80          0.00          19.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=3917315">1-K.Murray</a>          0.4/0.6       5.50          0.00          19.00         0.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4243003">20-R.Rivers</a>         0.3/0.7       3.90          0.00          16.00         0.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4239944">84-H.Long</a>           0.4/0.7       3.70          0.00          15.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=2576581">10-C.Moore</a>          0.5/0.5       3.00          0.00          9.00          0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4240631">20-D.Dallas</a>         0.2/0.3       2.80          0.00          20.00         0.00          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4569382">88-J.Whittington</a>    0.1/0.2       1.80          0.00          18.00         0.00          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4426844">84-E.Higgins</a>        0.2/0.3       1.80          0.00          15.00         0.00          
 
 == FANTASY POINTS ==
 
-[ATL]<a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>           17.69         
-[ATL]<a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>           15.93         
-[NE]<a href="http://127.0.0.1:8000/player?id=4427095">3-D.Douglas</a>           15.83         
-[ATL]<a href="http://127.0.0.1:8000/player?id=4430807">7-B.Robinson</a>         14.69         
-[NE]<a href="http://127.0.0.1:8000/player?id=2578570">14-J.Brissett</a>         14.26         
-[NE]<a href="http://127.0.0.1:8000/player?id=4360294">4-A.Gibson</a>            13.31         
-[NE]<a href="http://127.0.0.1:8000/player?id=4362921">11-T.Thornton</a>         13.08         
-[NE]<a href="http://127.0.0.1:8000/player?id=4569173">38-R.Stevenson</a>        12.93         
-[ATL]<a href="http://127.0.0.1:8000/player?id=4040655">1-D.Mooney</a>           12.27         
-[NE]<a href="http://127.0.0.1:8000/player?id=3916566">2-K.J.Osborn</a>          10.23         
-[ATL]<a href="http://127.0.0.1:8000/player?id=4372485">14-R.Moore</a>           9.40          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3728262">34-R.McCloud III</a>     6.19          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4373626">25-T.Allgeier</a>        5.65          
-[NE]<a href="http://127.0.0.1:8000/player?id=3045523">84-K.Bourne</a>           4.68          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4360248">8-K.Pitts</a>            1.83          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3047876">12-K.Hodge</a>           1.75          
-[NE]<a href="http://127.0.0.1:8000/player?id=3046439">85-H.Henry</a>            1.56          
-[NE]<a href="http://127.0.0.1:8000/player?id=4430637">1-J.Polk</a>              1.25          
-[NE]<a href="http://127.0.0.1:8000/player?id=3928925">39-J.Hasty</a>            0.80          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4428796">82-C.Washington</a>      0.72          
-[NE]<a href="http://127.0.0.1:8000/player?id=4692022">6-J.Baker</a>             0.68          
-[NE]<a href="http://127.0.0.1:8000/player?id=3043275">81-A.Hooper</a>           0.56          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4035020">89-C.Woerner</a>         0.52          
-[ATL]<a href="http://127.0.0.1:8000/player?id=4048259">26-A.Williams</a>        0.38          
-[ATL]<a href="http://127.0.0.1:8000/player?id=3049899">6-Y.Koo</a>              0.09          
-[NE]<a href="http://127.0.0.1:8000/player?id=4240545">17-B.Baringer</a>         0.04          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4430737">23-K.Williams</a>       27.09         
+[LAR] <a href="http://127.0.0.1:8000/player?id=2977187">10-C.Kupp</a>           23.66         
+[ARI] <a href="http://127.0.0.1:8000/player?id=3917315">1-K.Murray</a>          21.31         
+[ARI] <a href="http://127.0.0.1:8000/player?id=4432708">18-M.Harrison Jr.</a>   20.08         
+[LAR] <a href="http://127.0.0.1:8000/player?id=12483">9-M.Stafford</a>          19.25         
+[LAR] <a href="http://127.0.0.1:8000/player?id=3043116">15-D.Robinson</a>       16.85         
+[ARI] <a href="http://127.0.0.1:8000/player?id=4360761">14-M.Wilson</a>         10.36         
+[ARI] <a href="http://127.0.0.1:8000/player?id=3059722">12-Z.Jones</a>          10.07         
+[ARI] <a href="http://127.0.0.1:8000/player?id=3045147">6-J.Conner</a>          8.21          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4360797">5-T.Atwell</a>          5.86          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4037235">4-G.Dortch</a>          5.43          
+[LAR] <a href="http://127.0.0.1:8000/player?id=2310331">18-T.Johnson</a>        5.26          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4429275">33-T.Benson</a>         4.95          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4362478">31-E.Demercado</a>      4.42          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4429096">22-B.Corum</a>          3.61          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4240631">20-D.Dallas</a>         2.61          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4242557">86-C.Parkinson</a>      1.70          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4361307">85-T.McBride</a>        1.55          
+[ARI] <a href="http://127.0.0.1:8000/player?id=2978109">0-Z.Pascal</a>          1.48          
+[ARI] <a href="http://127.0.0.1:8000/player?id=2576581">10-C.Moore</a>          0.98          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4243003">20-R.Rivers</a>         0.86          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4239944">84-H.Long</a>           0.77          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4426844">84-E.Higgins</a>        0.38          
+[LAR] <a href="http://127.0.0.1:8000/player?id=4569382">88-J.Whittington</a>    0.28          
+[ARI] <a href="http://127.0.0.1:8000/player?id=4045180">12-B.Gillikin</a>       0.04          
+
+LV (50.0%) vs (40.0%) BAL
+
+LV:
+PA: 23.6
+D: 1.0
+DIFF: -0.8
+PF: 22.8
+W: 5.0
+L: 4.0
+
+BAL:
+PA: 22.8
+D: 1.0
+DIFF: 0.8
+PF: 23.6
+W: 4.0
+L: 5.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[LV]  <a href="http://127.0.0.1:8000/player?id=4038524">15-G.Minshew</a>        22.8/32.8     245.80        2.10          0.60          0.20          104.95        
+[BAL] <a href="http://127.0.0.1:8000/player?id=3916387">8-L.Jackson</a>         17.8/25.5     196.70        1.60          0.20          0.30          110.04        
+[LV]  <a href="http://127.0.0.1:8000/player?id=3916433">16-J.Meyers</a>         0.9/1.0       8.10          0.10          0.00          0.00          133.75        
+[BAL] <a href="http://127.0.0.1:8000/player?id=3043078">22-D.Henry</a>          0.4/0.5       3.50          0.10          0.00          0.00          135.42        
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[BAL] <a href="http://127.0.0.1:8000/player?id=3916387">8-L.Jackson</a>         10.7          58.20         15.00         0.50          0.20          5.44          
+[BAL] <a href="http://127.0.0.1:8000/player?id=3043078">22-D.Henry</a>          10.8          56.80         20.00         0.20          0.00          5.26          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4361777">3-Z.White</a>           10.5          53.70         15.00         0.00          0.10          5.11          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4048244">22-A.Mattison</a>       8.4           38.00         19.00         0.30          0.00          4.52          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4038441">43-J.Hill</a>           7.9           37.50         16.00         0.20          0.00          4.75          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4428718">11-T.Tucker</a>         8.5           35.50         17.00         0.10          0.10          4.18          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4596334">34-K.Mitchell</a>       6.0           26.70         12.00         0.20          0.20          4.45          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4038524">15-G.Minshew</a>        1.5           9.10          13.00         0.00          0.00          6.07          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4429615">4-Z.Flowers</a>         0.5           6.50          51.00         0.10          0.00          13.00         
+[BAL] <a href="http://127.0.0.1:8000/player?id=3915381">33-J.Kelly Jr.</a>      0.7           3.80          10.00         0.00          0.00          5.43          
+[LV]  <a href="http://127.0.0.1:8000/player?id=3916433">16-J.Meyers</a>         0.4           2.50          10.00         0.00          0.10          6.25          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4411193">3-D.Harty</a>           0.6           2.00          6.00          0.10          0.00          3.33          
+[LV]  <a href="http://127.0.0.1:8000/player?id=2576336">8-A.Abdullah</a>        0.5           1.50          7.00          0.00          0.00          3.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=3116365">89-M.Andrews</a>        0.1           0.60          6.00          0.00          0.00          6.00          
+[LV]  <a href="http://127.0.0.1:8000/player?id=16800">17-D.Adams</a>          0.4           0.30          3.00          0.00          0.10          0.75          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[LV]  <a href="http://127.0.0.1:8000/player?id=16800">17-D.Adams</a>          7.1/9.8       72.50         0.10          24.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4429615">4-Z.Flowers</a>         5.3/7.6       60.40         0.40          31.00         0.10          
+[LV]  <a href="http://127.0.0.1:8000/player?id=3916433">16-J.Meyers</a>         4.9/7.2       56.30         0.50          30.00         0.00          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4428718">11-T.Tucker</a>         5.1/7.2       51.00         0.60          22.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4360939">7-R.Bateman</a>         3.9/5.4       41.40         0.50          26.00         0.10          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4038441">43-J.Hill</a>           2.8/4.3       30.80         0.10          20.00         0.10          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4048244">22-A.Mattison</a>       2.2/3.2       24.80         0.30          27.00         0.10          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4361777">3-Z.White</a>           1.8/2.8       19.10         0.40          28.00         0.10          
+[BAL] <a href="http://127.0.0.1:8000/player?id=2971618">15-N.Agholor</a>        1.7/2.3       17.60         0.10          22.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=3043078">22-D.Henry</a>          1.3/1.8       14.10         0.20          18.00         0.00          
+[LV]  <a href="http://127.0.0.1:8000/player?id=2576336">8-A.Abdullah</a>        1.2/1.6       12.60         0.10          21.00         0.00          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4432665">89-B.Bowers</a>         0.8/1.1       10.70         0.20          31.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=3116365">89-M.Andrews</a>        0.7/1.1       6.90          0.10          18.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4596334">34-K.Mitchell</a>       0.7/1.2       6.80          0.00          20.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4241424">16-T.Wallace</a>        0.6/0.7       6.60          0.30          26.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4411193">3-D.Harty</a>           0.3/0.3       4.60          0.00          17.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=2975417">42-P.Ricard</a>         0.4/0.5       3.90          0.00          14.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=3916387">8-L.Jackson</a>         0.1/0.3       3.30          0.00          18.00         0.00          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4036211">19-D.Turner</a>         0.3/0.5       3.30          0.00          12.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4361050">80-I.Likely</a>         0.3/0.4       2.60          0.00          15.00         0.00          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4038524">15-G.Minshew</a>        0.2/0.2       2.30          0.00          14.00         0.00          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4429086">87-M.Mayer</a>          0.1/0.2       1.30          0.00          13.00         0.00          
+[BAL] <a href="http://127.0.0.1:8000/player?id=15683">9-J.Tucker</a>          0.1/0.1       1.20          0.00          12.00         0.00          
+
+== FANTASY POINTS ==
+
+[BAL] <a href="http://127.0.0.1:8000/player?id=3916387">8-L.Jackson</a>         22.12         
+[LV]  <a href="http://127.0.0.1:8000/player?id=4038524">15-G.Minshew</a>        17.97         
+[LV]  <a href="http://127.0.0.1:8000/player?id=4428718">11-T.Tucker</a>         17.75         
+[BAL] <a href="http://127.0.0.1:8000/player?id=4429615">4-Z.Flowers</a>         14.79         
+[LV]  <a href="http://127.0.0.1:8000/player?id=16800">17-D.Adams</a>            14.78         
+[LV]  <a href="http://127.0.0.1:8000/player?id=3916433">16-J.Meyers</a>         14.30         
+[LV]  <a href="http://127.0.0.1:8000/player?id=4048244">22-A.Mattison</a>       11.88         
+[BAL] <a href="http://127.0.0.1:8000/player?id=3043078">22-D.Henry</a>          11.33         
+[BAL] <a href="http://127.0.0.1:8000/player?id=4038441">43-J.Hill</a>           11.23         
+[LV]  <a href="http://127.0.0.1:8000/player?id=4361777">3-Z.White</a>           11.08         
+[BAL] <a href="http://127.0.0.1:8000/player?id=4360939">7-R.Bateman</a>         10.84         
+[BAL] <a href="http://127.0.0.1:8000/player?id=4596334">34-K.Mitchell</a>       4.85          
+[BAL] <a href="http://127.0.0.1:8000/player?id=2971618">15-N.Agholor</a>        4.06          
+[LV]  <a href="http://127.0.0.1:8000/player?id=2576336">8-A.Abdullah</a>        3.21          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4432665">89-B.Bowers</a>         3.07          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4241424">16-T.Wallace</a>        3.06          
+[BAL] <a href="http://127.0.0.1:8000/player?id=3116365">89-M.Andrews</a>        2.05          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4411193">3-D.Harty</a>           1.56          
+[BAL] <a href="http://127.0.0.1:8000/player?id=2975417">42-P.Ricard</a>         0.79          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4036211">19-D.Turner</a>         0.63          
+[BAL] <a href="http://127.0.0.1:8000/player?id=4361050">80-I.Likely</a>         0.56          
+[BAL] <a href="http://127.0.0.1:8000/player?id=3915381">33-J.Kelly Jr.</a>      0.38          
+[LV]  <a href="http://127.0.0.1:8000/player?id=4429086">87-M.Mayer</a>          0.23          
+[BAL] <a href="http://127.0.0.1:8000/player?id=15683">9-J.Tucker</a>            0.22          
+
+CAR (60.0%) vs (40.0%) LAC
+
+CAR:
+PA: 16.5
+D: 0.0
+DIFF: 2.1
+PF: 18.6
+W: 6.0
+L: 4.0
+
+LAC:
+PA: 18.6
+D: 0.0
+DIFF: -2.1
+PF: 16.5
+W: 4.0
+L: 6.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[LAC] <a href="http://127.0.0.1:8000/player?id=4038941">10-J.Herbert</a>        23.7/37.4     242.60        1.20          0.40          0.20          88.16         
+[CAR] <a href="http://127.0.0.1:8000/player?id=4685720">9-B.Young</a>           16.7/29.8     183.00        0.90          0.60          0.00          76.05         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[CAR] <a href="http://127.0.0.1:8000/player?id=4241416">30-C.Hubbard</a>        10.9          51.90         51.00         0.20          0.00          4.76          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4045163">6-M.Sanders</a>         10.4          50.40         69.00         0.40          0.10          4.85          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4685720">9-B.Young</a>           7.4           46.50         68.00         0.40          0.20          6.28          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3051926">4-G.Edwards</a>         8.5           35.20         15.00         0.00          0.00          4.14          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4362477">12-D.Davis</a>          5.3           23.70         10.00         0.10          0.00          4.47          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4241985">27-J.K.Dobbins</a>      4.7           20.90         19.00         0.00          0.00          4.45          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4038941">10-J.Herbert</a>        4.3           20.70         15.00         0.10          0.00          4.81          
+[CAR] <a href="http://127.0.0.1:8000/player?id=16460">19-A.Thielen</a>        1.6           8.80          35.00         0.20          0.00          5.50          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4259308">3-R.Blackshear</a>      0.7           8.70          64.00         0.10          0.00          12.43         
+[LAC] <a href="http://127.0.0.1:8000/player?id=4429025">1-Q.Johnston</a>        1.7           8.10          10.00         0.00          0.00          4.76          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4372071">28-H.Haskins</a>        0.5           2.00          5.00          0.00          0.00          4.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=3932905">5-D.Johnson</a>         0.4           1.40          5.00          0.00          0.00          3.50          
+[CAR] <a href="http://127.0.0.1:8000/player?id=15153">10-J.Hekker</a>         0.3           0.60          3.00          0.00          0.00          2.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[LAC] <a href="http://127.0.0.1:8000/player?id=4242433">5-J.Palmer</a>          7.3/11.4      71.60         0.60          24.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3115394">9-D.Chark Jr.</a>       6.4/9.3       67.50         0.20          30.00         0.20          
+[CAR] <a href="http://127.0.0.1:8000/player?id=3932905">5-D.Johnson</a>         4.9/8.1       56.20         0.60          33.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=16460">19-A.Thielen</a>        3.7/7.0       43.90         0.10          28.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4612826">15-L.McConkey</a>       4.3/6.9       41.50         0.30          19.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4429025">1-Q.Johnston</a>        2.7/4.2       32.00         0.00          29.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4241416">30-C.Hubbard</a>        2.2/3.4       22.40         0.20          23.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4045163">6-M.Sanders</a>         1.9/3.5       20.90         0.00          23.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4430034">17-X.Legette</a>        1.9/3.8       15.90         0.00          23.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3051926">4-G.Edwards</a>         1.0/1.9       9.90          0.00          17.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4685720">9-B.Young</a>           0.4/0.6       6.30          0.00          35.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4362477">12-D.Davis</a>          0.5/1.3       5.20          0.00          14.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4038941">10-J.Herbert</a>        0.5/0.5       4.80          0.00          14.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4426485">15-J.Mingo</a>          0.4/1.1       4.50          0.00          15.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4241985">27-J.K.Dobbins</a>      0.3/0.3       4.10          0.00          19.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4372780">82-T.Tremble</a>        0.4/0.7       3.70          0.00          13.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4212909">83-D.Moore</a>          0.3/0.3       3.20          0.00          12.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4360739">87-S.Fehoko</a>         0.2/0.5       2.70          0.00          14.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3127292">81-W.Dissly</a>         0.4/0.9       2.60          0.10          10.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4431588">0-J.Sanders</a>         0.3/0.5       2.50          0.00          14.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4259308">3-R.Blackshear</a>      0.2/0.5       1.80          0.00          12.00         0.00          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4034949">4-E.Pineiro</a>         0.1/0.3       1.70          0.00          17.00         0.00          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3924365">88-H.Hurst</a>          0.1/0.2       0.70          0.00          7.00          0.00          
+
+== FANTASY POINTS ==
+
+[LAC] <a href="http://127.0.0.1:8000/player?id=4242433">5-J.Palmer</a>          18.06         
+[CAR] <a href="http://127.0.0.1:8000/player?id=4685720">9-B.Young</a>           17.40         
+[LAC] <a href="http://127.0.0.1:8000/player?id=4038941">10-J.Herbert</a>        16.95         
+[CAR] <a href="http://127.0.0.1:8000/player?id=3932905">5-D.Johnson</a>         14.26         
+[LAC] <a href="http://127.0.0.1:8000/player?id=3115394">9-D.Chark Jr.</a>       13.95         
+[CAR] <a href="http://127.0.0.1:8000/player?id=4241416">30-C.Hubbard</a>        12.03         
+[CAR] <a href="http://127.0.0.1:8000/player?id=4045163">6-M.Sanders</a>         11.23         
+[CAR] <a href="http://127.0.0.1:8000/player?id=16460">19-A.Thielen</a>          10.77         
+[LAC] <a href="http://127.0.0.1:8000/player?id=4612826">15-L.McConkey</a>       10.25         
+[LAC] <a href="http://127.0.0.1:8000/player?id=4429025">1-Q.Johnston</a>        6.71          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3051926">4-G.Edwards</a>         5.51          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4362477">12-D.Davis</a>          3.99          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4430034">17-X.Legette</a>        3.49          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4241985">27-J.K.Dobbins</a>      2.80          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4259308">3-R.Blackshear</a>      1.85          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3127292">81-W.Dissly</a>         1.26          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4426485">15-J.Mingo</a>          0.85          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4372780">82-T.Tremble</a>        0.77          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4212909">83-D.Moore</a>          0.62          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4431588">0-J.Sanders</a>         0.55          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4360739">87-S.Fehoko</a>         0.47          
+[CAR] <a href="http://127.0.0.1:8000/player?id=4034949">4-E.Pineiro</a>         0.27          
+[LAC] <a href="http://127.0.0.1:8000/player?id=4372071">28-H.Haskins</a>        0.20          
+[LAC] <a href="http://127.0.0.1:8000/player?id=3924365">88-H.Hurst</a>          0.17          
+[CAR] <a href="http://127.0.0.1:8000/player?id=15153">10-J.Hekker</a>           0.06          
+
+NO (60.0%) vs (40.0%) DAL
+
+NO:
+PA: 22.6
+D: 0.0
+DIFF: -0.8
+PF: 21.8
+W: 6.0
+L: 4.0
+
+DAL:
+PA: 21.8
+D: 0.0
+DIFF: 0.8
+PF: 22.6
+W: 4.0
+L: 6.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[DAL] <a href="http://127.0.0.1:8000/player?id=2577417">4-D.Prescott</a>        24.7/36.5     266.60        2.00          1.00          0.20          95.76         
+[NO]  <a href="http://127.0.0.1:8000/player?id=16757">4-D.Carr</a>            23.0/34.8     260.30        1.60          0.80          0.30          94.07         
+[NO]  <a href="http://127.0.0.1:8000/player?id=2468609">7-T.Hill</a>            0.8/1.1       8.80          0.00          0.00          0.00          96.02         
+[DAL] <a href="http://127.0.0.1:8000/player?id=4249417">1-J.Tolbert</a>         0.0/0.1       0.00          0.00          0.00          0.00          39.58         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[DAL] <a href="http://127.0.0.1:8000/player?id=3051392">15-E.Elliott</a>        9.8           42.10         9.00          0.60          0.00          4.30          
+[NO]  <a href="http://127.0.0.1:8000/player?id=3054850">41-A.Kamara</a>         9.8           40.50         12.00         0.20          0.10          4.13          
+[NO]  <a href="http://127.0.0.1:8000/player?id=2980453">21-J.Williams</a>       6.9           32.30         15.00         0.10          0.00          4.68          
+[NO]  <a href="http://127.0.0.1:8000/player?id=2468609">7-T.Hill</a>            6.2           31.70         58.00         0.20          0.00          5.11          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4038815">23-R.Dowdle</a>         5.7           23.00         8.00          0.00          0.00          4.04          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4599739">25-K.Miller</a>         3.4           17.20         21.00         0.00          0.00          5.06          
+[DAL] <a href="http://127.0.0.1:8000/player?id=3676833">9-K.Turpin</a>          3.4           16.20         9.00          0.10          0.00          4.76          
+[DAL] <a href="http://127.0.0.1:8000/player?id=2577417">4-D.Prescott</a>        3.2           13.60         10.00         0.00          0.10          4.25          
+[NO]  <a href="http://127.0.0.1:8000/player?id=16757">4-D.Carr</a>            1.3           8.00          31.00         0.20          0.00          6.15          
+[DAL] <a href="http://127.0.0.1:8000/player?id=16731">3-B.Cooks</a>           1.8           7.40          6.00          0.00          0.00          4.11          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4383396">40-H.Luepke</a>         0.8           3.20          5.00          0.00          0.00          4.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4361370">12-C.Olave</a>          0.7           3.10          5.00          0.00          0.00          4.43          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4032473">22-R.Shaheed</a>        0.4           2.70          18.00         0.00          0.00          6.75          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4431453">42-D.Vaughn</a>         0.6           2.70          8.00          0.10          0.00          4.50          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4243004">33-J.Mims</a>           0.6           1.90          5.00          0.00          0.00          3.17          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4241389">88-C.Lamb</a>           0.2           0.30          2.00          0.00          0.00          1.50          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[NO]  <a href="http://127.0.0.1:8000/player?id=4032473">22-R.Shaheed</a>        7.8/11.5      91.60         0.40          25.00         0.10          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4361370">12-C.Olave</a>          7.3/11.0      85.00         0.70          32.00         0.10          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4241389">88-C.Lamb</a>           7.2/10.9      76.50         0.80          30.00         0.10          
+[DAL] <a href="http://127.0.0.1:8000/player?id=16731">3-B.Cooks</a>           5.6/8.3       65.30         0.50          28.00         0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4036335">11-C.Wilson Jr.</a>     4.7/7.2       46.00         0.20          26.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=3051392">15-E.Elliott</a>        4.1/6.7       39.70         0.10          23.00         0.10          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4249417">1-J.Tolbert</a>         2.1/3.0       25.40         0.20          36.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4038815">23-R.Dowdle</a>         1.9/2.6       22.10         0.10          29.00         0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=3054850">41-A.Kamara</a>         1.8/2.6       20.60         0.10          19.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4692835">83-J.Brooks</a>         1.2/1.5       11.10         0.00          23.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4372096">86-L.Schoonmaker</a>    0.8/1.1       9.60          0.20          18.00         0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=2468609">7-T.Hill</a>            0.6/0.6       8.20          0.00          25.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4431453">42-D.Vaughn</a>         0.6/0.7       6.30          0.00          20.00         0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=2980453">21-J.Williams</a>       0.5/0.9       5.40          0.00          17.00         0.10          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4573697">84-M.Tipton</a>         0.3/0.3       3.90          0.00          19.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=2577417">4-D.Prescott</a>        0.4/0.6       3.90          0.00          11.00         0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4427985">16-B.Means</a>          0.3/0.5       2.90          0.20          13.00         0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=3843945">87-F.Moreau</a>         0.3/1.0       2.60          0.00          14.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4360967">89-B.Spann-Ford</a>     0.2/0.2       2.20          0.00          12.00         0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=16757">4-D.Carr</a>            0.1/0.1       2.10          0.00          21.00         0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=3676833">9-K.Turpin</a>          0.3/0.7       2.00          0.10          9.00          0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=3953687">17-B.Aubrey</a>         0.2/0.2       1.70          0.00          9.00          0.00          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4383396">40-H.Luepke</a>         0.1/0.1       0.80          0.00          8.00          0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4599739">25-K.Miller</a>         0.1/0.1       0.80          0.00          8.00          0.00          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4243004">33-J.Mims</a>           0.0/0.1       0.00          0.00          0.00          0.00          
+
+== FANTASY POINTS ==
+
+[NO]  <a href="http://127.0.0.1:8000/player?id=4361370">12-C.Olave</a>          20.11         
+[DAL] <a href="http://127.0.0.1:8000/player?id=4241389">88-C.Lamb</a>           19.48         
+[NO]  <a href="http://127.0.0.1:8000/player?id=4032473">22-R.Shaheed</a>        19.43         
+[DAL] <a href="http://127.0.0.1:8000/player?id=2577417">4-D.Prescott</a>        18.21         
+[NO]  <a href="http://127.0.0.1:8000/player?id=16757">4-D.Carr</a>              16.92         
+[DAL] <a href="http://127.0.0.1:8000/player?id=3051392">15-E.Elliott</a>        16.28         
+[DAL] <a href="http://127.0.0.1:8000/player?id=16731">3-B.Cooks</a>             15.87         
+[NO]  <a href="http://127.0.0.1:8000/player?id=4036335">11-C.Wilson Jr.</a>     10.50         
+[NO]  <a href="http://127.0.0.1:8000/player?id=3054850">41-A.Kamara</a>         9.51          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4038815">23-R.Dowdle</a>         7.01          
+[NO]  <a href="http://127.0.0.1:8000/player?id=2468609">7-T.Hill</a>            6.14          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4249417">1-J.Tolbert</a>         5.84          
+[NO]  <a href="http://127.0.0.1:8000/player?id=2980453">21-J.Williams</a>       4.67          
+[DAL] <a href="http://127.0.0.1:8000/player?id=3676833">9-K.Turpin</a>          3.32          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4372096">86-L.Schoonmaker</a>    2.96          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4692835">83-J.Brooks</a>         2.31          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4431453">42-D.Vaughn</a>         2.10          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4599739">25-K.Miller</a>         1.90          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4427985">16-B.Means</a>          1.79          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4573697">84-M.Tipton</a>         0.69          
+[NO]  <a href="http://127.0.0.1:8000/player?id=3843945">87-F.Moreau</a>         0.56          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4383396">40-H.Luepke</a>         0.50          
+[DAL] <a href="http://127.0.0.1:8000/player?id=4360967">89-B.Spann-Ford</a>     0.42          
+[DAL] <a href="http://127.0.0.1:8000/player?id=3953687">17-B.Aubrey</a>         0.37          
+[NO]  <a href="http://127.0.0.1:8000/player?id=4243004">33-J.Mims</a>           0.19          
+
+PIT (50.0%) vs (40.0%) DEN
+
+PIT:
+PA: 17.5
+D: 1.0
+DIFF: 1.2
+PF: 18.7
+W: 5.0
+L: 4.0
+
+DEN:
+PA: 18.7
+D: 1.0
+DIFF: -1.2
+PF: 17.5
+W: 4.0
+L: 5.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[PIT] <a href="http://127.0.0.1:8000/player?id=14881">3-R.Wilson</a>          23.2/34.1     238.10        1.40          0.50          0.20          95.45         
+[DEN] <a href="http://127.0.0.1:8000/player?id=4426338">10-B.Nix</a>            14.3/24.1     171.40        0.80          0.40          0.40          85.31         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[PIT] <a href="http://127.0.0.1:8000/player?id=4241457">22-N.Harris</a>         9.0           52.60         59.00         0.40          0.00          5.84          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4686472">19-M.Mims Jr.</a>       9.5           48.10         74.00         0.20          0.20          5.06          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4361579">33-J.Williams</a>       11.5          43.50         11.00         0.40          0.10          3.78          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4722893">38-J.McLaughlin</a>     10.3          42.60         11.00         0.10          0.00          4.14          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4569987">30-J.Warren</a>         8.3           35.40         14.00         0.20          0.00          4.27          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4243389">19-C.Austin III</a>     5.7           27.40         47.00         0.10          0.10          4.81          
+[PIT] <a href="http://127.0.0.1:8000/player?id=14881">3-R.Wilson</a>          4.7           21.70         16.00         0.00          0.00          4.62          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4426338">10-B.Nix</a>            1.4           10.10         17.00         0.10          0.00          7.21          
+[DEN] <a href="http://127.0.0.1:8000/player?id=2515270">20-M.Burton</a>         2.0           4.00          5.00          0.00          0.00          2.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4035656">15-B.Skowronek</a>      0.4           3.30          12.00         0.00          0.00          8.25          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4361604">25-B.Watson</a>         0.8           2.40          5.00          0.00          0.00          3.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=3930066">11-V.Jefferson</a>      0.3           1.30          5.00          0.00          0.00          4.33          
+[PIT] <a href="http://127.0.0.1:8000/player?id=15807">84-C.Patterson</a>      0.5           1.30          4.00          0.00          0.00          2.60          
+[DEN] <a href="http://127.0.0.1:8000/player?id=3128429">14-C.Sutton</a>         0.2           1.20          9.00          0.00          0.00          6.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4426354">14-G.Pickens</a>        0.2           0.40          2.00          0.00          0.00          2.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[PIT] <a href="http://127.0.0.1:8000/player?id=4426354">14-G.Pickens</a>        5.7/8.4       56.50         0.20          24.00         0.10          
+[PIT] <a href="http://127.0.0.1:8000/player?id=3930066">11-V.Jefferson</a>      5.0/7.4       55.00         0.40          32.00         0.10          
+[DEN] <a href="http://127.0.0.1:8000/player?id=3128429">14-C.Sutton</a>         4.0/6.8       53.30         0.20          37.00         0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=3115306">11-J.Reynolds</a>       3.5/5.4       42.50         0.30          24.00         0.30          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4569987">30-J.Warren</a>         4.2/7.0       40.90         0.30          23.00         0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4361579">33-J.Williams</a>       3.1/5.2       34.30         0.10          25.00         0.10          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4241457">22-N.Harris</a>         2.7/3.4       31.30         0.10          22.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4243389">19-C.Austin III</a>     2.5/3.8       25.30         0.00          34.00         0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4722893">38-J.McLaughlin</a>     2.3/3.6       23.90         0.10          20.00         0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=2515270">20-M.Burton</a>         0.4/0.6       5.70          0.10          21.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=14881">3-R.Wilson</a>          0.6/0.7       5.60          0.20          12.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4431492">10-R.Wilson</a>         0.4/0.5       5.50          0.00          34.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=15807">84-C.Patterson</a>      0.4/0.6       5.40          0.20          17.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4361411">88-P.Freiermuth</a>     0.6/0.8       5.10          0.00          14.00         0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4367209">80-G.Dulcich</a>        0.3/0.5       4.90          0.00          32.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=3914397">13-S.Miller</a>         0.6/0.7       4.50          0.00          10.00         0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4686472">19-M.Mims Jr.</a>       0.3/0.8       3.70          0.00          15.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4035656">15-B.Skowronek</a>      0.3/0.6       2.20          0.00          9.00          0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4383440">45-N.Adkins</a>         0.2/0.4       1.80          0.00          12.00         0.00          
+[PIT] <a href="http://127.0.0.1:8000/player?id=2508256">81-M.Pruitt</a>         0.2/0.2       0.80          0.00          4.00          0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4431280">16-T.Franklin</a>       0.1/0.3       0.80          0.00          8.00          0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4039057">84-L.Humphrey</a>       0.1/0.3       0.50          0.00          5.00          0.00          
+[DEN] <a href="http://127.0.0.1:8000/player?id=3911853">82-A.Trautman</a>       0.0/0.2       0.00          0.00          0.00          0.00          
+
+== FANTASY POINTS ==
+
+[PIT] <a href="http://127.0.0.1:8000/player?id=14881">3-R.Wilson</a>            18.25         
+[PIT] <a href="http://127.0.0.1:8000/player?id=4569987">30-J.Warren</a>         14.83         
+[PIT] <a href="http://127.0.0.1:8000/player?id=4241457">22-N.Harris</a>         14.09         
+[DEN] <a href="http://127.0.0.1:8000/player?id=4361579">33-J.Williams</a>       13.48         
+[PIT] <a href="http://127.0.0.1:8000/player?id=3930066">11-V.Jefferson</a>      12.83         
+[PIT] <a href="http://127.0.0.1:8000/player?id=4426354">14-G.Pickens</a>        12.39         
+[DEN] <a href="http://127.0.0.1:8000/player?id=3128429">14-C.Sutton</a>         10.65         
+[DEN] <a href="http://127.0.0.1:8000/player?id=4722893">38-J.McLaughlin</a>     10.15         
+[DEN] <a href="http://127.0.0.1:8000/player?id=4426338">10-B.Nix</a>            10.07         
+[DEN] <a href="http://127.0.0.1:8000/player?id=3115306">11-J.Reynolds</a>       8.95          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4243389">19-C.Austin III</a>     8.17          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4686472">19-M.Mims Jr.</a>       6.28          
+[PIT] <a href="http://127.0.0.1:8000/player?id=15807">84-C.Patterson</a>        2.27          
+[DEN] <a href="http://127.0.0.1:8000/player?id=2515270">20-M.Burton</a>         1.97          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4361411">88-P.Freiermuth</a>     1.11          
+[PIT] <a href="http://127.0.0.1:8000/player?id=3914397">13-S.Miller</a>         1.05          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4431492">10-R.Wilson</a>         0.95          
+[PIT] <a href="http://127.0.0.1:8000/player?id=4035656">15-B.Skowronek</a>      0.85          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4367209">80-G.Dulcich</a>        0.79          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4383440">45-N.Adkins</a>         0.38          
+[PIT] <a href="http://127.0.0.1:8000/player?id=2508256">81-M.Pruitt</a>         0.28          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4361604">25-B.Watson</a>         0.24          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4431280">16-T.Franklin</a>       0.18          
+[DEN] <a href="http://127.0.0.1:8000/player?id=4039057">84-L.Humphrey</a>       0.15          
+[DEN] <a href="http://127.0.0.1:8000/player?id=3911853">82-A.Trautman</a>       0.00          
+
+DET (60.0%) vs (40.0%) TB
+
+DET:
+PA: 21.5
+D: 0.0
+DIFF: -0.1
+PF: 21.4
+W: 6.0
+L: 4.0
+
+TB:
+PA: 21.4
+D: 0.0
+DIFF: 0.1
+PF: 21.5
+W: 4.0
+L: 6.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[TB]  <a href="http://127.0.0.1:8000/player?id=3052587">6-B.Mayfield</a>        21.9/34.9     269.60        2.10          1.20          0.20          92.29         
+[DET] <a href="http://127.0.0.1:8000/player?id=3046779">16-J.Goff</a>           21.7/34.7     255.50        1.80          0.90          0.30          91.36         
+[TB]  <a href="http://127.0.0.1:8000/player?id=3116165">14-C.Godwin</a>         0.1/0.1       1.00          0.00          0.00          0.00          108.33        
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[DET] <a href="http://127.0.0.1:8000/player?id=4035538">5-D.Montgomery</a>      10.8          59.80         76.00         0.40          0.20          5.54          
+[DET] <a href="http://127.0.0.1:8000/player?id=2973405">11-K.Raymond</a>        7.2           36.10         14.00         0.20          0.00          5.01          
+[DET] <a href="http://127.0.0.1:8000/player?id=4429795">26-J.Gibbs</a>          7.7           35.00         13.00         0.20          0.20          4.55          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4697815">1-R.White</a>           6.6           31.10         32.00         0.30          0.20          4.71          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4596448">7-B.Irving</a>          6.0           20.80         8.00          0.10          0.20          3.47          
+[DET] <a href="http://127.0.0.1:8000/player?id=3046779">16-J.Goff</a>           4.2           20.60         17.00         0.10          0.10          4.90          
+[TB]  <a href="http://127.0.0.1:8000/player?id=3119195">22-C.Edmonds</a>        4.8           17.60         9.00          0.10          0.10          3.67          
+[TB]  <a href="http://127.0.0.1:8000/player?id=3052587">6-B.Mayfield</a>        3.0           16.60         17.00         0.10          0.00          5.53          
+[DET] <a href="http://127.0.0.1:8000/player?id=4430027">87-S.LaPorta</a>        0.8           4.90          13.00         0.00          0.00          6.13          
+[DET] <a href="http://127.0.0.1:8000/player?id=4421446">13-C.Reynolds</a>       1.0           3.60          6.00          0.00          0.00          3.60          
+[TB]  <a href="http://127.0.0.1:8000/player?id=3116165">14-C.Godwin</a>         0.6           3.10          9.00          0.00          0.00          5.17          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4430871">44-S.Tucker</a>         0.4           1.80          8.00          0.00          0.00          4.50          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4426407">10-T.Palmer</a>         0.4           1.20          5.00          0.00          0.00          3.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=16737">13-M.Evans</a>          0.3           0.90          3.00          0.00          0.00          3.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=4426388">9-J.Williams</a>        0.2           0.70          6.00          0.00          0.00          3.50          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4429006">18-R.Jarrett</a>        0.1           0.40          4.00          0.00          0.00          4.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=4374302">14-A.St.Brown</a>       0.1           0.20          2.00          0.00          0.00          2.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[DET] <a href="http://127.0.0.1:8000/player?id=4426388">9-J.Williams</a>        7.7/11.4      81.20         0.50          25.00         0.10          
+[TB]  <a href="http://127.0.0.1:8000/player?id=16737">13-M.Evans</a>          6.3/10.0      79.60         0.20          40.00         0.10          
+[DET] <a href="http://127.0.0.1:8000/player?id=4374302">14-A.St.Brown</a>       5.3/9.2       65.70         0.20          42.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=3116165">14-C.Godwin</a>         4.5/7.5       60.10         0.70          37.00         0.10          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4697815">1-R.White</a>           4.8/6.8       58.80         0.60          31.00         0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=2973405">11-K.Raymond</a>        4.5/6.6       53.80         0.30          29.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4430834">15-J.McMillan</a>       2.4/4.2       24.30         0.20          29.00         0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=4429795">26-J.Gibbs</a>          1.5/3.2       19.40         0.40          24.00         0.20          
+[TB]  <a href="http://127.0.0.1:8000/player?id=3119195">22-C.Edmonds</a>        1.5/2.7       18.70         0.00          29.00         0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=4035538">5-D.Montgomery</a>      1.0/1.5       15.30         0.30          26.00         0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=4430027">87-S.LaPorta</a>        0.7/1.1       10.90         0.00          29.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4426407">10-T.Palmer</a>         0.8/1.3       8.00          0.10          18.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4429006">18-R.Jarrett</a>        0.8/1.1       6.60          0.10          14.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=3052587">6-B.Mayfield</a>        0.2/0.4       5.70          0.00          36.00         0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=3134353">17-T.Patrick</a>        0.5/0.9       5.30          0.00          19.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4243331">88-C.Otton</a>          0.4/0.5       5.30          0.00          19.00         0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=4421446">13-C.Reynolds</a>       0.2/0.3       2.20          0.10          15.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=5097554">19-K.Johnson</a>        0.1/0.2       2.10          0.00          12.00         0.00          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4372505">87-P.Durham</a>         0.2/0.3       1.40          0.20          12.00         0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=3126997">85-T.Kennedy</a>        0.2/0.3       1.00          0.00          6.00          0.00          
+[DET] <a href="http://127.0.0.1:8000/player?id=4242392">89-B.Wright</a>         0.1/0.2       0.70          0.00          7.00          0.00          
+
+== FANTASY POINTS ==
+
+[TB]  <a href="http://127.0.0.1:8000/player?id=3052587">6-B.Mayfield</a>        19.41         
+[TB]  <a href="http://127.0.0.1:8000/player?id=4697815">1-R.White</a>           18.79         
+[DET] <a href="http://127.0.0.1:8000/player?id=4426388">9-J.Williams</a>        18.69         
+[DET] <a href="http://127.0.0.1:8000/player?id=3046779">16-J.Goff</a>           17.48         
+[DET] <a href="http://127.0.0.1:8000/player?id=2973405">11-K.Raymond</a>        16.49         
+[TB]  <a href="http://127.0.0.1:8000/player?id=16737">13-M.Evans</a>            15.35         
+[TB]  <a href="http://127.0.0.1:8000/player?id=3116165">14-C.Godwin</a>         14.86         
+[DET] <a href="http://127.0.0.1:8000/player?id=4374302">14-A.St.Brown</a>       13.09         
+[DET] <a href="http://127.0.0.1:8000/player?id=4035538">5-D.Montgomery</a>      12.31         
+[DET] <a href="http://127.0.0.1:8000/player?id=4429795">26-J.Gibbs</a>          9.74          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4430834">15-J.McMillan</a>       6.03          
+[TB]  <a href="http://127.0.0.1:8000/player?id=3119195">22-C.Edmonds</a>        5.53          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4426407">10-T.Palmer</a>         2.32          
+[DET] <a href="http://127.0.0.1:8000/player?id=4430027">87-S.LaPorta</a>        2.28          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4596448">7-B.Irving</a>          2.28          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4429006">18-R.Jarrett</a>        2.10          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4372505">87-P.Durham</a>         1.54          
+[DET] <a href="http://127.0.0.1:8000/player?id=4421446">13-C.Reynolds</a>       1.38          
+[DET] <a href="http://127.0.0.1:8000/player?id=3134353">17-T.Patrick</a>        1.03          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4243331">88-C.Otton</a>          0.93          
+[TB]  <a href="http://127.0.0.1:8000/player?id=5097554">19-K.Johnson</a>        0.31          
+[DET] <a href="http://127.0.0.1:8000/player?id=3126997">85-T.Kennedy</a>        0.30          
+[TB]  <a href="http://127.0.0.1:8000/player?id=4430871">44-S.Tucker</a>         0.18          
+[DET] <a href="http://127.0.0.1:8000/player?id=4242392">89-B.Wright</a>         0.17          
+
+GB (50.0%) vs (40.0%) IND
+
+GB:
+PA: 15.9
+D: 1.0
+DIFF: 2.0
+PF: 17.9
+W: 5.0
+L: 4.0
+
+IND:
+PA: 17.9
+D: 1.0
+DIFF: -2.0
+PF: 15.9
+W: 4.0
+L: 5.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[IND] <a href="http://127.0.0.1:8000/player?id=4429084">5-A.Richardson</a>      14.2/23.3     165.60        1.20          1.00          0.20          81.77         
+[GB]  <a href="http://127.0.0.1:8000/player?id=4242512">2-M.Willis</a>          14.8/22.5     164.60        0.70          0.50          0.00          88.49         
+[GB]  <a href="http://127.0.0.1:8000/player?id=4047365">8-J.Jacobs</a>          0.5/0.6       6.90          0.00          0.00          0.00          114.58        
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[IND] <a href="http://127.0.0.1:8000/player?id=4429084">5-A.Richardson</a>      14.0          69.00         14.00         0.40          0.30          4.93          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4239934">28-A.Dillon</a>         16.6          67.30         12.00         0.60          0.10          4.05          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4047365">8-J.Jacobs</a>          15.4          66.80         14.00         0.40          0.10          4.34          
+[IND] <a href="http://127.0.0.1:8000/player?id=4242335">28-J.Taylor</a>         12.2          59.60         18.00         0.10          0.00          4.89          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4429023">32-M.Lloyd</a>          10.4          41.30         15.00         0.20          0.20          3.97          
+[IND] <a href="http://127.0.0.1:8000/player?id=4241401">27-T.Sermon</a>         8.0           36.80         11.00         0.00          0.10          4.60          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4242512">2-M.Willis</a>          1.6           15.60         42.00         0.00          0.00          9.75          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4259305">80-B.Melton</a>         1.1           4.00          7.00          0.00          0.00          3.64          
+[IND] <a href="http://127.0.0.1:8000/player?id=4429676">31-T.Goodson</a>        0.7           2.90          6.00          0.00          0.00          4.14          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4887558">31-E.Wilson</a>         0.7           2.50          7.00          0.00          0.00          3.57          
+[IND] <a href="http://127.0.0.1:8000/player?id=4035687">11-M.Pittman Jr.</a>    0.5           2.30          6.00          0.00          0.00          4.60          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4248528">9-C.Watson</a>          0.4           2.00          8.00          0.10          0.00          5.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4362249">11-J.Reed</a>           0.3           1.50          7.00          0.00          0.00          5.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4039160">83-K.Granson</a>        0.2           0.70          6.00          0.10          0.00          3.50          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[GB]  <a href="http://127.0.0.1:8000/player?id=4362249">11-J.Reed</a>           4.5/6.4       50.60         0.20          28.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4035687">11-M.Pittman Jr.</a>    4.2/7.6       49.20         0.30          29.00         0.10          
+[IND] <a href="http://127.0.0.1:8000/player?id=4360078">14-A.Pierce</a>         3.4/4.9       39.40         0.30          25.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4248528">9-C.Watson</a>          3.0/4.6       33.00         0.30          25.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4242335">28-J.Taylor</a>         2.6/4.4       25.50         0.10          21.00         0.10          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4239934">28-A.Dillon</a>         1.7/2.8       22.40         0.00          29.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4429676">31-T.Goodson</a>        1.5/2.0       22.40         0.10          34.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4689334">18-M.Heath</a>          1.5/2.3       19.60         0.00          38.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4047365">8-J.Jacobs</a>          2.1/3.2       18.50         0.00          15.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4361432">87-R.Doubs</a>          1.5/2.6       15.20         0.20          16.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4039160">83-K.Granson</a>        0.4/0.8       5.70          0.10          18.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4597500">10-A.Mitchell</a>       0.5/0.6       5.30          0.10          24.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4241401">27-T.Sermon</a>         0.4/1.3       4.70          0.00          19.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4249087">7-M.Gay</a>             0.2/0.3       4.40          0.00          25.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4572680">85-T.Kraft</a>          0.5/0.5       4.20          0.00          17.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4429084">5-A.Richardson</a>      0.3/0.5       4.00          0.00          16.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4061956">16-A.Dulin</a>          0.4/0.6       3.20          0.10          12.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4259305">80-B.Melton</a>         0.2/0.3       2.90          0.00          20.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4428850">13-D.Wicks</a>          0.1/0.1       2.40          0.00          24.00         0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4428085">88-L.Musgrave</a>       0.1/0.1       1.70          0.00          17.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=4429684">6-A.Gould</a>           0.2/0.2       1.60          0.00          8.00          0.00          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4887558">31-E.Wilson</a>         0.1/0.2       1.00          0.00          10.00         0.00          
+[IND] <a href="http://127.0.0.1:8000/player?id=2998565">81-M.Alie-Cox</a>       0.1/0.1       0.20          0.10          2.00          0.00          
+
+== FANTASY POINTS ==
+
+[IND] <a href="http://127.0.0.1:8000/player?id=4429084">5-A.Richardson</a>      18.42         
+[GB]  <a href="http://127.0.0.1:8000/player?id=4239934">28-A.Dillon</a>         14.07         
+[GB]  <a href="http://127.0.0.1:8000/player?id=4047365">8-J.Jacobs</a>          13.11         
+[IND] <a href="http://127.0.0.1:8000/player?id=4242335">28-J.Taylor</a>         12.11         
+[IND] <a href="http://127.0.0.1:8000/player?id=4035687">11-M.Pittman Jr.</a>    10.95         
+[GB]  <a href="http://127.0.0.1:8000/player?id=4362249">11-J.Reed</a>           10.91         
+[GB]  <a href="http://127.0.0.1:8000/player?id=4242512">2-M.Willis</a>          9.94          
+[IND] <a href="http://127.0.0.1:8000/player?id=4360078">14-A.Pierce</a>         9.14          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4248528">9-C.Watson</a>          8.90          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4429023">32-M.Lloyd</a>          4.93          
+[IND] <a href="http://127.0.0.1:8000/player?id=4429676">31-T.Goodson</a>        4.63          
+[IND] <a href="http://127.0.0.1:8000/player?id=4241401">27-T.Sermon</a>         4.35          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4361432">87-R.Doubs</a>          4.22          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4689334">18-M.Heath</a>          3.46          
+[IND] <a href="http://127.0.0.1:8000/player?id=4039160">83-K.Granson</a>        2.24          
+[IND] <a href="http://127.0.0.1:8000/player?id=4597500">10-A.Mitchell</a>       1.63          
+[IND] <a href="http://127.0.0.1:8000/player?id=4061956">16-A.Dulin</a>          1.32          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4572680">85-T.Kraft</a>          0.92          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4259305">80-B.Melton</a>         0.89          
+[IND] <a href="http://127.0.0.1:8000/player?id=2998565">81-M.Alie-Cox</a>       0.72          
+[IND] <a href="http://127.0.0.1:8000/player?id=4249087">7-M.Gay</a>             0.64          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4887558">31-E.Wilson</a>         0.45          
+[IND] <a href="http://127.0.0.1:8000/player?id=4429684">6-A.Gould</a>           0.36          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4428850">13-D.Wicks</a>          0.34          
+[GB]  <a href="http://127.0.0.1:8000/player?id=4428085">88-L.Musgrave</a>       0.27          
+
+CHI (30.0%) vs (60.0%) HOU
+
+CHI:
+PA: 22.7
+D: 1.0
+DIFF: -4.2
+PF: 18.5
+W: 3.0
+L: 6.0
+
+HOU:
+PA: 18.5
+D: 1.0
+DIFF: 4.2
+PF: 22.7
+W: 6.0
+L: 3.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[HOU] <a href="http://127.0.0.1:8000/player?id=4432577">7-C.J.Stroud</a>        20.1/30.1     221.10        1.70          0.50          0.10          100.24        
+[CHI] <a href="http://127.0.0.1:8000/player?id=4431611">18-C.Williams</a>       20.5/31.8     216.80        1.60          0.40          0.30          95.74         
+[HOU] <a href="http://127.0.0.1:8000/player?id=4366031">3-T.Dell</a>            0.7/0.7       6.50          0.10          0.00          0.00          144.94        
+[CHI] <a href="http://127.0.0.1:8000/player?id=15818">13-K.Allen</a>          0.5/0.8       3.90          0.10          0.00          0.00          114.06        
+[HOU] <a href="http://127.0.0.1:8000/player?id=3915398">6-T.Townsend</a>        0.1/0.4       2.60          0.00          0.00          0.00          54.17         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[CHI] <a href="http://127.0.0.1:8000/player?id=4259545">4-D.Swift</a>           13.5          63.20         15.00         0.20          0.00          4.68          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3116385">28-J.Mixon</a>          9.3           46.20         76.00         0.20          0.00          4.97          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4426386">23-R.Johnson</a>        9.2           45.10         25.00         0.00          0.10          4.90          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4360238">31-D.Pierce</a>         8.1           40.10         51.00         0.10          0.10          4.95          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4035886">24-K.Herbert</a>        8.3           33.60         14.00         0.10          0.10          4.05          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4432577">7-C.J.Stroud</a>        3.3           17.20         19.00         0.00          0.00          5.21          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4431611">18-C.Williams</a>       2.2           17.00         15.00         0.00          0.00          7.73          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4366031">3-T.Dell</a>            3.2           15.00         46.00         0.40          0.00          4.69          
+[HOU] <a href="http://127.0.0.1:8000/player?id=2983509">33-D.Ogunbowale</a>     0.9           7.70          46.00         0.10          0.00          8.56          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4035693">12-V.Jones Jr.</a>      1.6           6.90          9.00          0.00          0.00          4.31          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4686422">19-X.Hutchinson</a>     1.5           6.20          12.00         0.00          0.00          4.13          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3917960">82-S.Sims</a>           0.8           3.70          11.00         0.00          0.00          4.63          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4258173">12-N.Collins</a>        0.8           3.70          7.00          0.10          0.00          4.63          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4037457">20-T.Homer</a>          0.8           3.40          8.00          0.00          0.00          4.25          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4567096">8-J.Metchie III</a>     0.6           2.30          5.00          0.00          0.00          3.83          
+[CHI] <a href="http://127.0.0.1:8000/player?id=3918639">14-G.Everett</a>        0.5           1.80          7.00          0.00          0.00          3.60          
+[CHI] <a href="http://127.0.0.1:8000/player?id=3915416">2-D.Moore</a>           0.2           0.90          5.00          0.00          0.00          4.50          
+[CHI] <a href="http://127.0.0.1:8000/player?id=2580216">11-D.Carter</a>         0.2           0.60          4.00          0.00          0.00          3.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=15880">2-R.Woods</a>           0.1           0.30          3.00          0.00          0.00          3.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4565908">10-T.Scott</a>          0.1           0.30          3.00          0.00          0.00          3.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=15818">13-K.Allen</a>          0.2           0.20          2.00          0.00          0.00          1.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=2976212">1-S.Diggs</a>           0.1           0.20          2.00          0.00          0.00          2.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[CHI] <a href="http://127.0.0.1:8000/player?id=3915416">2-D.Moore</a>           7.2/10.5      78.50         0.90          28.00         0.30          
+[HOU] <a href="http://127.0.0.1:8000/player?id=2976212">1-S.Diggs</a>           5.5/8.5       61.30         0.60          36.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4258173">12-N.Collins</a>        4.0/6.5       43.50         0.30          24.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=15818">13-K.Allen</a>          4.2/6.0       40.30         0.30          28.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4366031">3-T.Dell</a>            2.9/4.1       36.40         0.00          29.00         0.10          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4567096">8-J.Metchie III</a>     2.9/3.7       29.10         0.20          26.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3116385">28-J.Mixon</a>          2.2/3.8       22.70         0.10          28.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4431299">15-R.Odunze</a>         2.0/3.2       21.40         0.00          15.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4259545">4-D.Swift</a>           2.0/2.6       20.80         0.20          20.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4565908">10-T.Scott</a>          1.6/3.0       19.20         0.10          19.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4035886">24-K.Herbert</a>        1.4/2.4       15.40         0.00          19.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4426386">23-R.Johnson</a>        1.4/2.5       12.90         0.20          18.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4360238">31-D.Pierce</a>         0.7/0.9       8.30          0.20          23.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4432577">7-C.J.Stroud</a>        0.5/0.5       6.90          0.10          20.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=2983509">33-D.Ogunbowale</a>     0.6/0.6       6.30          0.10          16.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4258595">85-C.Kmet</a>           0.6/0.9       5.50          0.00          15.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4362504">9-B.Jordan</a>          0.5/0.6       4.90          0.10          12.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3117256">86-D.Schultz</a>        0.5/0.7       4.80          0.00          15.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4686422">19-X.Hutchinson</a>     0.3/0.5       3.50          0.10          17.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=2580216">11-D.Carter</a>         0.2/0.4       2.90          0.00          24.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3917960">82-S.Sims</a>           0.2/0.3       1.60          0.00          11.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4035693">12-V.Jones Jr.</a>      0.1/0.5       1.60          0.00          16.00         0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=17427">8-C.Santos</a>          0.2/0.3       1.20          0.00          7.00          0.00          
+[CHI] <a href="http://127.0.0.1:8000/player?id=3918639">14-G.Everett</a>        0.1/0.3       1.00          0.00          10.00         0.00          
+[HOU] <a href="http://127.0.0.1:8000/player?id=15880">2-R.Woods</a>           0.1/0.5       0.90          0.00          9.00          0.00          
+
+== FANTASY POINTS ==
+
+[CHI] <a href="http://127.0.0.1:8000/player?id=3915416">2-D.Moore</a>           19.94         
+[HOU] <a href="http://127.0.0.1:8000/player?id=4432577">7-C.J.Stroud</a>        17.95         
+[CHI] <a href="http://127.0.0.1:8000/player?id=4431611">18-C.Williams</a>       15.37         
+[HOU] <a href="http://127.0.0.1:8000/player?id=2976212">1-S.Diggs</a>           15.25         
+[CHI] <a href="http://127.0.0.1:8000/player?id=4259545">4-D.Swift</a>           12.80         
+[HOU] <a href="http://127.0.0.1:8000/player?id=4258173">12-N.Collins</a>        11.12         
+[HOU] <a href="http://127.0.0.1:8000/player?id=4366031">3-T.Dell</a>            10.90         
+[HOU] <a href="http://127.0.0.1:8000/player?id=3116385">28-J.Mixon</a>          10.89         
+[CHI] <a href="http://127.0.0.1:8000/player?id=15818">13-K.Allen</a>            10.61         
+[CHI] <a href="http://127.0.0.1:8000/player?id=4426386">23-R.Johnson</a>        8.20          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4567096">8-J.Metchie III</a>     7.24          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4360238">31-D.Pierce</a>         7.14          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4035886">24-K.Herbert</a>        6.70          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4565908">10-T.Scott</a>          4.15          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4431299">15-R.Odunze</a>         4.14          
+[HOU] <a href="http://127.0.0.1:8000/player?id=2983509">33-D.Ogunbowale</a>     3.20          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4686422">19-X.Hutchinson</a>     1.87          
+[HOU] <a href="http://127.0.0.1:8000/player?id=4362504">9-B.Jordan</a>          1.59          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4258595">85-C.Kmet</a>           1.15          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3117256">86-D.Schultz</a>        0.98          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4035693">12-V.Jones Jr.</a>      0.95          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3917960">82-S.Sims</a>           0.73          
+[CHI] <a href="http://127.0.0.1:8000/player?id=2580216">11-D.Carter</a>         0.55          
+[CHI] <a href="http://127.0.0.1:8000/player?id=3918639">14-G.Everett</a>        0.38          
+[CHI] <a href="http://127.0.0.1:8000/player?id=4037457">20-T.Homer</a>          0.34          
+[CHI] <a href="http://127.0.0.1:8000/player?id=17427">8-C.Santos</a>            0.32          
+[HOU] <a href="http://127.0.0.1:8000/player?id=15880">2-R.Woods</a>             0.22          
+[HOU] <a href="http://127.0.0.1:8000/player?id=3915398">6-T.Townsend</a>        0.10          
+
+JAX (40.0%) vs (60.0%) CLE
+
+JAX:
+PA: 20.6
+D: 0.0
+DIFF: -2.3
+PF: 18.3
+W: 4.0
+L: 6.0
+
+CLE:
+PA: 18.3
+D: 0.0
+DIFF: 2.3
+PF: 20.6
+W: 6.0
+L: 4.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[JAX] <a href="http://127.0.0.1:8000/player?id=4360310">16-T.Lawrence</a>       22.0/35.9     260.60        1.20          1.30          0.40          79.45         
+[CLE] <a href="http://127.0.0.1:8000/player?id=3122840">4-D.Watson</a>          18.7/30.6     223.50        1.50          0.70          0.40          90.25         
+[JAX] <a href="http://127.0.0.1:8000/player?id=3895856">13-C.Kirk</a>           0.6/1.0       4.90          0.20          0.00          0.00          112.08        
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[CLE] <a href="http://127.0.0.1:8000/player?id=4372019">34-J.Ford</a>           12.6          58.40         19.00         0.30          0.00          4.63          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4249836">20-P.Strong Jr.</a>     8.4           33.90         18.00         0.00          0.10          4.04          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4239996">1-T.Etienne Jr.</a>     8.0           32.80         14.00         0.30          0.20          4.10          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3128720">24-N.Chubb</a>          7.2           28.30         13.00         0.20          0.30          3.93          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3122840">4-D.Watson</a>          4.6           26.70         18.00         0.10          0.00          5.80          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4360310">16-T.Lawrence</a>       4.8           23.60         15.00         0.00          0.00          4.92          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4429013">4-T.Bigsby</a>          4.2           17.10         13.00         0.00          0.00          4.07          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4039050">12-D.Duvernay</a>       3.5           11.60         15.00         0.30          0.10          3.31          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4372414">8-E.Moore</a>           2.2           10.40         13.00         0.20          0.00          4.73          
+[CLE] <a href="http://127.0.0.1:8000/player?id=2976499">2-A.Cooper</a>          0.6           4.20          24.00         0.10          0.00          7.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=3139602">2-D.Johnson</a>         0.8           3.80          7.00          0.00          0.00          4.75          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3125116">27-D.Foreman</a>        0.6           2.90          9.00          0.00          0.00          4.83          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4369863">19-C.Tillman</a>        0.7           2.80          6.00          0.10          0.00          4.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=3895856">13-C.Kirk</a>           0.3           1.50          10.00         0.00          0.00          5.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4243537">0-G.Davis</a>           0.9           1.50          7.00          0.10          0.00          1.67          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[CLE] <a href="http://127.0.0.1:8000/player?id=2976499">2-A.Cooper</a>          6.3/11.0      74.90         0.60          37.00         0.10          
+[JAX] <a href="http://127.0.0.1:8000/player?id=3895856">13-C.Kirk</a>           6.6/10.2      72.60         0.60          28.00         0.20          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4243537">0-G.Davis</a>           4.7/7.8       57.50         0.30          32.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4239996">1-T.Etienne Jr.</a>     4.2/7.5       50.60         0.10          24.00         0.10          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4372414">8-E.Moore</a>           3.9/6.8       47.20         0.30          22.00         0.20          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4241463">3-J.Jeudy</a>           3.6/5.7       39.20         0.20          26.00         0.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4372019">34-J.Ford</a>           2.6/3.7       35.40         0.20          30.00         0.10          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4432773">7-B.Thomas Jr.</a>      2.1/3.5       26.60         0.10          23.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4245131">15-T.Jones</a>          1.0/1.8       11.90         0.00          15.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=3139602">2-D.Johnson</a>         0.9/1.3       11.60         0.00          23.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4432620">11-P.Washington</a>     0.8/1.2       11.40         0.10          32.00         0.10          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3128452">88-J.Akins</a>          0.8/1.2       10.00         0.00          28.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=3051876">17-E.Engram</a>         0.7/1.4       7.30          0.00          15.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4360310">16-T.Lawrence</a>       0.7/1.0       7.00          0.10          19.00         0.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4369863">19-C.Tillman</a>        0.5/0.5       5.30          0.20          20.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4040612">89-L.Farrell</a>        0.5/0.7       5.00          0.00          16.00         0.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3125116">27-D.Foreman</a>        0.5/0.7       4.90          0.00          13.00         0.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4249836">20-P.Strong Jr.</a>     0.2/0.3       3.20          0.00          18.00         0.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4570409">18-D.Bell</a>           0.2/0.3       2.50          0.00          17.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4039050">12-D.Duvernay</a>       0.3/0.3       2.50          0.10          14.00         0.00          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4429013">4-T.Bigsby</a>          0.1/0.2       1.50          0.00          15.00         0.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3916204">11-J.Proche II</a>      0.1/0.3       0.90          0.00          9.00          0.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4362018">86-B.Whiteheart</a>     0.0/0.1       0.00          0.00          0.00          0.00          
+
+== FANTASY POINTS ==
+
+[CLE] <a href="http://127.0.0.1:8000/player?id=2976499">2-A.Cooper</a>          18.21         
+[JAX] <a href="http://127.0.0.1:8000/player?id=3895856">13-C.Kirk</a>           18.21         
+[JAX] <a href="http://127.0.0.1:8000/player?id=4360310">16-T.Lawrence</a>       16.18         
+[CLE] <a href="http://127.0.0.1:8000/player?id=3122840">4-D.Watson</a>          16.01         
+[CLE] <a href="http://127.0.0.1:8000/player?id=4372019">34-J.Ford</a>           14.78         
+[JAX] <a href="http://127.0.0.1:8000/player?id=4239996">1-T.Etienne Jr.</a>     14.34         
+[JAX] <a href="http://127.0.0.1:8000/player?id=4243537">0-G.Davis</a>           13.00         
+[CLE] <a href="http://127.0.0.1:8000/player?id=4372414">8-E.Moore</a>           12.26         
+[CLE] <a href="http://127.0.0.1:8000/player?id=4241463">3-J.Jeudy</a>           8.72          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4432773">7-B.Thomas Jr.</a>      5.36          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4039050">12-D.Duvernay</a>       3.91          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4249836">20-P.Strong Jr.</a>     3.71          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3128720">24-N.Chubb</a>          3.43          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4369863">19-C.Tillman</a>        3.11          
+[JAX] <a href="http://127.0.0.1:8000/player?id=3139602">2-D.Johnson</a>         2.44          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4432620">11-P.Washington</a>     2.34          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4245131">15-T.Jones</a>          2.19          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4429013">4-T.Bigsby</a>          1.96          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3128452">88-J.Akins</a>          1.80          
+[JAX] <a href="http://127.0.0.1:8000/player?id=3051876">17-E.Engram</a>         1.43          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3125116">27-D.Foreman</a>        1.28          
+[JAX] <a href="http://127.0.0.1:8000/player?id=4040612">89-L.Farrell</a>        1.00          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4570409">18-D.Bell</a>           0.45          
+[CLE] <a href="http://127.0.0.1:8000/player?id=3916204">11-J.Proche II</a>      0.19          
+[CLE] <a href="http://127.0.0.1:8000/player?id=4362018">86-B.Whiteheart</a>     0.00          
+
+KC (70.0%) vs (30.0%) CIN
+
+KC:
+PA: 16.2
+D: 0.0
+DIFF: 8.7
+PF: 24.9
+W: 7.0
+L: 3.0
+
+CIN:
+PA: 24.9
+D: 0.0
+DIFF: -8.7
+PF: 16.2
+W: 3.0
+L: 7.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[KC]  <a href="http://127.0.0.1:8000/player?id=3139477">15-P.Mahomes</a>        25.9/40.4     273.40        2.20          1.10          0.20          90.51         
+[CIN] <a href="http://127.0.0.1:8000/player?id=3915511">9-J.Burrow</a>          21.9/33.1     219.00        1.00          0.90          0.20          83.53         
+[CIN] <a href="http://127.0.0.1:8000/player?id=4362628">1-J.Chase</a>           0.1/0.2       0.80          0.00          0.00          0.00          60.42         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[KC]  <a href="http://127.0.0.1:8000/player?id=4361529">10-I.Pacheco</a>        8.7           48.30         66.00         0.50          0.00          5.55          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4242214">25-C.Edwards-Helaire</a>8.1           38.50         15.00         0.30          0.00          4.75          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4035676">31-Z.Moss</a>           8.5           35.70         15.00         0.10          0.00          4.20          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4257188">15-C.Jones</a>          6.5           32.40         47.00         0.30          0.00          4.98          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4362238">30-C.Brown</a>          6.0           29.10         33.00         0.10          0.30          4.85          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3116389">34-S.Perine</a>         7.1           29.10         12.00         0.30          0.00          4.10          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3139477">15-P.Mahomes</a>        2.2           16.00         21.00         0.10          0.00          7.27          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3915511">9-J.Burrow</a>          2.6           11.90         12.00         0.20          0.00          4.58          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4046530">25-C.Evans</a>          1.4           6.70          9.00          0.00          0.00          4.79          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4683062">1-X.Worthy</a>          0.4           1.70          5.00          0.00          0.00          4.25          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4714365">42-C.Steele</a>         0.3           1.40          8.00          0.00          0.00          4.67          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4035222">32-T.Williams</a>       0.2           0.70          4.00          0.00          0.00          3.50          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4430191">24-S.Moore</a>          0.1           0.50          5.00          0.00          0.00          5.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4428331">4-R.Rice</a>            0.1           0.20          2.00          0.00          0.00          2.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4240472">83-N.Gray</a>           0.1           0.20          2.00          0.00          0.00          2.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[KC]  <a href="http://127.0.0.1:8000/player?id=4683062">1-X.Worthy</a>          7.6/12.2      86.60         0.50          27.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4428331">4-R.Rice</a>            7.9/12.2      83.30         0.90          34.00         0.10          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4362628">1-J.Chase</a>           5.3/9.1       54.30         0.20          38.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3118892">84-J.Watson</a>         5.0/7.9       50.20         0.30          31.00         0.10          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4368003">80-A.Iosivas</a>        4.6/7.2       49.60         0.20          21.00         0.10          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4035676">31-Z.Moss</a>           4.1/6.6       44.60         0.20          24.00         0.00          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4362238">30-C.Brown</a>          4.6/5.5       42.00         0.10          27.00         0.00          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4035222">32-T.Williams</a>       1.3/2.0       12.20         0.10          14.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=15847">87-T.Kelce</a>          0.8/1.4       9.70          0.10          17.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3116389">34-S.Perine</a>         1.0/1.4       9.50          0.00          13.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4361529">10-I.Pacheco</a>        0.9/1.6       9.30          0.30          20.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4242214">25-C.Edwards-Helaire</a>0.9/1.0       8.10          0.10          21.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4035004">17-M.Hardman</a>        0.7/0.8       6.80          0.00          14.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4430191">24-S.Moore</a>          0.6/0.8       4.70          0.00          14.00         0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3120348">9-J.Smith-Schuster</a>  0.4/0.7       4.60          0.00          21.00         0.00          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3931391">16-T.Irwin</a>          0.7/0.8       4.30          0.10          11.00         0.00          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4257188">15-C.Jones</a>          0.4/0.5       3.60          0.00          14.00         0.00          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3116164">88-M.Gesicki</a>        0.4/0.5       3.50          0.00          13.00         0.00          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3915511">9-J.Burrow</a>          0.3/0.7       3.40          0.00          10.00         0.10          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3127310">89-D.Sample</a>         0.2/0.3       1.60          0.00          9.00          0.00          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4046530">25-C.Evans</a>          0.1/0.1       0.70          0.10          7.00          0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4240472">83-N.Gray</a>           0.1/0.2       0.60          0.00          6.00          0.00          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3139477">15-P.Mahomes</a>        0.0/0.2       0.00          0.00          0.00          0.00          
+
+== FANTASY POINTS ==
+
+[KC]  <a href="http://127.0.0.1:8000/player?id=4428331">4-R.Rice</a>            21.45         
+[KC]  <a href="http://127.0.0.1:8000/player?id=4683062">1-X.Worthy</a>          19.43         
+[KC]  <a href="http://127.0.0.1:8000/player?id=3139477">15-P.Mahomes</a>        19.34         
+[CIN] <a href="http://127.0.0.1:8000/player?id=4035676">31-Z.Moss</a>           13.93         
+[CIN] <a href="http://127.0.0.1:8000/player?id=3915511">9-J.Burrow</a>          13.39         
+[CIN] <a href="http://127.0.0.1:8000/player?id=4362238">30-C.Brown</a>          12.31         
+[CIN] <a href="http://127.0.0.1:8000/player?id=4362628">1-J.Chase</a>           11.96         
+[KC]  <a href="http://127.0.0.1:8000/player?id=3118892">84-J.Watson</a>         11.62         
+[KC]  <a href="http://127.0.0.1:8000/player?id=4361529">10-I.Pacheco</a>        11.46         
+[CIN] <a href="http://127.0.0.1:8000/player?id=4368003">80-A.Iosivas</a>        10.56         
+[KC]  <a href="http://127.0.0.1:8000/player?id=4242214">25-C.Edwards-Helaire</a>7.96          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3116389">34-S.Perine</a>         6.66          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4257188">15-C.Jones</a>          5.80          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4035222">32-T.Williams</a>       3.19          
+[KC]  <a href="http://127.0.0.1:8000/player?id=15847">87-T.Kelce</a>            2.37          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3931391">16-T.Irwin</a>          1.73          
+[CIN] <a href="http://127.0.0.1:8000/player?id=4046530">25-C.Evans</a>          1.44          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4035004">17-M.Hardman</a>        1.38          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4430191">24-S.Moore</a>          1.12          
+[KC]  <a href="http://127.0.0.1:8000/player?id=3120348">9-J.Smith-Schuster</a>  0.86          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3116164">88-M.Gesicki</a>        0.75          
+[CIN] <a href="http://127.0.0.1:8000/player?id=3127310">89-D.Sample</a>         0.36          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4240472">83-N.Gray</a>           0.18          
+[KC]  <a href="http://127.0.0.1:8000/player?id=4714365">42-C.Steele</a>         0.14          
+
+BUF (50.0%) vs (50.0%) MIA
+
+BUF:
+PA: 24.9
+D: 0.0
+DIFF: 0.3
+PF: 25.2
+W: 5.0
+L: 5.0
+
+MIA:
+PA: 25.2
+D: 0.0
+DIFF: -0.3
+PF: 24.9
+W: 5.0
+L: 5.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[BUF] <a href="http://127.0.0.1:8000/player?id=3918298">17-J.Allen</a>          26.4/40.2     297.90        2.30          0.70          0.20          99.50         
+[MIA] <a href="http://127.0.0.1:8000/player?id=4241479">1-T.Tagovailoa</a>      23.7/35.6     288.60        2.50          0.60          0.50          107.72        
+[MIA] <a href="http://127.0.0.1:8000/player?id=4429160">28-D.Achane</a>         1.2/1.8       15.80         0.00          0.20          0.00          54.63         
+[MIA] <a href="http://127.0.0.1:8000/player?id=3054212">9-J.Smith</a>           0.2/0.2       3.30          0.10          0.00          0.00          158.33        
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[MIA] <a href="http://127.0.0.1:8000/player?id=4429160">28-D.Achane</a>         8.3           42.20         16.00         0.10          0.00          5.08          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3918298">17-J.Allen</a>          7.7           40.80         43.00         0.20          0.00          5.30          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4379399">4-J.Cook</a>            8.5           40.40         16.00         0.20          0.00          4.75          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4241479">1-T.Tagovailoa</a>      6.3           36.90         68.00         0.10          0.00          5.86          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4429501">22-R.Davis</a>          6.3           31.80         14.00         0.40          0.00          5.05          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3122976">23-J.Wilson Jr.</a>     5.7           26.50         15.00         0.30          0.20          4.65          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3917668">30-A.Ingold</a>         2.0           13.50         20.00         0.10          0.00          6.75          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4036431">37-D.Evans</a>          2.1           8.50          10.00         0.00          0.00          4.05          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3915411">26-T.Johnson</a>        0.8           5.10          12.00         0.00          0.00          6.37          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4682745">25-J.Wright</a>         0.5           2.30          12.00         0.00          0.00          4.60          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3123075">0-B.Berrios</a>         0.7           2.10          12.00         0.00          0.00          3.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4373678">10-K.Shakir</a>         0.3           1.50          10.00         0.00          0.00          5.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4372016">17-J.Waddle</a>         0.4           1.20          6.00          0.00          0.00          3.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4635008">0-K.Coleman</a>         0.2           1.00          6.00          0.00          0.00          5.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3054212">9-J.Smith</a>           0.1           0.90          9.00          0.00          0.00          9.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3121427">1-C.Samuel</a>          0.4           0.80          3.00          0.00          0.00          2.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3116406">10-T.Hill</a>           0.3           0.60          5.00          0.00          0.00          2.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[MIA] <a href="http://127.0.0.1:8000/player?id=3116406">10-T.Hill</a>           8.7/12.1      115.00        0.60          36.00         0.10          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4635008">0-K.Coleman</a>         8.4/13.3      95.70         1.00          34.00         0.20          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4372016">17-J.Waddle</a>         7.0/11.3      75.30         0.80          27.00         0.20          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4373678">10-K.Shakir</a>         5.6/8.9       65.30         0.50          24.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4379399">4-J.Cook</a>            5.7/7.8       65.20         0.40          30.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3123075">0-B.Berrios</a>         5.2/8.1       64.20         0.70          30.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=2991662">13-M.Hollins</a>        2.0/3.6       23.60         0.00          20.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4429160">28-D.Achane</a>         1.6/1.7       16.90         0.10          24.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3915411">26-T.Johnson</a>        1.3/1.6       13.70         0.20          16.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4036431">37-D.Evans</a>          0.9/1.1       9.60          0.00          19.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3054212">9-J.Smith</a>           0.6/1.4       7.80          0.00          15.00         0.20          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3121427">1-C.Samuel</a>          0.7/0.9       7.20          0.00          14.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4385690">86-D.Kincaid</a>        0.6/0.8       7.00          0.00          20.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3917668">30-A.Ingold</a>         0.7/1.0       6.50          0.20          18.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3052897">81-D.Smythe</a>         0.3/0.4       4.30          0.00          20.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=16733">3-O.Beckham Jr.</a>     0.2/0.2       4.20          0.00          29.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3124679">7-J.Sanders</a>         0.3/0.3       3.50          0.10          19.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3930086">88-D.Knox</a>           0.4/0.6       3.40          0.00          13.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3052056">85-R.Cracraft</a>       0.2/0.2       3.20          0.00          19.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4241479">1-T.Tagovailoa</a>      0.1/0.2       3.10          0.00          31.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4039505">41-R.Gilliam</a>        0.2/0.2       2.80          0.00          22.00         0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3122976">23-J.Wilson Jr.</a>     0.1/0.3       2.80          0.00          28.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3917232">2-T.Bass</a>            0.3/0.7       2.50          0.20          12.00         0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3051738">15-M.Valdes-Scantling</a>0.2/0.4       1.40          0.00          7.00          0.00          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4879650">88-G.DuBose</a>         0.1/0.4       0.90          0.10          9.00          0.00          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3918298">17-J.Allen</a>          0.1/0.3       0.50          0.00          5.00          0.00          
+
+== FANTASY POINTS ==
+
+[BUF] <a href="http://127.0.0.1:8000/player?id=3918298">17-J.Allen</a>          24.75         
+[MIA] <a href="http://127.0.0.1:8000/player?id=4241479">1-T.Tagovailoa</a>      24.04         
+[BUF] <a href="http://127.0.0.1:8000/player?id=4635008">0-K.Coleman</a>         23.67         
+[MIA] <a href="http://127.0.0.1:8000/player?id=3116406">10-T.Hill</a>           23.66         
+[BUF] <a href="http://127.0.0.1:8000/player?id=4379399">4-J.Cook</a>            19.86         
+[MIA] <a href="http://127.0.0.1:8000/player?id=4372016">17-J.Waddle</a>         19.05         
+[MIA] <a href="http://127.0.0.1:8000/player?id=3123075">0-B.Berrios</a>         16.03         
+[BUF] <a href="http://127.0.0.1:8000/player?id=4373678">10-K.Shakir</a>         15.28         
+[MIA] <a href="http://127.0.0.1:8000/player?id=4429160">28-D.Achane</a>         8.94          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4429501">22-R.Davis</a>          5.58          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3917668">30-A.Ingold</a>         4.50          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3122976">23-J.Wilson Jr.</a>     4.43          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3915411">26-T.Johnson</a>        4.38          
+[BUF] <a href="http://127.0.0.1:8000/player?id=2991662">13-M.Hollins</a>        4.36          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4036431">37-D.Evans</a>          2.71          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3917232">2-T.Bass</a>            1.75          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3054212">9-J.Smith</a>           1.60          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3121427">1-C.Samuel</a>          1.50          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4385690">86-D.Kincaid</a>        1.30          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3124679">7-J.Sanders</a>         1.25          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4879650">88-G.DuBose</a>         0.79          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3930086">88-D.Knox</a>           0.74          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3052897">81-D.Smythe</a>         0.73          
+[MIA] <a href="http://127.0.0.1:8000/player?id=16733">3-O.Beckham Jr.</a>       0.62          
+[MIA] <a href="http://127.0.0.1:8000/player?id=3052056">85-R.Cracraft</a>       0.52          
+[BUF] <a href="http://127.0.0.1:8000/player?id=4039505">41-R.Gilliam</a>        0.48          
+[BUF] <a href="http://127.0.0.1:8000/player?id=3051738">15-M.Valdes-Scantling</a>0.34          
+[MIA] <a href="http://127.0.0.1:8000/player?id=4682745">25-J.Wright</a>         0.23          
+
+MIN (20.0%) vs (60.0%) SF
+
+MIN:
+PA: 24.3
+D: 2.0
+DIFF: -11.5
+PF: 12.8
+W: 2.0
+L: 6.0
+
+SF:
+PA: 12.8
+D: 2.0
+DIFF: 11.5
+PF: 24.3
+W: 6.0
+L: 2.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[SF]  <a href="http://127.0.0.1:8000/player?id=4361741">13-B.Purdy</a>          20.4/30.5     262.30        1.70          1.10          0.30          97.21         
+[MIN] <a href="http://127.0.0.1:8000/player?id=3912547">14-S.Darnold</a>        19.0/29.9     196.40        1.00          0.80          0.20          82.41         
+[SF]  <a href="http://127.0.0.1:8000/player?id=3126486">1-D.Samuel Sr.</a>      0.4/0.8       6.20          0.00          0.00          0.00          76.04         
+[MIN] <a href="http://127.0.0.1:8000/player?id=4262921">18-J.Jefferson</a>      0.5/0.5       5.20          0.10          0.00          0.00          149.58        
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[SF]  <a href="http://127.0.0.1:8000/player?id=4241555">25-E.Mitchell</a>       13.0          61.70         16.00         0.40          0.00          4.75          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4360569">24-J.Mason</a>          12.5          51.50         16.00         0.40          0.00          4.12          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3042519">33-A.Jones</a>          9.4           39.70         13.00         0.20          0.20          4.22          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4242431">32-T.Chandler</a>       8.8           31.90         12.00         0.00          0.20          3.62          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4372561">49-I.Guerendo</a>       6.4           29.90         17.00         0.00          0.00          4.67          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3115255">4-B.Powell</a>          4.9           19.80         13.00         0.20          0.10          4.04          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3912547">14-S.Darnold</a>        4.9           18.40         16.00         0.00          0.00          3.76          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4361741">13-B.Purdy</a>          2.2           13.70         24.00         0.30          0.00          6.23          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4012556">30-C.J.Ham</a>          2.3           13.00         18.00         0.00          0.00          5.65          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4039358">32-P.Taylor Jr.</a>     1.0           5.20          16.00         0.00          0.00          5.20          
+[SF]  <a href="http://127.0.0.1:8000/player?id=3126486">1-D.Samuel Sr.</a>      0.3           2.20          12.00         0.00          0.00          7.33          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3886818">37-M.Gaskin</a>         0.7           2.20          5.00          0.00          0.00          3.14          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4360438">11-B.Aiyuk</a>          0.1           1.10          11.00         0.00          0.00          11.00         
+[MIN] <a href="http://127.0.0.1:8000/player?id=4262921">18-J.Jefferson</a>      0.2           0.60          6.00          0.00          0.00          3.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=16002">44-K.Juszczyk</a>       0.1           0.50          5.00          0.00          0.00          5.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[SF]  <a href="http://127.0.0.1:8000/player?id=3126486">1-D.Samuel Sr.</a>      6.8/9.5       84.00         0.20          30.00         0.20          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4262921">18-J.Jefferson</a>      7.0/9.9       74.20         0.40          30.00         0.10          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4360438">11-B.Aiyuk</a>          5.5/8.7       71.00         0.70          33.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=3886598">15-J.Jennings</a>       4.3/6.7       60.40         0.30          32.00         0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3042519">33-A.Jones</a>          3.7/5.8       39.30         0.20          24.00         0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3115255">4-B.Powell</a>          3.7/5.6       37.00         0.20          18.00         0.10          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4242431">32-T.Chandler</a>       2.6/4.4       26.70         0.20          36.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=3040151">85-G.Kittle</a>         0.7/1.0       13.70         0.00          40.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=16002">44-K.Juszczyk</a>       0.8/0.8       12.00         0.20          25.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=2578533">18-C.Conley</a>         1.0/1.2       9.90          0.10          15.00         0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4012556">30-C.J.Ham</a>          0.6/1.3       6.40          0.00          25.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4039358">32-P.Taylor Jr.</a>     0.6/1.1       5.70          0.00          13.00         0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3921690">84-J.Oliver</a>         0.5/0.9       4.90          0.10          14.00         0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4046715">8-T.Jackson</a>         0.4/0.6       4.00          0.00          15.00         0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3122168">11-T.Sherfield Sr.</a>  0.4/0.8       3.70          0.00          13.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4575665">83-J.Cowing</a>         0.1/0.5       2.70          0.00          15.00         0.10          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4372063">10-R.Bell</a>           0.2/0.6       2.60          0.00          17.00         0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3052096">86-J.Mundt</a>          0.2/0.3       2.60          0.00          21.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=2975863">82-E.Saubert</a>        0.4/0.6       2.60          0.10          9.00          0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4382466">83-J.Nailor</a>         0.3/0.6       2.30          0.00          8.00          0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4360569">24-J.Mason</a>          0.1/0.2       1.60          0.00          16.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4372066">4-J.Moody</a>           0.1/0.1       1.30          0.00          13.00         0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4241555">25-E.Mitchell</a>       0.2/0.2       1.00          0.10          6.00          0.00          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3912547">14-S.Darnold</a>        0.1/0.2       0.50          0.00          5.00          0.00          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4361741">13-B.Purdy</a>          0.0/0.1       0.00          0.00          0.00          0.00          
+
+== FANTASY POINTS ==
+
+[SF]  <a href="http://127.0.0.1:8000/player?id=4361741">13-B.Purdy</a>          17.66         
+[MIN] <a href="http://127.0.0.1:8000/player?id=4262921">18-J.Jefferson</a>      17.29         
+[SF]  <a href="http://127.0.0.1:8000/player?id=4360438">11-B.Aiyuk</a>          16.91         
+[SF]  <a href="http://127.0.0.1:8000/player?id=3126486">1-D.Samuel Sr.</a>      16.47         
+[MIN] <a href="http://127.0.0.1:8000/player?id=3042519">33-A.Jones</a>          13.60         
+[SF]  <a href="http://127.0.0.1:8000/player?id=3886598">15-J.Jennings</a>       12.14         
+[MIN] <a href="http://127.0.0.1:8000/player?id=3912547">14-S.Darnold</a>        11.85         
+[MIN] <a href="http://127.0.0.1:8000/player?id=3115255">4-B.Powell</a>          11.38         
+[SF]  <a href="http://127.0.0.1:8000/player?id=4241555">25-E.Mitchell</a>       9.47          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4242431">32-T.Chandler</a>       9.26          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4360569">24-J.Mason</a>          7.81          
+[SF]  <a href="http://127.0.0.1:8000/player?id=16002">44-K.Juszczyk</a>         3.25          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4372561">49-I.Guerendo</a>       2.99          
+[SF]  <a href="http://127.0.0.1:8000/player?id=2578533">18-C.Conley</a>         2.59          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4012556">30-C.J.Ham</a>          2.54          
+[SF]  <a href="http://127.0.0.1:8000/player?id=3040151">85-G.Kittle</a>         2.07          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4039358">32-P.Taylor Jr.</a>     1.69          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3921690">84-J.Oliver</a>         1.59          
+[SF]  <a href="http://127.0.0.1:8000/player?id=2975863">82-E.Saubert</a>        1.26          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4046715">8-T.Jackson</a>         0.80          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3122168">11-T.Sherfield Sr.</a>  0.77          
+[MIN] <a href="http://127.0.0.1:8000/player?id=4382466">83-J.Nailor</a>         0.53          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4372063">10-R.Bell</a>           0.46          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3052096">86-J.Mundt</a>          0.46          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4372066">4-J.Moody</a>           0.23          
+[MIN] <a href="http://127.0.0.1:8000/player?id=3886818">37-M.Gaskin</a>         0.22          
+[SF]  <a href="http://127.0.0.1:8000/player?id=4575665">83-J.Cowing</a>         0.17          
+
+NE (40.0%) vs (40.0%) SEA
+
+NE:
+PA: 21.4
+D: 2.0
+DIFF: 0.3
+PF: 21.7
+W: 4.0
+L: 4.0
+
+SEA:
+PA: 21.7
+D: 2.0
+DIFF: -0.3
+PF: 21.4
+W: 4.0
+L: 4.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[SEA] <a href="http://127.0.0.1:8000/player?id=15864">7-G.Smith</a>           23.9/36.8     286.60        1.90          1.00          0.30          94.54         
+[NE]  <a href="http://127.0.0.1:8000/player?id=2578570">14-J.Brissett</a>       24.9/36.6     250.30        1.50          0.90          0.20          90.69         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[NE]  <a href="http://127.0.0.1:8000/player?id=4569173">38-R.Stevenson</a>      10.0          47.20         53.00         0.30          0.10          4.72          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4362921">11-T.Thornton</a>       9.2           42.50         25.00         0.40          0.00          4.62          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4360294">4-A.Gibson</a>          7.7           35.60         16.00         0.20          0.00          4.62          
+[SEA] <a href="http://127.0.0.1:8000/player?id=15864">7-G.Smith</a>           5.3           35.10         30.00         0.20          0.00          6.62          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4426385">26-Z.Charbonnet</a>     8.0           32.00         15.00         0.20          0.00          4.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4427391">25-K.McIntosh</a>       6.3           24.60         14.00         0.20          0.00          3.90          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4243160">1-L.Shenault Jr.</a>    2.9           15.40         13.00         0.00          0.00          5.31          
+[NE]  <a href="http://127.0.0.1:8000/player?id=2578570">14-J.Brissett</a>       2.7           14.10         19.00         0.00          0.00          5.22          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3045523">84-K.Bourne</a>         0.6           1.70          4.00          0.00          0.00          2.83          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3928925">39-J.Hasty</a>          0.5           1.60          6.00          0.00          0.00          3.20          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4429835">36-G.Holani</a>         0.5           1.20          6.00          0.00          0.00          2.40          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4427095">3-D.Douglas</a>         0.3           1.00          6.00          0.00          0.00          3.33          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4047650">14-D.Metcalf</a>        0.2           0.60          5.00          0.00          0.00          3.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4360405">19-J.Bobo</a>           0.3           0.50          3.00          0.00          0.00          1.67          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[SEA] <a href="http://127.0.0.1:8000/player?id=4047650">14-D.Metcalf</a>        6.7/10.6      94.50         0.60          37.00         0.30          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4427095">3-D.Douglas</a>         7.5/11.3      87.30         0.50          44.00         0.10          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4426385">26-Z.Charbonnet</a>     6.7/9.9       75.30         0.40          29.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=2577327">16-T.Lockett</a>        5.6/8.3       61.30         0.40          26.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3916566">2-K.J.Osborn</a>        4.6/7.2       48.40         0.20          30.00         0.10          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4569173">38-R.Stevenson</a>      2.7/4.0       25.00         0.30          20.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4430878">11-J.Smith-Njigba</a>   2.1/2.9       23.60         0.20          28.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4360294">4-A.Gibson</a>          2.8/3.5       23.20         0.30          21.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4362921">11-T.Thornton</a>       2.8/4.0       22.30         0.00          16.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3045523">84-K.Bourne</a>         2.1/3.2       21.20         0.00          16.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=15864">7-G.Smith</a>           1.1/1.5       11.50         0.00          17.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4430637">1-J.Polk</a>            0.8/1.1       8.30          0.10          19.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4360405">19-J.Bobo</a>           0.5/1.2       8.00          0.20          27.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3046439">85-H.Henry</a>          0.8/1.2       6.90          0.10          11.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4036131">87-N.Fant</a>           0.6/1.0       6.10          0.00          14.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3043275">81-A.Hooper</a>         0.5/0.6       4.40          0.00          11.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4243160">1-L.Shenault Jr.</a>    0.3/0.5       3.50          0.00          21.00         0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4692022">6-J.Baker</a>           0.3/0.4       3.30          0.00          14.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4576297">88-A.Barner</a>         0.2/0.6       2.10          0.10          11.00         0.00          
+[SEA] <a href="http://127.0.0.1:8000/player?id=2473037">5-J.Myers</a>           0.1/0.3       0.70          0.00          7.00          0.00          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3928925">39-J.Hasty</a>          0.0/0.1       0.00          0.00          0.00          0.00          
+
+== FANTASY POINTS ==
+
+[SEA] <a href="http://127.0.0.1:8000/player?id=15864">7-G.Smith</a>             23.42         
+[SEA] <a href="http://127.0.0.1:8000/player?id=4426385">26-Z.Charbonnet</a>     21.03         
+[SEA] <a href="http://127.0.0.1:8000/player?id=4047650">14-D.Metcalf</a>        19.21         
+[NE]  <a href="http://127.0.0.1:8000/player?id=4427095">3-D.Douglas</a>         19.13         
+[NE]  <a href="http://127.0.0.1:8000/player?id=2578570">14-J.Brissett</a>       15.22         
+[SEA] <a href="http://127.0.0.1:8000/player?id=2577327">16-T.Lockett</a>        14.13         
+[NE]  <a href="http://127.0.0.1:8000/player?id=4569173">38-R.Stevenson</a>      13.32         
+[NE]  <a href="http://127.0.0.1:8000/player?id=4362921">11-T.Thornton</a>       11.68         
+[NE]  <a href="http://127.0.0.1:8000/player?id=4360294">4-A.Gibson</a>          11.68         
+[NE]  <a href="http://127.0.0.1:8000/player?id=3916566">2-K.J.Osborn</a>        10.44         
+[SEA] <a href="http://127.0.0.1:8000/player?id=4430878">11-J.Smith-Njigba</a>   5.66          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3045523">84-K.Bourne</a>         4.39          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4427391">25-K.McIntosh</a>       3.66          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4360405">19-J.Bobo</a>           2.55          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4430637">1-J.Polk</a>            2.23          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4243160">1-L.Shenault Jr.</a>    2.19          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3046439">85-H.Henry</a>          2.09          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4036131">87-N.Fant</a>           1.21          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4576297">88-A.Barner</a>         1.01          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3043275">81-A.Hooper</a>         0.94          
+[NE]  <a href="http://127.0.0.1:8000/player?id=4692022">6-J.Baker</a>           0.63          
+[SEA] <a href="http://127.0.0.1:8000/player?id=2473037">5-J.Myers</a>           0.17          
+[NE]  <a href="http://127.0.0.1:8000/player?id=3928925">39-J.Hasty</a>          0.16          
+[SEA] <a href="http://127.0.0.1:8000/player?id=4429835">36-G.Holani</a>         0.12          
+
+PHI (70.0%) vs (30.0%) ATL
+
+PHI:
+PA: 17.3
+D: 0.0
+DIFF: 5.6
+PF: 22.9
+W: 7.0
+L: 3.0
+
+ATL:
+PA: 22.9
+D: 0.0
+DIFF: -5.6
+PF: 17.3
+W: 3.0
+L: 7.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[ATL] <a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>        23.2/37.0     255.90        1.00          0.70          0.00          84.28         
+[PHI] <a href="http://127.0.0.1:8000/player?id=4040715">1-J.Hurts</a>           21.6/31.9     231.10        1.60          0.40          0.30          100.19        
+[ATL] <a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>          0.0/0.2       0.00          0.00          0.00          0.00          39.58         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[PHI] <a href="http://127.0.0.1:8000/player?id=4040715">1-J.Hurts</a>           14.7          66.10         13.00         0.30          0.00          4.50          
+[PHI] <a href="http://127.0.0.1:8000/player?id=3929630">26-S.Barkley</a>        11.1          51.90         59.00         0.30          0.10          4.68          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4371733">14-K.Gainwell</a>       9.2           37.50         14.00         0.40          0.10          4.08          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4372485">14-R.Moore</a>          5.9           26.90         17.00         0.40          0.00          4.56          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4430807">7-B.Robinson</a>        6.7           25.60         12.00         0.30          0.00          3.82          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4373626">25-T.Allgeier</a>       4.6           20.90         10.00         0.10          0.00          4.54          
+[ATL] <a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>        2.3           13.60         12.00         0.10          0.00          5.91          
+[ATL] <a href="http://127.0.0.1:8000/player?id=3728262">34-R.McCloud III</a>    1.0           4.50          10.00         0.00          0.00          4.50          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4431545">39-W.Shipley</a>        0.9           3.50          7.00          0.00          0.00          3.89          
+[ATL] <a href="http://127.0.0.1:8000/player?id=3047876">12-K.Hodge</a>          0.7           2.90          11.00         0.00          0.20          4.14          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4048259">26-A.Williams</a>       0.5           2.50          8.00          0.00          0.00          5.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4360248">8-K.Pitts</a>           0.2           1.50          12.00         0.00          0.00          7.50          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4047646">11-A.J.Brown</a>        0.2           1.30          7.00          0.00          0.00          6.50          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>          0.3           1.30          9.00          0.00          0.00          4.33          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4241478">6-D.Smith</a>           0.2           0.80          6.00          0.10          0.00          4.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=3121023">88-D.Goedert</a>        0.2           0.30          2.00          0.00          0.00          1.50          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4040655">1-D.Mooney</a>          0.1           0.20          2.00          0.00          0.00          2.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[ATL] <a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>          7.5/12.5      80.00         0.30          33.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4047646">11-A.J.Brown</a>        5.9/9.8       66.80         0.40          46.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4241478">6-D.Smith</a>           6.1/9.1       63.50         0.50          22.00         0.30          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4040655">1-D.Mooney</a>          4.5/7.3       54.80         0.20          22.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4361409">87-J.Dotson</a>         5.2/7.1       54.40         0.40          21.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4430807">7-B.Robinson</a>        3.6/5.4       44.60         0.30          25.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=3728262">34-R.McCloud III</a>    2.9/4.0       31.40         0.00          23.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4372485">14-R.Moore</a>          2.0/3.3       20.00         0.20          16.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=3929630">26-S.Barkley</a>        1.1/1.7       15.60         0.00          37.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4373626">25-T.Allgeier</a>       1.0/1.9       10.60         0.00          15.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=3121023">88-D.Goedert</a>        1.0/1.3       8.50          0.00          14.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4371733">14-K.Gainwell</a>       0.9/0.9       8.30          0.20          25.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4686104">89-J.Wilson</a>         0.5/0.6       5.60          0.00          14.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4360248">8-K.Pitts</a>           0.4/0.6       4.30          0.00          13.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4428532">82-A.Smith</a>          0.3/0.5       4.20          0.10          15.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4428796">82-C.Washington</a>     0.5/0.5       3.50          0.00          10.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=3047876">12-K.Hodge</a>          0.4/1.0       3.30          0.00          12.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=3926231">18-B.Covey</a>          0.3/0.5       2.40          0.00          10.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>        0.2/0.2       2.20          0.00          16.00         0.00          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4035020">89-C.Woerner</a>        0.2/0.5       1.20          0.00          10.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4241374">81-G.Calcaterra</a>     0.2/0.2       1.20          0.00          10.00         0.00          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4040715">1-J.Hurts</a>           0.1/0.2       0.60          0.00          6.00          0.00          
+
+== FANTASY POINTS ==
+
+[PHI] <a href="http://127.0.0.1:8000/player?id=4040715">1-J.Hurts</a>           22.81         
+[ATL] <a href="http://127.0.0.1:8000/player?id=4426502">5-D.London</a>          17.43         
+[PHI] <a href="http://127.0.0.1:8000/player?id=4241478">6-D.Smith</a>           15.53         
+[ATL] <a href="http://127.0.0.1:8000/player?id=14880">18-K.Cousins</a>          15.22         
+[PHI] <a href="http://127.0.0.1:8000/player?id=4047646">11-A.J.Brown</a>        15.11         
+[ATL] <a href="http://127.0.0.1:8000/player?id=4430807">7-B.Robinson</a>        14.22         
+[PHI] <a href="http://127.0.0.1:8000/player?id=4361409">87-J.Dotson</a>         13.04         
+[ATL] <a href="http://127.0.0.1:8000/player?id=4040655">1-D.Mooney</a>          11.20         
+[ATL] <a href="http://127.0.0.1:8000/player?id=4372485">14-R.Moore</a>          10.29         
+[PHI] <a href="http://127.0.0.1:8000/player?id=3929630">26-S.Barkley</a>        9.45          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4371733">14-K.Gainwell</a>       8.88          
+[ATL] <a href="http://127.0.0.1:8000/player?id=3728262">34-R.McCloud III</a>    6.49          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4373626">25-T.Allgeier</a>       4.75          
+[PHI] <a href="http://127.0.0.1:8000/player?id=3121023">88-D.Goedert</a>        1.88          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4428532">82-A.Smith</a>          1.32          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4686104">89-J.Wilson</a>         1.06          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4360248">8-K.Pitts</a>           0.98          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4428796">82-C.Washington</a>     0.85          
+[ATL] <a href="http://127.0.0.1:8000/player?id=3047876">12-K.Hodge</a>          0.62          
+[PHI] <a href="http://127.0.0.1:8000/player?id=3926231">18-B.Covey</a>          0.54          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4431545">39-W.Shipley</a>        0.35          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4035020">89-C.Woerner</a>        0.32          
+[PHI] <a href="http://127.0.0.1:8000/player?id=4241374">81-G.Calcaterra</a>     0.32          
+[ATL] <a href="http://127.0.0.1:8000/player?id=4048259">26-A.Williams</a>       0.25          
+
+TEN (40.0%) vs (60.0%) NYJ
+
+TEN:
+PA: 16.4
+D: 0.0
+DIFF: 0.5
+PF: 16.9
+W: 4.0
+L: 6.0
+
+NYJ:
+PA: 16.9
+D: 0.0
+DIFF: -0.5
+PF: 16.4
+W: 6.0
+L: 4.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[NYJ] <a href="http://127.0.0.1:8000/player?id=8439">8-A.Rodgers</a>         24.7/39.1     269.20        1.20          0.60          0.10          87.25         
+[TEN] <a href="http://127.0.0.1:8000/player?id=4361418">8-W.Levis</a>           19.0/29.8     210.20        1.00          0.40          0.10          90.20         
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4569618">5-G.Wilson</a>          0.5/0.7       6.50          0.00          0.00          0.00          100.30        
+[TEN] <a href="http://127.0.0.1:8000/player?id=15795">10-D.Hopkins</a>        0.4/0.7       5.60          0.10          0.00          0.00          122.62        
+[TEN] <a href="http://127.0.0.1:8000/player?id=3045144">83-T.Boyd</a>           0.4/0.6       3.70          0.00          0.00          0.00          83.33         
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[TEN] <a href="http://127.0.0.1:8000/player?id=3916148">20-T.Pollard</a>        10.2          43.50         19.00         0.30          0.20          4.26          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4428557">2-T.Spears</a>          7.3           28.90         14.00         0.20          0.20          3.96          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4427366">20-B.Hall</a>           6.9           28.60         12.00         0.30          0.00          4.14          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4427278">82-X.Gipson</a>         6.5           26.20         12.00         0.00          0.10          4.03          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4685247">0-B.Allen</a>           6.1           21.90         13.00         0.10          0.20          3.59          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4567156">16-T.Burks</a>          4.4           20.90         17.00         0.10          0.10          4.75          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4361418">8-W.Levis</a>           3.7           20.70         17.00         0.10          0.00          5.59          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3045144">83-T.Boyd</a>           2.2           9.40          14.00         0.00          0.00          4.27          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=8439">8-A.Rodgers</a>         1.4           8.90          10.00         0.10          0.00          6.36          
+[TEN] <a href="http://127.0.0.1:8000/player?id=15795">10-D.Hopkins</a>        1.6           5.20          5.00          0.00          0.00          3.25          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4360635">85-C.Okonkwo</a>        1.2           5.20          9.00          0.00          0.20          4.33          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4367567">36-J.Chestnut</a>       0.9           3.50          9.00          0.00          0.00          3.89          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3915486">83-T.Conklin</a>        0.7           2.20          5.00          0.00          0.00          3.14          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4695404">32-I.Davis</a>          0.4           2.10          14.00         0.00          0.00          5.25          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3925357">0-C.Ridley</a>          0.3           1.30          6.00          0.00          0.00          4.33          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3045138">18-M.Williams</a>       0.3           1.20          6.00          0.00          0.00          4.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4569618">5-G.Wilson</a>          0.1           0.50          5.00          0.00          0.00          5.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4256051">4-R.Stonehouse</a>      0.1           0.40          4.00          0.00          0.00          4.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4427366">20-B.Hall</a>           7.1/11.6      79.50         0.20          28.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4569618">5-G.Wilson</a>          7.2/11.1      78.50         0.40          31.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3925357">0-C.Ridley</a>          6.9/10.1      76.50         0.40          23.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3045138">18-M.Williams</a>       5.3/8.0       53.30         0.30          31.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=15795">10-D.Hopkins</a>        4.0/6.7       39.90         0.20          26.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4428557">2-T.Spears</a>          2.8/4.4       35.10         0.10          36.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3916148">20-T.Pollard</a>        2.6/4.5       31.50         0.20          25.00         0.10          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3128390">10-A.Lazard</a>         2.5/4.1       27.40         0.30          21.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3045144">83-T.Boyd</a>           1.3/2.7       17.30         0.10          36.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4427278">82-X.Gipson</a>         1.1/1.6       12.30         0.00          16.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3915486">83-T.Conklin</a>        0.8/0.9       7.40          0.00          15.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4360635">85-C.Okonkwo</a>        0.6/1.0       6.20          0.10          16.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4408988">86-M.Taylor</a>         0.2/0.5       5.00          0.00          23.00         0.10          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4567156">16-T.Burks</a>          0.5/0.6       4.70          0.00          12.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4613104">17-M.Corley</a>         0.3/0.5       3.80          0.00          17.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=14993">9-G.Zuerlein</a>        0.4/0.6       3.60          0.00          14.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3929785">15-N.Westbrook-Ikhine</a>0.4/0.4       3.20          0.00          10.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4360086">81-J.Whyle</a>          0.4/0.4       3.10          0.00          11.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3929636">19-I.Charles</a>        0.2/0.3       2.80          0.00          17.00         0.00          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4361372">89-J.Ruckert</a>        0.1/0.6       2.10          0.00          13.00         0.00          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4361418">8-W.Levis</a>           0.3/0.3       2.00          0.00          8.00          0.00          
+
+== FANTASY POINTS ==
+
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4427366">20-B.Hall</a>           20.91         
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4569618">5-G.Wilson</a>          17.76         
+[TEN] <a href="http://127.0.0.1:8000/player?id=3925357">0-C.Ridley</a>          17.08         
+[NYJ] <a href="http://127.0.0.1:8000/player?id=8439">8-A.Rodgers</a>            15.66         
+[TEN] <a href="http://127.0.0.1:8000/player?id=4361418">8-W.Levis</a>           14.58         
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3045138">18-M.Williams</a>       12.55         
+[TEN] <a href="http://127.0.0.1:8000/player?id=3916148">20-T.Pollard</a>        12.50         
+[TEN] <a href="http://127.0.0.1:8000/player?id=4428557">2-T.Spears</a>          10.60         
+[TEN] <a href="http://127.0.0.1:8000/player?id=15795">10-D.Hopkins</a>          10.33         
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3128390">10-A.Lazard</a>         7.04          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4427278">82-X.Gipson</a>         4.75          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3045144">83-T.Boyd</a>           4.72          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4567156">16-T.Burks</a>          3.46          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4685247">0-B.Allen</a>           2.39          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4360635">85-C.Okonkwo</a>        1.94          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3915486">83-T.Conklin</a>        1.76          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=14993">9-G.Zuerlein</a>          0.76          
+[TEN] <a href="http://127.0.0.1:8000/player?id=3929785">15-N.Westbrook-Ikhine</a>0.72          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4360086">81-J.Whyle</a>          0.71          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4613104">17-M.Corley</a>         0.68          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4408988">86-M.Taylor</a>         0.50          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=3929636">19-I.Charles</a>        0.48          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4367567">36-J.Chestnut</a>       0.35          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4361372">89-J.Ruckert</a>        0.31          
+[NYJ] <a href="http://127.0.0.1:8000/player?id=4695404">32-I.Davis</a>          0.21          
+[TEN] <a href="http://127.0.0.1:8000/player?id=4256051">4-R.Stonehouse</a>      0.04          
+
+NYG (20.0%) vs (80.0%) WSH
+
+NYG:
+PA: 19.4
+D: 0.0
+DIFF: -5.8
+PF: 13.6
+W: 2.0
+L: 8.0
+
+WSH:
+PA: 13.6
+D: 0.0
+DIFF: 5.8
+PF: 19.4
+W: 8.0
+L: 2.0
+
+== PASS ==
+
+PASSER                    CMP           YD            TD            INT           FUM           RTG           
+[NYG] <a href="http://127.0.0.1:8000/player?id=3917792">8-D.Jones</a>           15.9/26.3     185.10        0.50          0.60          0.20          78.62         
+[WSH] <a href="http://127.0.0.1:8000/player?id=4426348">5-J.Daniels</a>         17.0/28.2     160.10        1.10          0.20          0.10          86.02         
+[WSH] <a href="http://127.0.0.1:8000/player?id=4361577">2-D.Brown</a>           0.4/0.5       4.00          0.00          0.00          0.00          100.00        
+
+== RUSH ==
+
+RUSHER                    ATT           YD            LNG           TD            FUM           AVG           
+[WSH] <a href="http://127.0.0.1:8000/player?id=4241474">8-B.Robinson Jr.</a>    17.0          75.20         13.00         0.50          0.00          4.42          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3068267">30-A.Ekeler</a>         13.2          61.30         53.00         0.50          0.10          4.64          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4040761">26-D.Singletary</a>     10.3          48.70         17.00         0.20          0.10          4.73          
+[NYG] <a href="http://127.0.0.1:8000/player?id=3917792">8-D.Jones</a>           7.0           36.00         17.00         0.10          0.00          5.14          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4240573">0-I.Smith-Marsette</a>  6.2           30.30         22.00         0.20          0.00          4.89          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4360516">29-T.Tracy Jr.</a>      7.1           29.80         13.00         0.20          0.10          4.20          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4361577">2-D.Brown</a>           2.6           11.40         11.00         0.10          0.00          4.38          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3127586">26-J.McNichols</a>      1.8           9.40          11.00         0.00          0.00          5.22          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4426348">5-J.Daniels</a>         1.4           9.30          14.00         0.20          0.00          6.64          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4570561">20-E.Gray</a>           0.9           5.60          13.00         0.00          0.00          6.22          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3121422">17-T.McLaurin</a>       0.5           2.70          9.00          0.00          0.00          5.40          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4595348">1-M.Nabers</a>          0.3           1.50          7.00          0.00          0.00          5.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3121409">85-N.Brown</a>          0.2           1.10          6.00          0.00          0.00          5.50          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4569587">17-W.Robinson</a>       0.1           0.20          2.00          0.00          0.00          2.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=16166">10-T.Way</a>            0.1           0.10          1.00          0.00          0.00          1.00          
+
+== REC ==
+
+RECEIVER                  CMP           YD            TD            LNG           FUM           
+[NYG] <a href="http://127.0.0.1:8000/player?id=4595348">1-M.Nabers</a>          5.2/7.7       56.90         0.10          25.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4569587">17-W.Robinson</a>       4.7/7.7       53.90         0.10          24.00         0.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3068267">30-A.Ekeler</a>         4.8/7.7       44.30         0.10          29.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=3916945">86-D.Slayton</a>        3.1/5.6       43.70         0.20          39.00         0.20          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3121422">17-T.McLaurin</a>       4.5/7.3       43.20         0.30          25.00         0.10          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4426948">12-L.McCaffrey</a>      3.1/5.2       25.40         0.50          24.00         0.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4361577">2-D.Brown</a>           0.6/1.3       12.20         0.00          29.00         0.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4241474">8-B.Robinson Jr.</a>    1.4/2.8       12.10         0.10          16.00         0.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3917914">14-O.Zaccheaus</a>      1.5/2.1       11.10         0.00          15.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4040761">26-D.Singletary</a>     1.2/1.9       11.00         0.10          14.00         0.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=15835">86-Z.Ertz</a>           0.7/1.1       7.20          0.00          22.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4570561">20-E.Gray</a>           0.5/0.9       5.60          0.00          19.00         0.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4048228">87-J.Bates</a>          0.4/0.5       5.00          0.00          21.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=12460">9-G.Gano</a>            0.2/0.3       4.50          0.00          32.00         0.00          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3121409">85-N.Brown</a>          0.4/0.7       3.60          0.10          11.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4429148">84-T.Johnson</a>        0.3/0.4       3.30          0.00          12.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4692590">13-J.Hyatt</a>          0.2/0.4       1.90          0.00          11.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4362227">88-B.Ford-Wheaton</a>   0.2/0.6       1.60          0.00          10.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4361516">82-D.Bellinger</a>      0.1/0.1       1.40          0.00          14.00         0.00          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4240573">0-I.Smith-Marsette</a>  0.2/0.7       1.30          0.00          8.00          0.00          
+
+== FANTASY POINTS ==
+
+[WSH] <a href="http://127.0.0.1:8000/player?id=3068267">30-A.Ekeler</a>         18.76         
+[WSH] <a href="http://127.0.0.1:8000/player?id=4241474">8-B.Robinson Jr.</a>    13.73         
+[WSH] <a href="http://127.0.0.1:8000/player?id=4426348">5-J.Daniels</a>         12.33         
+[NYG] <a href="http://127.0.0.1:8000/player?id=3917792">8-D.Jones</a>           12.00         
+[NYG] <a href="http://127.0.0.1:8000/player?id=4595348">1-M.Nabers</a>          11.64         
+[NYG] <a href="http://127.0.0.1:8000/player?id=4569587">17-W.Robinson</a>       10.71         
+[WSH] <a href="http://127.0.0.1:8000/player?id=3121422">17-T.McLaurin</a>       10.69         
+[NYG] <a href="http://127.0.0.1:8000/player?id=4040761">26-D.Singletary</a>     8.77          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4426948">12-L.McCaffrey</a>      8.64          
+[NYG] <a href="http://127.0.0.1:8000/player?id=3916945">86-D.Slayton</a>        8.27          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4240573">0-I.Smith-Marsette</a>  4.56          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4360516">29-T.Tracy Jr.</a>      3.98          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4361577">2-D.Brown</a>           3.72          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3917914">14-O.Zaccheaus</a>      2.61          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4570561">20-E.Gray</a>           1.62          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3121409">85-N.Brown</a>          1.47          
+[WSH] <a href="http://127.0.0.1:8000/player?id=15835">86-Z.Ertz</a>             1.42          
+[WSH] <a href="http://127.0.0.1:8000/player?id=3127586">26-J.McNichols</a>      0.94          
+[WSH] <a href="http://127.0.0.1:8000/player?id=4048228">87-J.Bates</a>          0.90          
+[NYG] <a href="http://127.0.0.1:8000/player?id=12460">9-G.Gano</a>              0.65          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4429148">84-T.Johnson</a>        0.63          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4692590">13-J.Hyatt</a>          0.39          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4362227">88-B.Ford-Wheaton</a>   0.36          
+[NYG] <a href="http://127.0.0.1:8000/player?id=4361516">82-D.Bellinger</a>      0.24          
+[WSH] <a href="http://127.0.0.1:8000/player?id=16166">10-T.Way</a>              0.01          

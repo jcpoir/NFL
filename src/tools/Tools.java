@@ -69,6 +69,7 @@ public class Tools {
         
         // Clear output file by opening the file outside of append mode!
         if (to_clear) {
+            new File(filepath).mkdirs();
             FileWriter f_dummy = new FileWriter(filepath + "/" + filename + html, false); f_dummy.close(); // Was csv
         }
 
@@ -141,5 +142,20 @@ public class Tools {
             w.write(curr_line + LF);
             w.close();
         }
+    }
+
+    public static int calcURLSpacing(String URL, int URL_s) {
+        // Returns the delta between the non-displayed URL segment's length and URL_s (the standard length)
+        // Used in box score formatting
+
+        String[] components = URL.split("[<>]");
+        int non_visible_URL_len = URL.length() - components[2].length();
+        int URL_length_delta = non_visible_URL_len - URL_s;
+
+        return URL_length_delta;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("4==" + Tools.calcURLSpacing("<>hello<>", 0));
     }
 }

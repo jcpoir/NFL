@@ -36,7 +36,7 @@ public class GameSimulator {
 	static int XP_LINE = 15; static int TOUCHBACK_LINE = 25; static int KICKOFF_LINE = 35; static int SAFETY_PUNT_LINE = 20;
 	String LOG_FILE = "data.txt";
 
-	static String LF = "\n";
+	static String LF = "\n"; static int TEAM_abbv_len = 6;
 	
 	DataTable pass_df; DataTable rush_df; DataTable rec_df; DataTable fantasy_df;
 	DataTable pass_df2; DataTable rush_df2; DataTable rec_df2; DataTable fantasy_df2;
@@ -289,20 +289,20 @@ public class GameSimulator {
 		 */
 
 		pass_df = pass_df2.copy(); rush_df = rush_df2.copy(); rec_df = rec_df2.copy();
+		int URL_s = 54;
 		
 		String out = "";
 		
 		int N_DECIMALS = 2; double mult = Math.pow(10.0, N_DECIMALS);
-		int n = 14; int m = 80; String s = "%-"+n+"s"; Map<String,Map<String,Double>> map; Map<String,Double> row;
+		int n = 14; int m = 20; int m1 = m + TEAM_abbv_len; String s = "%-"+n+"s"; Map<String,Map<String,Double>> map; Map<String,Double> row;
 		
 		// Passer data
 		out += "== PASS ==" + LF + LF; 
-		String headerFormat = "%-"+m+"s"+s+s+s+s+s+s; String header = String.format(headerFormat, "PASSER", "CMP", "YD", "TD", "INT", "FUM", "RTG"); 
+		String f = "%-"+n+".2f"; String headerFormat = "%-"+m1+"s"+s+s+s+s+s+s; String header = String.format(headerFormat, "PASSER", "CMP", "YD", "TD", "INT", "FUM", "RTG"); 
 		out += header + LF;
 		
 		List<Entry<String, Map<String, Double>>> entries = pass_df.sortByField("YD");
 		
-		String f = "%-"+n+".2f"; String rowFormat = "%-"+m+"s"+s+f+f+f+f+"%-"+n+".2f";
 		for (Entry<String, Map<String, Double>> entry : entries) {
 			
 			row = entry.getValue(); String player = entry.getKey();
@@ -312,6 +312,11 @@ public class GameSimulator {
 			double rtg = calcPasserRTG(c, a, yd, td, intr);
 			
 			double cmp = Math.round(row.get("CMP") * mult) / mult; double att = Math.round(row.get("ATT") * mult) / mult;
+
+			// NEW: Special row formatting to account for URL length changes!
+			int player_URL_spacing = m + URL_s + Tools.calcURLSpacing(player, URL_s);
+			String rowFormat = "%-"+player_URL_spacing+"s"+s+f+f+f+f+"%-"+n+".2f";
+
 			String entry_str = String.format(rowFormat, player, cmp+"/"+att, row.get("YD"), row.get("TD"), row.get("INT"), row.get("FUM"), rtg); 
 			
 			out += entry_str + LF;
@@ -320,8 +325,8 @@ public class GameSimulator {
 		// Rusher data
 		out += LF + "== RUSH ==" + LF + LF;
 		
-		headerFormat = "%-"+m+"s"+s+s+s+s+s+s;
-		header = String.format(headerFormat, "RUSHER", "ATT", "YD", "LNG", "TD", "FUM", "AVG"); rowFormat = "%-"+m+"s"+f+f+f+f+f+"%-"+n+".2f";
+		headerFormat = "%-"+m1+"s"+s+s+s+s+s+s;
+		header = String.format(headerFormat, "RUSHER", "ATT", "YD", "LNG", "TD", "FUM", "AVG"); 
 		out += header + LF;
 		
 		entries = rush_df.sortByField("YD");
@@ -330,6 +335,11 @@ public class GameSimulator {
 			row = entry.getValue(); String player = entry.getKey();
 			
 			double yd = row.get("YD"); double att = row.get("ATT"); double avg = yd/att;
+
+			// NEW: Special row formatting to account for URL length changes!
+			int player_URL_spacing = m + URL_s + Tools.calcURLSpacing(player, URL_s);
+			String rowFormat = "%-"+player_URL_spacing+"s"+s+f+f+f+f+"%-"+n+".2f";
+
 			String entry_str = String.format(rowFormat, player, att, yd, row.get("LNG"), row.get("TD"), row.get("FUM"), avg); 
 			
 			out += entry_str + LF;
@@ -337,8 +347,8 @@ public class GameSimulator {
 		
 		out += LF + "== REC ==" + LF +LF;
 		
-		headerFormat = "%-"+m+"s"+s+s+s+s+s;
-		header = String.format(headerFormat, "RECEIVER", "CMP", "YD", "TD", "LNG", "FUM"); rowFormat = "%-"+m+"s"+s+f+f+f+f;
+		headerFormat = "%-"+m1+"s"+s+s+s+s+s;
+		header = String.format(headerFormat, "RECEIVER", "CMP", "YD", "TD", "LNG", "FUM");
 		out += header + LF;
 		
 		entries = rec_df.sortByField("YD");
@@ -347,6 +357,11 @@ public class GameSimulator {
 			row = entry.getValue(); String player = entry.getKey();
 			
 			double cmp = Math.round(row.get("REC") * mult) / mult; double att = Math.round(row.get("TGT") * mult) / mult;
+
+			// NEW: Special row formatting to account for URL length changes!
+			int player_URL_spacing = m + URL_s + Tools.calcURLSpacing(player, URL_s);
+			String rowFormat = "%-"+player_URL_spacing+"s"+s+f+f+f+f;
+
 			String entry_str = String.format(rowFormat, player, cmp+"/"+att, row.get("YD"), row.get("TD"), row.get("LNG"), row.get("FUM")); 
 			
 			out += entry_str + LF;
@@ -364,7 +379,7 @@ public class GameSimulator {
 		String out = "";
 		
 		out += "== FANTASY POINTS ==" + LF + LF;
-		int n = 14; int m = 80; String s = "%-"+n+"s"; String f = "%-"+n+".2f";
+		int n = 14; int m = 80; String f = "%-"+n+".2f";
 		
 		List<Entry<String, Map<String, Double>>> entries = fantasy_df.sortByField("PTS");
 		String rowFormat = "%-"+m+"s"+f;
@@ -446,8 +461,7 @@ public class GameSimulator {
 		Map<String,Double> stats = resultToBSInput(result);
 		
 		String playType = result.get("playType"); if (playType == null) return;
-		// String teamString = String.format("%-5s ", "[" + team + "]");
-		String teamString = "[" + team + "]";
+		String teamString = String.format("%-5s ", "[" + team + "]");
 				
 		if ("RUSH".equals(playType) | "SCRAMBLE".equals(playType)) {
 			String ID = teamString + result.get("player1");
@@ -904,7 +918,7 @@ public class GameSimulator {
 
 		Tools.clear_dir("java_outputs/fantasy");
 		
-		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
+		int n_trials = 10; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
 		sim.simulateMatchup("NE", "ATL", n_trials, avg_stats, OT, verbose, show_result, add_to_box, to_txt);
 	}
 }

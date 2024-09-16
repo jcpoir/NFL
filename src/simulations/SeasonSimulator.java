@@ -442,7 +442,7 @@ public class SeasonSimulator extends GameSimulator {
 		
 		SeasonSimulator sim = new SeasonSimulator();
 		
-		boolean verbose = true; int n_trials = 1;
+		boolean verbose = true; int n_trials = 10;
 		sim.simulateSeason(n_trials, verbose);
 
 	}

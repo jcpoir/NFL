@@ -24,6 +24,23 @@ html, body {
       height: auto;
       min-height: 100%; } }
 
+/* Top bar styles */
+.top-bar {
+  padding: 0.4em 0em 0em 4em; 
+  position: fixed; /* Keeps the bar at the top even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%; /* Spans the full width of the page */
+  height:65px; /* Adjust the height as needed */
+  background-color: white; /* White background */
+  z-index: 1000; /* Ensures the bar stays above other content */
+  border-bottom: 1px solid #ccc; /* Optional: adds a subtle border */
+}
+
+.top-bar img {
+  vertical-align: middle;
+}
+
 body {
   justify-content: center;
   background-color: #000;

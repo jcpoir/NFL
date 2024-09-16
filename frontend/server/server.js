@@ -18,7 +18,11 @@ const routes = require('./routes')
 
 app.use(express.static(dirname));
 
-app.get("/", (req,res) => {res.sendFile(dirname + "/frontend/client/index.html")});
+app.get("/", (req, res) => {
+    res.redirect("/about");
+});
+
+app.get("/:page", routes.serve);
 
 app.get("/gamescript", routes.gamescript);
 
