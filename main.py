@@ -26,19 +26,19 @@ def run_pipeline(season, week):
         data.to_csv(p("data2"), index = False)
 
     # (3) Filter data to account for injuries, roster changes
-    if False:
+    if True:
 
-        if False:
+        if True:
             from depth_chart_parallel_import import import_data
             import_data(season)
-        if False:
+        if True:
             from get_depth_charts import add_java_formats
             add_java_formats("pipeline/depth_charts.csv")
         from filter import filter, reassign_plays
         if True:
             data = filter()
             data.to_csv("pipeline/data3.csv", index = False)
-        if False:
+        if True:
             data = reassign_plays()
             data.to_csv("pipeline/data3.1.csv", index = False)
 
@@ -48,15 +48,15 @@ def run_pipeline(season, week):
         from smoothing_tools import agg_distributions
         from defense_offense_parallel import gen_distributions
         
-        if False:
+        if True:
             gen_distributions(side = "OFF")
             agg_distributions("OFF")
         
-        if False:
+        if True:
             gen_distributions(side = "DEF", n_target = 30)
             agg_distributions("DEF")
 
-        if False:
+        if True:
             from special import gen_spec_distributions
             gen_spec_distributions()
 
@@ -65,4 +65,4 @@ def run_pipeline(season, week):
             from to_java_df import to_java_dfs
             to_java_dfs()
 
-run_pipeline(season = 2023, week = 1)
+run_pipeline(season = 2024, week = 1)

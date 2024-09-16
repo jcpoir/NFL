@@ -21,14 +21,14 @@ def get_injuries(team_id):
         if status == "A": status = "H"
 
         returnDate = "N/A"
-        if status != "H":
+        if status != "H" and "returnDate" in injury["details"]:
             returnDate = injury["details"]["returnDate"]
 
         out[player_id] = (status, returnDate)
 
     return out
 
-def get_depth_charts(start_idx, end_idx, verbose = False):
+def get_depth_charts(start_idx = 0, end_idx = 100, verbose = False):
 
     ref = "$ref"
     out = pd.DataFrame()

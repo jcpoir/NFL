@@ -67,7 +67,16 @@ public class GameSimulator {
 		if (x == 1) return 0;
 		return 1;
 	}
-	
+
+    public void saveGameSummary(String base_filepath, String scoreline, int game_ID) throws IOException {
+		// Used to construct the simulations/{game_ID}/summary.html docs 
+
+		String text = "<h2>" + scoreline + "</h2><p>" + LF + LF + formatBoxScores() + formatFantasyPoints() + "</p>";
+		String filepath = base_filepath + String.valueOf(game_ID) + "/";
+		writeToFile(text, filepath, "summary.html");
+
+	}
+
 	static void displayTimeElapsed(Instant start) {
 		
 		Instant end = Instant.now();
@@ -284,7 +293,7 @@ public class GameSimulator {
 		String out = "";
 		
 		int N_DECIMALS = 2; double mult = Math.pow(10.0, N_DECIMALS);
-		int n = 14; int m = 30; String s = "%-"+n+"s"; Map<String,Map<String,Double>> map; Map<String,Double> row;
+		int n = 14; int m = 80; String s = "%-"+n+"s"; Map<String,Map<String,Double>> map; Map<String,Double> row;
 		
 		// Passer data
 		out += "== PASS ==" + LF + LF; 
@@ -326,7 +335,7 @@ public class GameSimulator {
 			out += entry_str + LF;
 		}
 		
-		out += LF + "== REC ==" + LF;
+		out += LF + "== REC ==" + LF +LF;
 		
 		headerFormat = "%-"+m+"s"+s+s+s+s+s;
 		header = String.format(headerFormat, "RECEIVER", "CMP", "YD", "TD", "LNG", "FUM"); rowFormat = "%-"+m+"s"+s+f+f+f+f;
@@ -355,7 +364,7 @@ public class GameSimulator {
 		String out = "";
 		
 		out += "== FANTASY POINTS ==" + LF + LF;
-		int n = 14; int m = 30; String s = "%-"+n+"s"; String f = "%-"+n+".2f";
+		int n = 14; int m = 80; String s = "%-"+n+"s"; String f = "%-"+n+".2f";
 		
 		List<Entry<String, Map<String, Double>>> entries = fantasy_df.sortByField("PTS");
 		String rowFormat = "%-"+m+"s"+f;
@@ -514,9 +523,9 @@ public class GameSimulator {
 	}
 
 	class GameResult {
-		Map<String,Integer> scores; String pbp;
-		public GameResult(Map<String,Integer> scores, String pbp) {
-			this.scores = scores; this.pbp = pbp;
+		Map<String,Integer> scores; String pbp; String scoreline;
+		public GameResult(Map<String,Integer> scores, String scoreline, String pbp) {
+			this.scores = scores; this.pbp = pbp; this.scoreline = scoreline;
 		}
 	}
 	
@@ -771,11 +780,12 @@ public class GameSimulator {
 		pbp += "END OF GAME";
 
 		// Finish with final score, returning the result to simulateMatchup()
-		String fin_score_string = LF + LF + "FINAL SCORE: " + getScoreLine();
+		String scoreline = getScoreLine();
+		String fin_score_string = LF + LF + "FINAL SCORE: " + scoreline;
 		if (verbose) System.out.println(fin_score_string); // HERE
 		if (to_txt) pbp += fin_score_string;
 		
-		GameResult out = new GameResult(scores, pbp);
+		GameResult out = new GameResult(scores, scoreline, pbp);
 		return out;
 	}
 	
@@ -845,8 +855,11 @@ public class GameSimulator {
 				pass_df.to_csv(filepath + "/pass.html"); rush_df.to_csv(filepath + "/rush.html");
 				rec_df.to_csv(filepath + "/rec.html"); fantasy_df.to_csv(filepath + "/fantasy.html");
 
-				// Record fantasy data in fantasy/{player_id}.csv
+				// Record fantasy data in fantasy/{player_id}.html
 				Tools.record_fantasy(fantasy_df, i, matchup, score);
+
+				// Format summary data, use it to create summary.html for each game simulation
+				saveGameSummary(base_filepath + "/simulations/", game_result.scoreline, i);
 
 				initBoxScores();
 			}
@@ -863,7 +876,7 @@ public class GameSimulator {
 		
 		// Here is where logging, console printing of aggregated tabular data happens!
 		String text = formatStats(matchup_stats); String statline = formatStatLine(matchup_stats);
-		appendToFile(statline, "java_outputs/", "summary.txt");
+		appendToFile(statline, "java_outputs/", "summary.html");
 
 		text += formatBoxScores() + formatFantasyPoints(); 
 		
@@ -873,7 +886,7 @@ public class GameSimulator {
 		}	
 
 		if (to_txt) {
-			writeToFile(text, base_filepath, "summary.txt");
+			writeToFile(text, base_filepath, "summary.html");
 		}
 
 		return new MatchupResult(matchup_stats, leader); // stats are sent to SeasonSimulator (if applicable)
@@ -892,6 +905,6 @@ public class GameSimulator {
 		Tools.clear_dir("java_outputs/fantasy");
 		
 		int n_trials = 1000; boolean avg_stats = true; boolean OT = false; boolean verbose = true; boolean show_result = true; boolean add_to_box = true; boolean to_txt = true;
-		sim.simulateMatchup("ATL", "PIT", n_trials, avg_stats, OT, verbose, show_result, add_to_box, to_txt);
+		sim.simulateMatchup("NE", "ATL", n_trials, avg_stats, OT, verbose, show_result, add_to_box, to_txt);
 	}
 }
