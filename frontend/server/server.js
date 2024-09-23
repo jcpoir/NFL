@@ -22,11 +22,13 @@ app.get("/", (req, res) => {
     res.redirect("/about");
 });
 
-app.get("/:page", routes.serve);
+app.get("/simulations/matchup", routes.matchup);
 
-app.get("/gamescript", routes.gamescript);
+app.get("/home/:page", routes.serve);
 
-app.get("/player", routes.player);
+app.get("/simulations/gamescript", routes.gamescript);
+
+app.get("/simulations/player", routes.player);
 
 app.listen(port, () => {
     console.log("Server is running on http://" + hostname + ":" + port)

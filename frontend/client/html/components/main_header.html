@@ -16,12 +16,37 @@
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
         <!-- Favicon for most browsers -->
-        <link rel="icon" href="cube-blue180x180.png?v=M44lzPylqQ" type="image/png">
+        <link rel="icon" href="/cube-blue180x180.png?v=M44lzPylqQ" type="image/png">
         <!-- Apple Touch Icon for Safari on iOS (haven't figures this out yet) -->
-        <link rel="apple-touch-icon" sizes = "180x180" href="cube-blue180x180.png?v=M44lzPylqQ">
+        <link rel="apple-touch-icon" sizes = "180x180" href="/cube-blue180x180.png?v=M44lzPylqQ">
 
         <!-- Other head elements like stylesheets, etc. -->
         <style>
+
+            a:link {
+            color: #0097FF;
+            background-color: transparent;
+            text-decoration: underline;
+            }
+            
+            a:visited {
+            color: #0097FF;
+            background-color: transparent;
+            text-decoration: underline;
+            }
+            
+            a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+            }
+            
+            a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+            }
+
             body {
                 font-family: Courier;
                 margin: 10px; 
@@ -39,5 +64,5 @@
             }
         </style>
 <div class="top-bar"> 
-<img src="frontend/client/cube-blue180x180.png" width="35" height="35">  <strong>NFL Prophet</strong>   <a href = "http://localhost:8000/about">About</a> >> <a href = "http://localhost:8000/weekly_predictions">Week 2 Predictions</a> >> <a href = "http://localhost:8000/playoffs">Playoff Odds</a> >> <a href = "http://localhost:8000/fantasy">Fantasy Projections</a>
+<img src="/frontend/client/cube-blue180x180.png" width="35" height="35">  <strong>NFL Prophet</strong>   <a href = "/home/about">About</a> >> <a href = "/home/weekly_predictions">Week 2 Predictions</a> >> <a href = "/home/playoffs">Playoff Odds</a> >> <a href = "/home/fantasy">Fantasy Projections</a>
 </div>

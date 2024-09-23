@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-p = "<p>"; p_ = "</p>";
+p = "<p>"; p_ = "</p>"; h1 = "<h1>"; h1_ = "</h1>";
 
 const html_filepath = "../client/html/components/"
 const content_filepath = "../client/html/pages/"
@@ -16,8 +16,6 @@ async function serve(req, res) {
         content
     ]
 
-    console.log(page)
-
     fileContent = "";
     for (fp of filepaths) {
 
@@ -29,12 +27,12 @@ async function serve(req, res) {
     if (page == "weekly_predictions") {
 
         fp = path.join(__dirname, "../../java_outputs/summary.html");
-        fileContent += p + fs.readFileSync(fp, "utf-8") + p_;
+        fileContent += "<p style='font-size: 22px;'>" + fs.readFileSync(fp, "utf-8") + p_;
     }
 
     // Send file with error handling
+    console.log("Serving: " + page);
     res.send(fileContent);
-    console.log(fileContent);
 }
 
 async function gamescript(req, res) {
@@ -56,7 +54,7 @@ async function gamescript(req, res) {
     // plus the predefined header/footer htmls
     
     // Use path.join for cross-platform compatibility
-    const filepaths = [
+    filepaths = [
         html_filepath + "narrative_header.html",
         `../../java_outputs/matchups/${matchup}/simulations/${sim_idx}/${filename}`,
         html_filepath + "narrative_footer.html"
@@ -66,8 +64,23 @@ async function gamescript(req, res) {
     for (fp of filepaths) {
 
         fp = path.join(__dirname, fp);
-        fileContent += fs.readFileSync(fp, "utf-8");
+
+        // catch potential filenotfound errors!
+        try {fileContent += fs.readFileSync(fp, "utf-8");}
+        catch (err) {err_msg = "404: Not Found"; console.error(err_msg); res.send(err_msg)}
     }
+
+    // Send file with error handling
+    res.send(fileContent);
+}
+
+async function matchup(req, res) {
+
+    const matchup = req.query.matchup ? req.query.matchup : "NEvsSEA";
+    console.log("HERE")
+
+    fileContent = fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html")),
+    fileContent += p + fs.readFileSync(path.join(__dirname, `../../java_outputs/matchups/${matchup}/summary.html`)) + p_
 
     // Send file with error handling
     res.send(fileContent);
@@ -94,4 +107,4 @@ async function player(req, res) {
     res.send(fileContent);
 }
 
-module.exports = { serve, gamescript, player };
+module.exports = { matchup, serve, gamescript, player };
