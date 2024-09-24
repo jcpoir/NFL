@@ -77,7 +77,6 @@ async function gamescript(req, res) {
 async function matchup(req, res) {
 
     const matchup = req.query.matchup ? req.query.matchup : "NEvsSEA";
-    console.log("HERE")
 
     fileContent = fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html")),
     fileContent += p + fs.readFileSync(path.join(__dirname, `../../java_outputs/matchups/${matchup}/summary.html`)) + p_
