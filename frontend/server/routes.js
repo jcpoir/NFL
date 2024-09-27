@@ -1,9 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 
-p = "<p>"; p_ = "</p>"; h1 = "<h1>"; h1_ = "</h1>";
+p = "<p>"; p_ = "</p>"; h1 = "<h1>"; h1_ = "</h1>"; h2 = "<h2>"; h2_ = "</h2>"; br = "</br>"
 
 const html_filepath = "../client/html/components/"
+const script_filepath = "../client/scripts/"
 const content_filepath = "../client/html/pages/"
 
 async function serve(req, res) {
@@ -30,8 +31,6 @@ async function serve(req, res) {
         fileContent += "<p style='font-size: 22px;'>" + fs.readFileSync(fp, "utf-8") + p_;
     }
 
-    // Send file with error handling
-    console.log("Serving: " + page);
     res.send(fileContent);
 }
 
@@ -48,20 +47,33 @@ async function gamescript(req, res) {
     else if ("fantasy" === data_type) {filename = "fantasy.html"}
     else if ("summary" == data_type) {filename = "summary.html"}
 
-    console.log(filename);
-
     // define the list of input files, in this case the plain-ish text of interest (gamescript, box score etc.) 
     // plus the predefined header/footer htmls
     
-    // Use path.join for cross-platform compatibility
     filepaths = [
-        html_filepath + "narrative_header.html",
+        html_filepath + "narrative_header_p1.html",
+        -1,
+        html_filepath + "narrative_header_p2.html",
         `../../java_outputs/matchups/${matchup}/simulations/${sim_idx}/${filename}`,
         html_filepath + "narrative_footer.html"
     ];
 
-    fileContent = "";
+    // Title formatting
+    components = matchup.split("vs")
+    matchup_str = components[0] + " vs " + components[1]
+
+    fileContent = br + h2 + matchup_str + " #" + sim_idx + h2_;
     for (fp of filepaths) {
+
+        // Add custom URLs in the narrative header (requires qparams from route)
+        is_top_bar = fp == -1
+        if (is_top_bar) {
+            custom_urls = `<a href = "?sim_idx=${sim_idx}&matchup=${matchup}&data_type=summary">Summary</a> >> `
+            custom_urls += `<a href = "?sim_idx=${sim_idx}&matchup=${matchup}&data_type=pbp">Play-by-Play</a> >> `
+            custom_urls += `<a href = "/simulations/matchup?matchup=${matchup}">Return to Matchup</a>`
+            fileContent += custom_urls
+            continue;
+        }
 
         fp = path.join(__dirname, fp);
 
@@ -89,20 +101,16 @@ async function player(req, res) {
 
     const player_id = req.query.id ? req.query.id : "-1";
 
-    const filepaths = [
-        html_filepath + "narrative_header.html",
-        `../../java_outputs/fantasy/${player_id}.html`,
-        html_filepath + "narrative_footer.html"
-    ];
-
     fileContent = "";
-    for (fp of filepaths) {
+    fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html"));
 
-        fp = path.join(__dirname, fp);
-        fileContent += fs.readFileSync(fp, "utf-8");
-    }
+    // Add custom script
+    filepath = `/java_outputs/fantasy/${player_id}.csv`;
+    fileContent += br + br + br
+    fileContent += "<script src=\"" + "/frontend/server/scripts/swarmplot.js\"" + " data-filepath=" + `\"${filepath}\"` + "\"></script>"
+    fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_footer.html"));
 
-    // Send file with error handling
+    // fileContent += fs.readFileSync(filepath);
     res.send(fileContent);
 }
 
