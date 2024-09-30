@@ -38,7 +38,7 @@ d3.csv(filepath).then((data) => {
         }
         ans = total / n;
 
-        return ans.toFixed(4);
+        return ans;
     }
 
     // Find the sample mean
@@ -267,7 +267,7 @@ d3.csv(filepath).then((data) => {
             .text(`x = ${x_pts}`)
             .style("visibility", "visible");
 
-        r = calc_greater_than(x_pts) * 100
+        r = (calc_greater_than(x_pts) * 100).toFixed(2)
         d_bottom_text_r.transition()
             .duration(0)
             .attr("x", x + text_left)
@@ -277,7 +277,7 @@ d3.csv(filepath).then((data) => {
         d_bottom_text_l.transition()
             .duration(0)
             .attr("x", x - text_left)
-            .text(`${100 - r}%`)
+            .text(`${(100 - r).toFixed(2)}%`)
             .style("visibility", "visible");
 
         mean_line.transition()

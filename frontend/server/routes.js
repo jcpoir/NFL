@@ -1,5 +1,7 @@
 const path = require('path');
 const fs = require('fs');
+// import fetch from 'node-fetch';
+const papaparse = require('papaparse')
 
 p = "<p>"; p_ = "</p>"; h1 = "<h1>"; h1_ = "</h1>"; h2 = "<h2>"; h2_ = "</h2>"; br = "</br>"
 
@@ -106,7 +108,13 @@ async function player(req, res) {
 
     // Add custom script
     filepath = `/java_outputs/fantasy/${player_id}.csv`;
-    fileContent += br + br + br
+    dc_filepath = "/java_outputs/depth_charts.csv"
+
+    // dc_str = fetch(dc_filepath);
+    // console.log(dc_str);
+
+    fileContent += `<img src="/data/pictures/players/${player_id}.png" width=300 height=218 style="fill:white">`
+    // fileContent += br + br
     fileContent += "<script src=\"" + "/frontend/server/scripts/swarmplot.js\"" + " data-filepath=" + `\"${filepath}\"` + "\"></script>"
     fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_footer.html"));
 
