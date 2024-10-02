@@ -16,7 +16,13 @@ dirname = path.join(__dirname, '../../')
 // Imports
 const routes = require('./routes')
 
-app.use(express.static(dirname));
+// Ensure that the default file type is plain text
+app.use(express.static(dirname, {
+    setHeaders: (res, filepath) => {
+        res.removeHeader('Content-Type');
+        res.setHeader('Content-Type', 'text/plain')
+    }
+}));
 
 app.get("/", (req, res) => {
     res.redirect("/about");
