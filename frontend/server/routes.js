@@ -96,10 +96,35 @@ async function gamescript(req, res) {
 
 async function matchup(req, res) {
 
-    const matchup = req.query.matchup ? req.query.matchup : "NEvsSEA";
+    const matchup = req.query.matchup ? req.query.matchup : "NEvsSEA"; 
+    components = matchup.split("vs"); team1 = components[0]; team2 = components[1];
 
-    fileContent = fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html")),
-    fileContent += p + fs.readFileSync(path.join(__dirname, `../../java_outputs/matchups/${matchup}/summary.html`)) + p_
+    const active_col = req.query.active_col ? req.query.active_col : "PTS DIFF";
+    const filepath = `/java_outputs/matchups/${matchup}/scores.csv`
+
+    // Get display colors, team IDs from csv
+    team1_info = await tools.fetch_parse(baseURL + "/data/Team_Colors.csv", "Team", team1); team1_info = team1_info[0];
+    team2_info = await tools.fetch_parse(baseURL + "/data/Team_Colors.csv", "Team", team2); team2_info = team2_info[0];
+
+    fileContent = fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html"));
+
+    // Add team info at the page top
+    logo_size = 220
+    th25 = "<th width=\"25%\">" 
+    t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">" + tr + th25;
+    t += `<img src="/data/pictures/teams/${team1_info["ID"]}.png" width=${logo_size} height=${logo_size}>` 
+    t += h2 + team1_info["Full_Name"] + h2_ + th_ + th25 + th_ + th25 + h2_ + th_ + th25;
+    t += `<img src="/data/pictures/teams/${team2_info["ID"]}.png" width=${logo_size} height=${logo_size}>`;
+    t += h2 + team2_info["Full_Name"] + th_ + tr_;
+
+    fileContent += t;
+
+    // Send all necessary data to the swarmplot script!
+    fileContent += "<script src=\"" + "/frontend/server/scripts/matchup_swarm.js\"" + " data-filepath=" + `\"${filepath}\"` 
+    + " data-active_col=" + `\"${active_col}\"` + " data-matchup=" + `\"${matchup}\"`+ ` data-color1=\"${team1_info["Display"]}\"` 
+    + ` data-color2=\"${team2_info["Display"]}\"` + "\"></script>"
+
+    // fileContent += p + fs.readFileSync(path.join(__dirname, `../../java_outputs/matchups/${matchup}/summary.html`)) + p_
 
     // Send file with error handling
     res.send(fileContent);
@@ -108,8 +133,15 @@ async function matchup(req, res) {
 async function player(req, res) {
 
     const player_id = req.query.id ? req.query.id : "-1";
-    const int_pid = parseInt(player_id);
-    const str_pid = int_pid.toString();
+    const active_col = req.query.active_col ? req.query.active_col : "PTS"
+
+    // Define a mapping between column names, formal names for player stat categories
+    const cm = new Map();
+    cm.set("PTS", "Fantasy Points"); cm.set("Pass YD", "Passing Yards"); cm.set("Pass TD", "Passing Touchdowns");
+    cm.set("Rush YD", "Rushing Yards"); cm.set("Rush TD", "Rushing Touchdowns"); cm.set("Rec YD", "Receiving Yards");
+    cm.set("Rec TD", "Receiving Touchdowns"); cm.set("INT", "Interceptions"); cm.set("FUM", "Fumbles");
+
+    long_name = cm.get(active_col)
 
     fileContent = "";
     fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html"));
@@ -121,11 +153,11 @@ async function player(req, res) {
     // Attempt to load player data
     dc_response = await fetch(dc_filepath);
     dc_str = await dc_response.text()
+    out = await tools.parse_dc(dc_str, player_id);
+    result = out["filtered_rows"]; entry = result[0];
 
-    out = await tools.parse_dc(dc_str, str_pid);
-
-    result = out["filtered_rows"]
-    entry = result[0]
+    // Get display colors, team IDs from csv
+    team_info = await tools.fetch_parse(baseURL + "/data/Team_Colors.csv", "Team", entry["Team"]); color = team_info[0]["Display"];
 
     // Formulate position string i.e. "KR1, RB2"
     pos_str = "";
@@ -142,7 +174,8 @@ async function player(req, res) {
 
     // Unpack and format player data, with headshot image
     t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">";
-    t += tr + th + `<img src="/data/pictures/players/${player_id}.png" width=300 height=218 style="fill:white">` + th_;
+    t += tr + th + `<img src="/data/pictures/teams/${entry["Team_id"]}.png" width=218 height=218 style="fill:white">` 
+    + `<img src="/data/pictures/players/${player_id}.png" width=300 height=218 style="fill:white">` + th_;
     t += "<th width=\"33%\">" + h1 + entry["Long_Name"] + h1_;
 
     t += p + "Pos: " + pos_str + tab + "Team: " + entry["Team"] + tab + "YoE: " + entry["YOE"] 
@@ -153,12 +186,14 @@ async function player(req, res) {
     if (is_injured) t += tab + "Return Date: " + entry["Return_Date"];
 
     t += p_ + th_;
-    t += "<th width=\"33%\">" + `<img src="/data/pictures/teams/${entry["Team_id"]}.png" width=218 height=218 style="fill:white">` + th_ + tr_;
+    t += "<th width=\"33%\">" + th_ + tr_;
 
     fileContent += t;
 
     // fileContent += br + br
-    fileContent += "<script src=\"" + "/frontend/server/scripts/swarmplot.js\"" + " data-filepath=" + `\"${filepath}\"` + "\"></script>"
+    fileContent += "<script src=\"" + "/frontend/server/scripts/player_swarm.js\"" + " data-filepath=" 
+    + `\"${filepath}\"` + " data-active_col=" + `\"${active_col}\"` + " data-player_id=" + `\"${player_id}\"` +
+    ` data-color="${color}"` + "\"></script>"
     fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_footer.html"));
 
     // fileContent += fs.readFileSync(filepath);
