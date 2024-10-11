@@ -10,6 +10,7 @@ const tools = require("./tools")
 
 p = "<p>"; p_ = "</p>"; h1 = "<h1>"; h1_ = "</h1>"; h2 = "<h2>"; h2_ = "</h2>"; br = "</br>";
 tr = "<tr>"; tr_ = "</tr>"; td = "<td>"; td_ = "</td>"; th = "<th>"; th_ = "</th>"; tab = "   ";
+h6 = "<h6>"; h6_ = "</h6>"; // For making text huge (!!)
 
 const html_filepath = "../client/html/components/"
 const script_filepath = "../client/scripts/"
@@ -106,16 +107,27 @@ async function matchup(req, res) {
     team1_info = await tools.fetch_parse(baseURL + "/data/Team_Colors.csv", "Team", team1); team1_info = team1_info[0];
     team2_info = await tools.fetch_parse(baseURL + "/data/Team_Colors.csv", "Team", team2); team2_info = team2_info[0];
 
+    // Get matchup stats
+    team1_matchup = await tools.fetch_parse(baseURL + `/java_outputs/matchups/${matchup}/matchup_stats.csv`, "Team", team1); team1_matchup = team1_matchup[0];
+    team2_matchup = await tools.fetch_parse(baseURL + `/java_outputs/matchups/${matchup}/matchup_stats.csv`, "Team", team2); team2_matchup = team2_matchup[0];
+
     fileContent = fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html"));
 
     // Add team info at the page top
-    logo_size = 220
-    th25 = "<th width=\"25%\">" 
-    t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">" + tr + th25;
+    w1 = Math.round(team1_matchup["Win%"] * 100) / 100 + "%"; w2 = Math.round(team2_matchup["Win%"] * 100) / 100 + "%";
+    
+    // Mark winner
+    name1 = team1_info["Full_Name"]; name2 = team2_info["Full_Name"];
+    if (w1 > w2) {name1 += " ✓"}
+    else {name2 += " ✓"}
+
+    logo_size = 100
+    thw = "<th width=\"50%\">" 
+    t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">" + tr + thw;
     t += `<img src="/data/pictures/teams/${team1_info["ID"]}.png" width=${logo_size} height=${logo_size}>` 
-    t += h2 + team1_info["Full_Name"] + h2_ + th_ + th25 + th_ + th25 + h2_ + th_ + th25;
+    t += h2 + name1 + h2_ + br + h6 + w1 + h6_ + br + br + th_ + thw;
     t += `<img src="/data/pictures/teams/${team2_info["ID"]}.png" width=${logo_size} height=${logo_size}>`;
-    t += h2 + team2_info["Full_Name"] + th_ + tr_;
+    t += h2 + name2 + h2_ + br + h6 + w2 + h6_ + br + br + th_ + tr_;
 
     fileContent += t;
 
@@ -173,13 +185,14 @@ async function player(req, res) {
     }
 
     // Unpack and format player data, with headshot image
+    logo_size = 100; player_size = 220;
     t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">";
-    t += tr + th + `<img src="/data/pictures/teams/${entry["Team_id"]}.png" width=218 height=218 style="fill:white">` 
-    + `<img src="/data/pictures/players/${player_id}.png" width=300 height=218 style="fill:white">` + th_;
+    t += tr + th + `<img src="/data/pictures/teams/${entry["Team_id"]}.png" width=${logo_size} height=${logo_size} style="vertical-align: top">` 
+    + `<img src="/data/pictures/players/${player_id}.png" width=${player_size} height=${player_size * 218/300}>` + th_;
     t += "<th width=\"33%\">" + h1 + entry["Long_Name"] + h1_;
 
     t += p + "Pos: " + pos_str + tab + "Team: " + entry["Team"] + tab + "YoE: " + entry["YOE"] 
-    t += br + br + "Draft: " + draft_str + br + br;
+    t += br + "Draft: " + draft_str + br;
     t += "Injury Status: " + entry["Injury_Status"]
     
     is_injured = entry["Injury_Status"] != "H"

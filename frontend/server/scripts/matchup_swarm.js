@@ -58,9 +58,9 @@ let background = svg.append("rect")
     .attr("y", 0)
     .attr("width", 1000)
     .attr("height", 500)
-    .attr("fill", "#161616")
-    .attr("stroke", "white")
-    .attr("stroke-width", "3")
+    .attr("fill", "#101010")
+    .attr("stroke", "gray")
+    .attr("stroke-width", "0.5")
 
 if (!exists(filepath)) {
     svg.append("text")
@@ -162,9 +162,14 @@ else {
         console.log("c1: " + c1 + "\nc2: " + c2);
         fade_dist = 10
 
-        const colorScale = d3.scaleLinear()
+        // Define color gradients
+        const activeScale = d3.scaleLinear()
             .domain([-1000, -fade_dist, 0, fade_dist, 1000])
             .range([c1, c1, "white", c2, c2])
+
+        const defaultScale = d3.scaleLinear()
+            .domain(d3.extent(data, (d) => +d[active_col]))
+            .range(["red", "yellow"])
 
         // Append circles
         let circles = svg.selectAll(".circ")
@@ -176,9 +181,9 @@ else {
             .attr("stroke-width", 0.25)
             .attr("r", circle_r) // Circle radius
             .attr("cx", (d) => xScale(d[active_col]))
-            .attr("fill", "white")
+            .attr("fill", d => defaultScale(d[active_col]))
 
-        if (active_col == "PTS DIFF") {circles.attr("fill", d => colorScale(d[active_col]))}
+        if (active_col == "PTS DIFF") {circles.attr("fill", d => activeScale(d[active_col]))}
 
 
         // Append the x-axis
@@ -240,9 +245,15 @@ else {
             .attr("x", mean_x + text_left)
             .attr("y", 110)
             .style("fill", "white")
-            .text(`x̅ = ${mean}`)
             .style("font-size", "16")
             .style("font-weight", "bold")
+
+        if (active_col == "PTS DIFF") {
+            if (mean < 0) {ml_text.text(team1 + " -" + Math.abs(mean));}
+            else if (mean > 0) {ml_text.text(team2 + " -" + Math.abs(mean));}
+            else {ml_text.text("EVEN")}
+        }
+        else {ml_text.text(`x̅ = ${mean}`)}
 
         // Add title, x-label
         let chart_title = svg.append("text")

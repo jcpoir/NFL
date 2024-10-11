@@ -23,6 +23,7 @@
     background-color: #161616;
     min-width: 310px;
     z-index: 1;
+    text-align: center;
   }
   
   /* Links inside the dropdown */

@@ -55,9 +55,9 @@ let background = svg.append("rect")
     .attr("y", 0)
     .attr("width", 1000)
     .attr("height", 500)
-    .attr("fill", "#161616")
-    .attr("stroke", "white")
-    .attr("stroke-width", "3")
+    .attr("fill", "#101010")
+    .attr("stroke", "gray")
+    .attr("stroke-width", "0.5")
 
 if (!exists(filepath)) {
     svg.append("text")
@@ -169,7 +169,7 @@ else {
             .attr("class", "circ")
             .attr("stroke", "black")
             .attr("fill", color) // Added fill for better visibility
-            .attr("fill-opacity", 0.9)
+            .attr("fill-opacity", 1)
             .attr("r", circle_r) // Circle radius
             .attr("cx", (d) => xScale(d[active_col]))
 
@@ -243,7 +243,7 @@ else {
             .attr("x", 165)
             .attr("y", 75)
             .style("fill", "white")
-            .text(`Projected xxxxxxxxxxxxxxxxxxxx: ${player}`)
+            .text(`Projected xxxxxxxxxxxxxxxxxxxxii: ${player}`)
             .style("font-size", "23")
 
         let dropdown = d3.select("body").append("div")
