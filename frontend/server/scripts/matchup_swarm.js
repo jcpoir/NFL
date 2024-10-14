@@ -181,7 +181,7 @@ else {
             .attr("stroke-width", 0.25)
             .attr("r", circle_r) // Circle radius
             .attr("cx", (d) => xScale(d[active_col]))
-            .attr("fill", d => defaultScale(d[active_col]))
+            .attr("fill", d => defaultScale(d[active_col]));
 
         if (active_col == "PTS DIFF") {circles.attr("fill", d => activeScale(d[active_col]))}
 
@@ -256,7 +256,7 @@ else {
         else {ml_text.text(`x̅ = ${mean}`)}
 
         // Add title, x-label
-        let chart_title = svg.append("text")
+        svg.append("text")
             .attr("class", "title")
             .attr("text-anchor", "left")
             .attr("x", 165)
@@ -271,7 +271,7 @@ else {
 
         dropdown.html(d)
             .style("left", "300px")
-            .style("top", "-447px")
+            .style("top", "-448px")
 
         circles.on("mouseover", function (event, d) {
 

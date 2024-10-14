@@ -11,13 +11,38 @@ const filepath = scriptTag.getAttribute('data-filepath');
 const active_col = scriptTag.getAttribute('data-active_col')
 const player_id = scriptTag.getAttribute("data-player_id")
 const color = scriptTag.getAttribute("data-color")
+is_QB = scriptTag.getAttribute("data-is_QB") == "true"; is_skill = scriptTag.getAttribute("data-is_skill") == "true";
+is_K = scriptTag.getAttribute("data-is_K") == "true"; is_DST = scriptTag.getAttribute("data-is_DST") == "true";
+
+console.log("is_QB: " + is_QB);
+console.log("is_skill: " + is_skill);
+console.log("is_K: " + is_K);
+console.log("is_DST: " + is_DST);
+
 
 // Define a mapping between column names, formal names for player stat categories
 const cm = new Map();
-cm.set("PTS", "Fantasy Points"); cm.set("Pass YD", "Passing Yards"); cm.set("Pass TD", "Passing Touchdowns");
-cm.set("Rush YD", "Rushing Yards"); cm.set("Rush TD", "Rushing Touchdowns"); cm.set("Rec YD", "Receiving Yards");
-cm.set("Rec TD", "Receiving Touchdowns"); cm.set("INT", "Interceptions"); cm.set("FUM", "Fumbles");
-const long_name = cm.get(active_col);
+
+// General
+cm.set("PTS", "Fantasy Points"); cm.set("FUM", "Fumbles");
+
+// Passing
+if (is_QB) {
+    cm.set("Pass YD", "Passing Yards"); cm.set("Pass TD", "Passing Touchdowns"); cm.set("INT", "Interceptions");
+    cm.set("Pass ATT", "Pass Attempts"); cm.set("CMP%", "Completion Rate"); cm.set("Pass Yd/ATT", "Passing YPA");
+    cm.set("Passer RTG", "Passer Rating");
+}
+
+if (is_QB | is_skill) {
+    cm.set("Rush YD", "Rushing Yards"); cm.set("Rush TD", "Rushing Touchdowns"); cm.set("Rush ATT", "Rush Attempts");
+}
+
+// Rushing, receiving
+if (is_skill) {
+    cm.set("Rec YD", "Receiving Yards"); cm.set("Rec TD", "Receiving TDs"); cm.set("TGT", "Targets");
+}
+
+long_name = cm.get(active_col)
 
 // Build an html dropdown menu for the above columns
 d = `<div class='dropdown'><button class='dropbtn'>▼ ${long_name}</button><div class='dropdown-content'>`;
@@ -252,7 +277,7 @@ else {
 
         dropdown.html(d)
             .style("left", "300px")
-            .style("top", "-447px")
+            .style("top", "-448px")
 
         circles.on("mouseover", function (event, d) {
 

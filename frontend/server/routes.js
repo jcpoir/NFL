@@ -43,6 +43,13 @@ async function serve(req, res) {
     res.send(fileContent);
 }
 
+async function fantasy(req, res) {
+
+    const view = req.query.view ? req.query.view : "Summary";
+
+    table = fetch_parse(baseURL + "java_outputs/fantasy/-1.csv")
+}
+
 async function gamescript(req, res) {
 
     const matchup = req.query.matchup ? req.query.matchup : "NEvsATL";
@@ -147,14 +154,6 @@ async function player(req, res) {
     const player_id = req.query.id ? req.query.id : "-1";
     const active_col = req.query.active_col ? req.query.active_col : "PTS"
 
-    // Define a mapping between column names, formal names for player stat categories
-    const cm = new Map();
-    cm.set("PTS", "Fantasy Points"); cm.set("Pass YD", "Passing Yards"); cm.set("Pass TD", "Passing Touchdowns");
-    cm.set("Rush YD", "Rushing Yards"); cm.set("Rush TD", "Rushing Touchdowns"); cm.set("Rec YD", "Receiving Yards");
-    cm.set("Rec TD", "Receiving Touchdowns"); cm.set("INT", "Interceptions"); cm.set("FUM", "Fumbles");
-
-    long_name = cm.get(active_col)
-
     fileContent = "";
     fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html"));
 
@@ -171,10 +170,18 @@ async function player(req, res) {
     // Get display colors, team IDs from csv
     team_info = await tools.fetch_parse(baseURL + "/data/Team_Colors.csv", "Team", entry["Team"]); color = team_info[0]["Display"];
 
-    // Formulate position string i.e. "KR1, RB2"
+    // Formulate position string i.e. "KR1, RB2". Also get positional booleans
+    is_QB=false; is_skill=false; is_K=false; is_DST=false
+
     pos_str = "";
     for (role of result) {
-        pos_str += role["Position"].toUpperCase() + role["Rank"] + ", ";
+        pos = role["Position"].toUpperCase();
+        pos_str += pos + role["Rank"] + ", ";
+
+        if (pos == "QB") {is_QB=true}
+        else if ((pos == "RB") | (pos == "WR") | (pos == "TE")) {is_skill=true}
+        else if ((pos == "K")) {is_K=true}
+        else {is_DST=true}
     }
     pos_str = pos_str.substring(0,pos_str.length - 2);
     
@@ -206,7 +213,9 @@ async function player(req, res) {
     // fileContent += br + br
     fileContent += "<script src=\"" + "/frontend/server/scripts/player_swarm.js\"" + " data-filepath=" 
     + `\"${filepath}\"` + " data-active_col=" + `\"${active_col}\"` + " data-player_id=" + `\"${player_id}\"` +
-    ` data-color="${color}"` + "\"></script>"
+    ` data-color="${color}"`
+    + ` data-is_QB="${is_QB}"` + ` data-is_skill="${is_skill}"` + ` data-is_K="${is_K}"` + ` data-is_DST="${is_DST}"`
+    + "\"></script>"
     fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_footer.html"));
 
     // fileContent += fs.readFileSync(filepath);
