@@ -35,6 +35,7 @@ app.get("/home/:page", routes.serve);
 app.get("/simulations/gamescript", routes.gamescript);
 
 app.get("/simulations/player", routes.player);
+app.get("/simulations/defense", routes.defense);
 
 app.listen(port, () => {
     console.log("Server is running on http://" + hostname + ":" + port)

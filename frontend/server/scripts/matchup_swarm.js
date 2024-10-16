@@ -100,7 +100,7 @@ else {
 
         console.log(mean)
 
-        data = data.slice(0, 2000)
+        data = data.slice(0, 1000)
 
         // Unpack column names by inspecting the first row of the table
         let cols = data.length > 0 ? Object.keys(data[0]) : [];
@@ -222,6 +222,15 @@ else {
             .attr("y", 450)
             .style("fill", "white")
             .text(active_col)
+        
+        // Hyper-annoying jumping dropdown
+        let dropdown = d3.select("body").append("div")
+            .attr("class", "dropdown")
+            .style("visibility", "visible")
+
+        dropdown.html(d)
+            .style("left", "300px")
+            .style("top", "-448px")
 
         // Add effects, tooltips
         let div = d3.select("body").append("div")
@@ -264,14 +273,6 @@ else {
             .style("fill", "white")
             .text(`Projected xxxxxxxxxxxxxxxxxxxxx.: ${pretty_matchup}`)
             .style("font-size", "23")
-
-        let dropdown = d3.select("body").append("div")
-            .attr("class", "dropdown")
-            .style("visibility", "visible")
-
-        dropdown.html(d)
-            .style("left", "300px")
-            .style("top", "-448px")
 
         circles.on("mouseover", function (event, d) {
 

@@ -3,22 +3,17 @@
 // Generates a swarmplot using d3's force algorithm. Optimized for
 // the player-fantasy point use case
 
-
-
 // unpack arguments
 const scriptTag = document.querySelector('script[src*="player_swarm.js"]');
-const filepath = scriptTag.getAttribute('data-filepath');
+filepath = scriptTag.getAttribute('data-filepath'); alt_filepath = scriptTag.getAttribute('data-alt_filepath');
 const active_col = scriptTag.getAttribute('data-active_col')
 const player_id = scriptTag.getAttribute("data-player_id")
 const color = scriptTag.getAttribute("data-color")
 is_QB = scriptTag.getAttribute("data-is_QB") == "true"; is_skill = scriptTag.getAttribute("data-is_skill") == "true";
 is_K = scriptTag.getAttribute("data-is_K") == "true"; is_DST = scriptTag.getAttribute("data-is_DST") == "true";
 
-console.log("is_QB: " + is_QB);
-console.log("is_skill: " + is_skill);
-console.log("is_K: " + is_K);
-console.log("is_DST: " + is_DST);
-
+console.log("filepath: " + filepath);
+console.log("alt_filepath: " + alt_filepath);
 
 // Define a mapping between column names, formal names for player stat categories
 const cm = new Map();
@@ -42,6 +37,23 @@ if (is_skill) {
     cm.set("Rec YD", "Receiving Yards"); cm.set("Rec TD", "Receiving TDs"); cm.set("TGT", "Targets");
 }
 
+function exists(fp) {
+    var http = new XMLHttpRequest();
+    http.open('HEAD', fp, false);
+    http.send();
+    return http.status!=404;   
+}
+
+if (!exists(filepath)) {
+    filepath = alt_filepath
+    is_DST = true
+}
+
+if (is_DST) {
+    cm.set("Def YD", "Yards Against"); cm.set("PA", "Points Against"); cm.set("INT", "Interceptions"); cm.set("SACK", "Sacks");
+    cm.set("Def TD", "Defensive Touchdowns"); cm.set("SFTY", "Safeties"); cm.set("FUM", "Fumble Recoveries");
+}
+
 long_name = cm.get(active_col)
 
 // Build an html dropdown menu for the above columns
@@ -61,13 +73,6 @@ const circle_r = 3; const circle_r2 = 10;
 const text_top = 10; const text_left = 10;
 
 const average = array => array.reduce((a, b) => a + b) / array.length;
-
-function exists(fp) {
-    var http = new XMLHttpRequest();
-    http.open('HEAD', fp, false);
-    http.send();
-    return http.status!=404;   
-}
 
 let svg = d3
     .select("body")
@@ -122,7 +127,7 @@ else {
 
         console.log(mean)
 
-        data = data.slice(0, 2000)
+        data = data.slice(0, 1000)
 
         // Unpack column names by inspecting the first row of the table
         let cols = data.length > 0 ? Object.keys(data[0]) : [];
@@ -235,12 +240,6 @@ else {
             .style("fill", "white")
             .text(active_col)
 
-        // Add effects, tooltips
-        let div = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("visibility", "hidden")
-            .style("opacity", 0);
-
         // add mean line
         mean_x = xScale(mean)
         let mean_line = svg.append("line")
@@ -278,6 +277,12 @@ else {
         dropdown.html(d)
             .style("left", "300px")
             .style("top", "-448px")
+
+        // Add effects, tooltips
+        let div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("visibility", "hidden")
+            .style("opacity", 0);
 
         circles.on("mouseover", function (event, d) {
 

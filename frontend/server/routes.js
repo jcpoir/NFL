@@ -149,10 +149,50 @@ async function matchup(req, res) {
     res.send(fileContent);
 }
 
+async function defense(req, res) {
+
+    // Unpack defensive team tag
+    const def_id = req.query.defense_id ? req.query.defense_id : "NE D/ST"
+    const active_col = req.query.active_col ? req.query.active_col : "PTS"
+    const team = def_id.split(" ")[0]
+
+    // Get team colors, long name, id for image inclusion
+    team_info = await tools.fetch_parse(baseURL + "/data/Team_colors.csv", "Team", team); entry = team_info[0];
+    color = entry["Display"]; longname = entry["Full_Name"]; team_id = entry["ID"];
+
+    fileContent = "";
+    fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html"));
+
+    // Build metadata table
+    logo_size = 180;
+
+    th2 = "<th width=33%>"; // 
+
+    t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">";
+    t += tr + th2 + `<img src="/data/pictures/teams/${team_id}.png" width=${logo_size} height=${logo_size}>` + th_;
+    t += th2 + h2 + longname + " Defense and Special Teams</br>(D/ST)" + h2_ + th_
+    t += th2 + `<img src="/data/pictures/teams/${team_id}.png" width=${logo_size} height=${logo_size}>` + th_ + tr_ + "</table>";
+
+    fileContent += t
+
+    // Embed swarmplot script
+    filepath = `/java_outputs/fantasy/${team + "+DST"}.csv`;
+    fileContent += "<script src=\"" + "/frontend/server/scripts/player_swarm.js\"" + " data-filepath=" 
+    + `\"${filepath}\"` + " data-active_col=" + `\"${active_col}\"` + " data-player_id=" + `\"${def_id}\"` +
+    ` data-color="${color}"` + ` data-is_DST="true"`+ "\"></script>"
+
+    fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_footer.html"));
+    res.send(fileContent);
+    return;
+}
+
 async function player(req, res) {
 
     const player_id = req.query.id ? req.query.id : "-1";
     const active_col = req.query.active_col ? req.query.active_col : "PTS"
+
+    is_DST = req.query.id.includes("DST")
+    if (is_DST) {res.redirect(`/simulations/defense?defense_id=${player_id}&active_col=${active_col}`); return;}
 
     fileContent = "";
     fileContent += fs.readFileSync(path.join(__dirname, html_filepath + "main_header.html"));
@@ -162,10 +202,11 @@ async function player(req, res) {
     dc_filepath = path.join(baseURL, "/pipeline/depth_charts.csv");
 
     // Attempt to load player data
-    dc_response = await fetch(dc_filepath);
-    dc_str = await dc_response.text()
-    out = await tools.parse_dc(dc_str, player_id);
-    result = out["filtered_rows"]; entry = result[0];
+    dc_response = await fetch(dc_filepath); dc_str = await dc_response.text()
+    out = await tools.parse_dc(dc_str, player_id); result = out["filtered_rows"]; entry = result[0];
+
+    // Get defensive stat (D/ST) filepath for D/ST players
+    alt_filepath = `/java_outputs/fantasy/${entry["Team"]}+DST.csv`
 
     // Get display colors, team IDs from csv
     team_info = await tools.fetch_parse(baseURL + "/data/Team_Colors.csv", "Team", entry["Team"]); color = team_info[0]["Display"];
@@ -212,7 +253,7 @@ async function player(req, res) {
 
     // fileContent += br + br
     fileContent += "<script src=\"" + "/frontend/server/scripts/player_swarm.js\"" + " data-filepath=" 
-    + `\"${filepath}\"` + " data-active_col=" + `\"${active_col}\"` + " data-player_id=" + `\"${player_id}\"` +
+    + `\"${filepath}\" data-alt_filepath="${alt_filepath}"` + " data-active_col=" + `\"${active_col}\"` + " data-player_id=" + `\"${player_id}\"` +
     ` data-color="${color}"`
     + ` data-is_QB="${is_QB}"` + ` data-is_skill="${is_skill}"` + ` data-is_K="${is_K}"` + ` data-is_DST="${is_DST}"`
     + "\"></script>"
@@ -222,4 +263,4 @@ async function player(req, res) {
     res.send(fileContent);
 }
 
-module.exports = { matchup, serve, gamescript, player };
+module.exports = { matchup, serve, gamescript, player, defense, fantasy };
