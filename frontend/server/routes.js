@@ -221,7 +221,7 @@ async function player(req, res) {
 
         if (pos == "QB") {is_QB=true}
         else if ((pos == "RB") | (pos == "WR") | (pos == "TE")) {is_skill=true}
-        else if ((pos == "K")) {is_K=true}
+        else if ((pos == "PK")) {is_K=true}
         else {is_DST=true}
     }
     pos_str = pos_str.substring(0,pos_str.length - 2);

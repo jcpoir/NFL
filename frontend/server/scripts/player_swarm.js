@@ -32,6 +32,11 @@ if (is_QB | is_skill) {
     cm.set("Rush YD", "Rushing Yards"); cm.set("Rush TD", "Rushing Touchdowns"); cm.set("Rush ATT", "Rush Attempts");
 }
 
+if (is_K) {
+    cm.set("XPA", "Extra Point Attempts"); cm.set("XPM", "Extra Points Made"); cm.set("FGA", "FGs Attempted"); cm.set("FGM", "FGs Made");
+    cm.set("FG0_39", "FGs Made, < 40 Yds"); cm.set("FG40_49", "FGs Made, < 50 Yds"); cm.set("FG50plus", "FGs Made, ≥ 50 Yds"); cm.set("FG%", "FG Percentage");
+}
+
 // Rushing, receiving
 if (is_skill) {
     cm.set("Rec YD", "Receiving Yards"); cm.set("Rec TD", "Receiving TDs"); cm.set("TGT", "Targets");
