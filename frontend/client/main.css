@@ -57,6 +57,11 @@ table {
   justify-content: left;
 }
 
+.center-div {
+  justify-content: center;
+  text-align: center;
+}
+
 div.tooltip {
   position: absolute;
   text-align: center;
