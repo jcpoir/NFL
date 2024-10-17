@@ -2,9 +2,6 @@
 @-ms-viewport {
   width: device-width; }
 
-body {
-  -ms-overflow-style: scrollbar; }
-
 @media screen and (max-width: 480px) {
   html, body {
     min-width: 320px; } }
@@ -17,12 +14,14 @@ html {
 
 html, body {
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
  }
   @media screen and (max-height: 640px) {
     html, body {
       height: auto;
       min-height: 100%; } }
+
+  body {overflow-y: scroll;}
 
 /* Top bar styles */
 .top-bar {
@@ -32,9 +31,10 @@ html, body {
   left: 0;
   width: 100%; /* Spans the full width of the page */
   height:65px; /* Adjust the height as needed */
-  background-color: white; /* White background */
+  color: white;
+  background-color: #202020; /* White background */
   z-index: 1000; /* Ensures the bar stays above other content */
-  border-bottom: 1px solid #ccc; /* Optional: adds a subtle border */
+  border-bottom: 3px dashed lightgray; /* Optional: adds a subtle border */
   white-space: pre; /* was pre-line */
   line-height: 0.5;
 }

@@ -128,13 +128,15 @@ async function matchup(req, res) {
     if (w1 > w2) {name1 += " ✓"}
     else {name2 += " ✓"}
 
-    logo_size = 100
-    thw = "<th width=\"50%\">" 
-    t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">" + tr + thw;
-    t += `<img src="/data/pictures/teams/${team1_info["ID"]}.png" width=${logo_size} height=${logo_size}>` 
-    t += h2 + name1 + h2_ + br + h6 + w1 + h6_ + br + br + th_ + thw;
-    t += `<img src="/data/pictures/teams/${team2_info["ID"]}.png" width=${logo_size} height=${logo_size}>`;
-    t += h2 + name2 + h2_ + br + h6 + w2 + h6_ + br + br + th_ + tr_;
+    logo_size = 120
+    thw = "<th width=\"33%\">" 
+    t = "<table border=\"0\" style=\"text-align: center; vertical-align: middle; width: 1000\">" + tr;
+    t += thw + br + h2 + name1 + h2_ + br + h6 + w1 + h6_ + br + br + th_;
+    t += th + `<img src="/data/pictures/teams/${team1_info["ID"]}.png" width=${logo_size} height=${logo_size}>` + th_;
+    t += th + "<h2><strong>vs</strong></h2>" + th_;
+    t += th + `<img src="/data/pictures/teams/${team2_info["ID"]}.png" width=${logo_size} height=${logo_size}>` + th_;
+    t += thw + br + h2 + name2 + h2_ + br + h6 + w2 + h6_ + br + br + th_;
+    t += "</table>";
 
     fileContent += t;
 
