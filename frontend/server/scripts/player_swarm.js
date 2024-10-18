@@ -39,7 +39,7 @@ if (is_K) {
 
 // Rushing, receiving
 if (is_skill) {
-    cm.set("Rec YD", "Receiving Yards"); cm.set("Rec TD", "Receiving TDs"); cm.set("TGT", "Targets");
+    cm.set("Rec YD", "Receiving Yards"); cm.set("Rec TD", "Receiving TDs"); cm.set("TGT", "Targets"); cm.set("REC", "Receptions");
 }
 
 function exists(fp) {
@@ -57,6 +57,10 @@ if (!exists(filepath)) {
 if (is_DST) {
     cm.set("Def YD", "Yards Against"); cm.set("PA", "Points Against"); cm.set("INT", "Interceptions"); cm.set("SACK", "Sacks");
     cm.set("Def TD", "Defensive Touchdowns"); cm.set("SFTY", "Safeties"); cm.set("FUM", "Fumble Recoveries");
+}
+
+if (!is_DST & !is_K) {
+    cm.set("TOT TD", "Total Touchdowns");
 }
 
 long_name = cm.get(active_col)
@@ -170,7 +174,7 @@ else {
             .attr("class", "mean-line text")
             .attr("text-anchor", "start")
             .attr("x", x_start + 10)
-            .attr("y", 110)
+            .attr("y", 130)
             .style("fill", "white")
             .text(`x = ${null}`)
             .style("font-size", "16") 

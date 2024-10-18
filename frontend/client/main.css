@@ -7,7 +7,9 @@
     min-width: 320px; } }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+  color: white
+}
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -53,8 +55,21 @@ body {
 table {
   border:0px solid red;
   /* border-collapse: collapse; */
+  color: white;
   border-spacing: 0;
-  justify-content: left;
+  justify-content: center;
+}
+
+.display {
+  text-align: center;
+}
+
+.display th {
+  background-color: #202020;
+}
+
+.display tr:nth-child(even) {
+  background-color: #161616;
 }
 
 .center-div {

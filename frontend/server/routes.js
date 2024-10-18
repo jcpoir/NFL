@@ -1,12 +1,19 @@
 const path = require('path');
 const fs = require('fs');
 // import fetch from 'node-fetch';
+
 const fetch = require('node-fetch');
-const { parse } = require('csv-parse')
+
+// Requirements for DataTables
+// const $ = require('jquery');
+// require('datatables.net')();
+// require('datatables.net-dt')(); 
+
 const baseURL = "http://127.0.0.1:8000"
 
 // local imports
 const tools = require("./tools")
+const table = require("./scripts/table")
 
 p = "<p>"; p_ = "</p>"; h1 = "<h1>"; h1_ = "</h1>"; h2 = "<h2>"; h2_ = "</h2>"; br = "</br>";
 tr = "<tr>"; tr_ = "</tr>"; td = "<td>"; td_ = "</td>"; th = "<th>"; th_ = "</th>"; tab = "   ";
@@ -44,10 +51,24 @@ async function serve(req, res) {
 }
 
 async function fantasy(req, res) {
+    
+    // Get header
+    fileContent = fs.readFileSync(__dirname + "/" + html_filepath + "main_header.html")
+    fileContent += h1 + "Fantasy Projections" + h1_ + br
 
+    // Load in fantasy data
     const view = req.query.view ? req.query.view : "Summary";
+    data = await tools.fetch_parse(baseURL + "/pipeline/fantasy_final.csv")
 
-    table = fetch_parse(baseURL + "java_outputs/fantasy/-1.csv")
+    // Construct the table element
+    cols = new Map();
+    cols.set("Team_img", ""); cols.set("Team", "Team"); cols.set("Player_img", ""); cols.set("Player_link", "Player"); 
+    cols.set("Position", "Position"); cols.set("PTS", "Fantasy Projection");
+
+    html_table = table.html_table(data, cols);
+    fileContent += html_table;
+
+    res.send(fileContent);
 }
 
 async function gamescript(req, res) {
@@ -173,7 +194,7 @@ async function defense(req, res) {
     t = "<table border=\"0\" style=\"text-align: center; vertical-align: bottom; width: 1000\">";
     t += tr + th2 + `<img src="/data/pictures/teams/${team_id}.png" width=${logo_size} height=${logo_size}>` + th_;
     t += th2 + h2 + longname + " Defense and Special Teams</br>(D/ST)" + h2_ + th_
-    t += th2 + `<img src="/data/pictures/teams/${team_id}.png" width=${logo_size} height=${logo_size}>` + th_ + tr_ + "</table>";
+    t += th2 + th_ + tr_ + "</table>";
 
     fileContent += t
 
