@@ -58,14 +58,16 @@ table {
   color: white;
   border-spacing: 0;
   justify-content: center;
+  text-align: center;
 }
 
-.display {
+.display thead {
   text-align: center;
 }
 
 .display th {
   background-color: #202020;
+  text-align: center;
 }
 
 .display tr:nth-child(even) {

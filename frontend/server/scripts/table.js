@@ -21,7 +21,7 @@ function html_table(data, cols) {
         for ([k,v] of cols) {out += td + entry[k] + td_;}
         out += tr_;
     }
-    out += tbody_ + "</table>";
+    out += tbody_ + "</table style=\"text-align: center\">";
 
     out += "<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>"
     out += `<script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>`

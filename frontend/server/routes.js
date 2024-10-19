@@ -62,8 +62,8 @@ async function fantasy(req, res) {
 
     // Construct the table element
     cols = new Map();
-    cols.set("Team_img", ""); cols.set("Team", "Team"); cols.set("Player_img", ""); cols.set("Player_link", "Player"); 
-    cols.set("Position", "Position"); cols.set("PTS", "Fantasy Projection");
+    cols.set("Team_img", "Team"); cols.set("Player_img", "Player");
+    cols.set("Injury_Status", "Injury Status"); cols.set("Position", "Position"); cols.set("PTS", "Fantasy Projection");
 
     html_table = table.html_table(data, cols);
     fileContent += html_table;
