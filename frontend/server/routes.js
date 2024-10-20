@@ -51,6 +51,8 @@ async function serve(req, res) {
 }
 
 async function fantasy(req, res) {
+
+    const active_view = req.query.active_view ? req.query.active_view : "Fantasy";
     
     // Get header
     fileContent = fs.readFileSync(__dirname + "/" + html_filepath + "main_header.html")
@@ -62,11 +64,26 @@ async function fantasy(req, res) {
 
     // Construct the table element
     cols = new Map();
-    cols.set("Team_img", "Team"); cols.set("Player_img", "Player");
-    cols.set("Injury_Status", "Injury Status"); cols.set("Position", "Position"); cols.set("PTS", "Fantasy Projection");
+    cols.set("Team_img", "Team"); cols.set("Player_img", "Player"); cols.set("Injury_Status", "Injury Status"); cols.set("Position", "Position");
+    if (active_view == "Fantasy") cols.set("PTS", "Fantasy Projection");
+    if (active_view == "Passing") {cols.set("Pass YD", "Passing Yards"); cols.set("Pass TD", "Passing Touchdowns"); cols.set("Pass ATT", "Passing Attempts"); cols.set("CMP%","Completion Percentage"); cols.set("Passer RTG", "Passer Rating"); cols.set("INT","Interceptions")}
+    if (active_view == "Rushing") {cols.set("Rush YD", "Rushing Yards"); cols.set("Rush TD", "Rushing Touchdowns"); cols.set("Rush ATT", "Rush Attempts"); cols.set("FUM", "Fumbles")}
+    if (active_view == "Receiving") {cols.set("Rec YD", "Receiving Yards"); cols.set("Rec TD", "Receiving Touchdowns"); cols.set("TGT", "Targets"); cols.set("REC", "Receptions"); cols.set("FUM", "Fumbles")}
+    if (active_view == "Defense") {cols.set("Def YD", "Yards Against"); cols.set("PA", "Points Against"); cols.set("Def TD", "Defensive/Special Teams TDs"); cols.set("SFTY", "Safties"); cols.set("FUM", "Fumbles")}
+    if (active_view == "Kicking") {cols.set("FG%", "Field Goal Percentage"); cols.set("XPA", "Extra Points Attempted"); cols.set("XPM", "Extra Points Made"); cols.set("XPA", "Extra Points Attempted"); cols.set("FGM", "FGs Made"); cols.set("FG0_39", "FGs Made, < 40 Yd"); cols.set("FG40_49", "FGs Made, 41 – 50 Yd"); cols.set("FG50plus", "FGs Made, 50+ Yd"); }
+
+    // Create a set of dropdowns
+    views = ["Fantasy", "Passing", "Rushing", "Receiving", "Defense", "Kicking"]
+
+    // Build an html dropdown menu for the above columns
+    d = `<div class='dropdown2' style="xsborder-collapse: separate; border-spacing:20"><button class='dropbtn2'>▼ ${active_view}</button><div class='dropdown-content2'>`;
+    for (curr_view of views) {
+        d += `<a href='/home/fantasy?active_view=${curr_view}'>${curr_view}</a>`
+    }
+    fileContent += "<table style=\"text-align:left\">" + "<th style=\"vertical-align:top; min-width:200px\">" + h2 + "Select View:" + h2 + d + "</div>" + th_
 
     html_table = table.html_table(data, cols);
-    fileContent += html_table;
+    fileContent += th + html_table + th_ + "</table>";
 
     res.send(fileContent);
 }

@@ -27,7 +27,9 @@ function html_table(data, cols) {
     out += `<script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>`
     out += `<script>
                 $(document).ready(function() {
-                    $('#table1').DataTable();
+                    $('#table1').DataTable({
+                        'order':[[4, 'desc']]
+                    });
                 });
             </script>`
 

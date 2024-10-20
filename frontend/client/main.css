@@ -23,7 +23,7 @@ html, body {
       height: auto;
       min-height: 100%; } }
 
-  body {overflow-y: scroll;}
+  body {overflow: scroll;}
 
 /* Top bar styles */
 .top-bar {
