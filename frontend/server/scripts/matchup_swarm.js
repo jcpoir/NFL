@@ -133,7 +133,7 @@ else {
             .attr("class", "mean-line text")
             .attr("text-anchor", "start")
             .attr("x", x_start + 10)
-            .attr("y", 110)
+            .attr("y", 130)
             .style("fill", "white")
             .text(`x = ${null}`)
             .style("font-size", "16") 

@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
 app.get("/simulations/matchup", routes.matchup);
 
 app.get("/home/fantasy", routes.fantasy);
+app.get("/home/playoffs", routes.playoff_odds);
 app.get("/home/:page", routes.serve);
 
 app.get("/simulations/gamescript", routes.gamescript);

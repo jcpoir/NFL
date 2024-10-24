@@ -50,16 +50,33 @@ async function serve(req, res) {
     res.send(fileContent);
 }
 
+async function playoff_odds(req, res) {
+
+    // Get header
+    fileContent = fs.readFileSync(__dirname + "/" + html_filepath + "main_header.html")
+    fileContent += h1 + "Playoff Odds" + h1_ + br
+
+    // Load data
+    data = await tools.fetch_parse(baseURL + "/pipeline/season_projections.csv")
+
+    // Build table
+    html_table = table.simple_table(data);
+    fileContent += "<th style=\"vertical-align:top\">" + html_table + th_ + "</table>";
+
+    res.send(fileContent);
+}
+
 async function fantasy(req, res) {
 
     const active_view = req.query.active_view ? req.query.active_view : "Fantasy";
+    const active_pos = req.query.active_pos ? req.query.active_pos : "ALL";
+    const active_team = req.query.active_team ? req.query.active_team : "ALL";
     
     // Get header
     fileContent = fs.readFileSync(__dirname + "/" + html_filepath + "main_header.html")
     fileContent += h1 + "Fantasy Projections" + h1_ + br
 
     // Load in fantasy data
-    const view = req.query.view ? req.query.view : "Summary";
     data = await tools.fetch_parse(baseURL + "/pipeline/fantasy_final.csv")
 
     // Construct the table element
@@ -78,12 +95,38 @@ async function fantasy(req, res) {
     // Build an html dropdown menu for the above columns
     d = `<div class='dropdown2' style="xsborder-collapse: separate; border-spacing:20"><button class='dropbtn2'>▼ ${active_view}</button><div class='dropdown-content2'>`;
     for (curr_view of views) {
-        d += `<a href='/home/fantasy?active_view=${curr_view}'>${curr_view}</a>`
+        d += `<a href='/home/fantasy?active_view=${curr_view}&active_pos=${active_pos}&active_team=${active_team}'>${curr_view}</a>`
     }
-    fileContent += "<table style=\"text-align:left\">" + "<th style=\"vertical-align:top; min-width:200px\">" + h2 + "Select View:" + h2 + d + "</div>" + th_
+    fileContent += "<table style=\"text-align:left\">" + "<th style=\"vertical-align:top; min-width:200px\">" + h2 + "Select View:" + h2_ + d + "</div></div>"
+    
+    // Dropdown for filtering on position
+    pos = ["ALL", "QB", "RB", "WR", "TE", "K", "D/ST", "FLEX"]
+    d = `<div class='dropdown2' style="xsborder-collapse: separate; border-spacing:20"><button class='dropbtn2'>▼ ${active_pos}</button><div class='dropdown-content2'>`;
+    for (curr_pos of pos) {
+        d += `<a href='/home/fantasy?active_view=${active_view}&active_pos=${curr_pos}&active_team=${active_team}'>${curr_pos}</a>`
+    }
+    fileContent += h2 + "Filter by </br>Position:" + h2_ + d + "</div></div>"
 
-    html_table = table.html_table(data, cols);
-    fileContent += th + html_table + th_ + "</table>";
+    // Create a list of individual seraches in the html_table function. For team/position filtering
+    pos_regex = active_pos;
+    if (active_pos == "FLEX") {pos_regex = "(RB)|(TE)|(WR)"}
+    else if (active_pos == "K") {pos_regex = "PK"}
+
+    filters = []
+    if (active_pos != "ALL") {filters.push(`.column(3).search("${pos_regex}", true, false)`);}
+
+    // Dropdown for filtering by team
+    nfl_teams = ["ALL", "ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE", "DAL", "DEN", "DET", "GB", "HOU", "IND", "JAX", "KC", "LAC", "LAR", "LV", "MIA", "MIN", "NE", "NO", "NYG", "NYJ", "PHI", "PIT", "SEA", "SF", "TB", "TEN", "WSH"];
+    d = `<div class='dropdown2' style="xsborder-collapse: separate; border-spacing:20"><button class='dropbtn2'>▼ ${active_team}</button><div class='dropdown-content2'>`;
+    for (curr_team of nfl_teams) {
+        d += `<a href='/home/fantasy?active_view=${active_view}&active_pos=${active_pos}&active_team=${curr_team}'>${curr_team}</a>`
+    }
+    fileContent += h2 + "Filter by </br>Team:" + h2_ + d +"</div></div>" + th_;
+
+    if (active_team != "ALL") {filters.push(`.column(0).search("${active_team}", true, false)`);}
+
+    html_table = table.html_table(data, cols, filters);
+    fileContent += "<th style=\"vertical-align:top\">" + html_table + th_ + "</table>";
 
     res.send(fileContent);
 }
@@ -303,4 +346,4 @@ async function player(req, res) {
     res.send(fileContent);
 }
 
-module.exports = { matchup, serve, gamescript, player, defense, fantasy };
+module.exports = { matchup, serve, gamescript, player, defense, fantasy, playoff_odds };
